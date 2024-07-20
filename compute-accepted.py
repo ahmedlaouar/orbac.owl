@@ -54,8 +54,10 @@ def is_strictly_preferred(graph, member1, member2):
     try:
         first_result = next(iter(results))
         if first_result:
+            print(member1+" is Preferred To "+member2)
             return True
         else: 
+            print(member1+" is Not Preferred To "+member2)
             return False
     except StopIteration:
         print("No query results found.")
@@ -93,7 +95,7 @@ def check_acceptance(graph, subject, action, object):
                 conflict_supported = True
                 break
         if not conflict_supported:
-            accepted = False
+            return False
     return accepted
 
 # Load the ontology
@@ -104,26 +106,24 @@ graph.parse("ontology/orbac-STARWARS.owl", format="xml")
 subject, object, action = 'researcher4', 'dataset5', 'select'
 
 
-#if check_acceptance(graph, subject, action, object):
-#    print(f"The permission for {subject} to perform the action {action} on {object} is granted")
-#else:
-#    print(f"The permission for {subject} to perform the action {action} on {object} is denied")
-
-
+if check_acceptance(graph, subject, action, object):
+    print(f"The permission for {subject} to perform the action {action} on {object} is granted")
+else:
+    print(f"The permission for {subject} to perform the action {action} on {object} is denied")
 
 
 #if check_consistency(graph):
 #    print("The instance is consistent")
 #else:
 #    print("The instance is inconsistent")
-
+"""
 supports = compute_supports(graph, subject, action, object)
 for support in supports:
     stripped_support = tuple(strip_prefix(str(uri)) for uri in support)
     print(stripped_support)
 
 print("--------------------------------------------------------------------------")
-"""
+
 conflicts = compute_conflicts(graph)
 for conflict in conflicts:
     stripped_conflict = tuple(strip_prefix(str(uri)) for uri in conflict)

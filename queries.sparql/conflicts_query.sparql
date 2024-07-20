@@ -5,7 +5,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX : <http://www.co-ode.org/ontologies/ont.owl#> # Adjust the base URI as necessary
 
 # query for conflicts
-SELECT ?employ ?use ?consider ?define ?employBiss ?useBiss ?considerBiss ?defineBiss #?r ?r2 ?rBiss ?r2Biss ?org ?org2 ?orgBiss ?org2Biss ?a ?aBiss ?v ?vBiss ?c ?cBiss ?s ?alpha ?o
+SELECT ?employ ?use ?define ?employBiss ?useBiss ?defineBiss #?r ?r2 ?rBiss ?r2Biss ?org ?org2 ?orgBiss ?org2Biss ?a ?aBiss ?v ?vBiss ?c ?cBiss ?s ?alpha ?o ?consider ?considerBiss
 WHERE {{
     ?employ rdf:type :Employ .
     ?employ :employesEmployee ?s .
