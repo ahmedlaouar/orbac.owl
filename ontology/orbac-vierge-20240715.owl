@@ -1,0 +1,1125 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:orbac-owl="http://www.co-ode.org/ontologies/ont.owl#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessAccessType -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessAccessType">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                    </Restriction>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessAction -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessAction">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                    </Restriction>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessObject -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessObject">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                    </Restriction>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessSubject -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessSubject">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                    </Restriction>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeActivity -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeActivity">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeContext -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeContext">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeOrganisation -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeOrganisation">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeRole -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeRole">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeView -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeView">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#considersAction -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#considersAction">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consider"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#considersActivity -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#considersActivity">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consider"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#considersOrganisation -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#considersOrganisation">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consider"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#definesAction -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesAction">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#definesContext -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesContext">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#definesObject -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesObject">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#definesOrganisation -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesOrganisation">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#definesSubject -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesSubject">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employesEmployee -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#employesEmployee">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employesEmployer -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#employesEmployer">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employesRole -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#employesRole">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hasParent -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#hasParent">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#isPreferredTo -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#subOrganisationOf -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#subOrganisationOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#subRoleOrganisation -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#subRoleOrganisation">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#usesEmployer -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#usesEmployer">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#usesObject -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#usesObject">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#usesView -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#usesView">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#AbstractConcept -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Access -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#AccessType -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Action -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Action">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Activity -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Activity">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ConnectionRule -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Consider -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Consider">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Context -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Employ -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Employ">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Object -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Object">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Obligation -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Obligation">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Organisation -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Organisation">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Permission -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Permission">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Prohibition -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Prohibition">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Recommendation -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Recommendation">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Role -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Role">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#SeniorRole -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#SeniorRole">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#SpecializedRole -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#SpecializedRole">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#SubRole -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#SubRole">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Subject -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Subject">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Use -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Use">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#View -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#View">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <Restriction>
+        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+        <rdfs:subClassOf>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                    </Restriction>
+                </unionOf>
+            </Class>
+        </rdfs:subClassOf>
+    </Restriction>
+    <Restriction>
+        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+        <rdfs:subClassOf>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                    </Restriction>
+                </unionOf>
+            </Class>
+        </rdfs:subClassOf>
+    </Restriction>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#p1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#r1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#activity1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#activity2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#consider1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#consider2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#context1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#context2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#define1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#define2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#role1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#role2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#employ1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#employ2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#view1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#view2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#use1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#use2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#R1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#R2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">accessTypePreferredToAll</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#p1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#r1"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#p1"/>
+                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#r1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">preferrenceActivityToConsider</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#activity1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#activity2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#activity1"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#activity2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#considersActivity"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#consider1"/>
+                                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#activity1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#considersActivity"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#consider2"/>
+                                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#activity2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#consider1"/>
+                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#consider2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">preferrenceContextToDefine</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#context1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#context2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#context1"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#context2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#definesContext"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#define1"/>
+                                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#context1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#definesContext"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#define2"/>
+                                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#context2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#define1"/>
+                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#define2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">prefrrenceRoleToEmploy</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#role1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#role2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#role1"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#role2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#employesRole"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#employ1"/>
+                                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#role1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#employesRole"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#employ2"/>
+                                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#role2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#employ1"/>
+                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#employ2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">preferrenceViewToUse</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#view1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#view2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#view1"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#view2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#usesView"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#use1"/>
+                                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#view1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#usesView"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#use2"/>
+                                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#view2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#use1"/>
+                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#use2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"></rdfs:comment>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">preferenceFromHierarchy</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasParent"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#R1"/>
+                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#R2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#R1"/>
+                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#R2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

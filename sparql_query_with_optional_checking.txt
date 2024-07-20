@@ -1,0 +1,42 @@
+SELECT ?permission ?org ?r ?a ?v ?c ?s ?alpha ?o
+WHERE {
+    ?employ rdf:type :Employ .
+    ?employ :employesEmployer ?org .
+    ?employ :employesEmployee ?s .
+    ?employ :employesRole ?r .
+    
+    ?use rdf:type :Use .
+    ?use :usesEmployer ?org .
+    ?use :usesObject ?o .
+    ?use :usesVue ?v .
+   
+    ?consider rdf:type :Consider .
+    ?consider :considersOrganisation ?org .
+    ?consider :considersAction ?alpha .
+    ?consider :considersActivity ?a .
+    
+    ?define rdf:type :Define .
+    ?define :definesOrganisation ?org .
+    ?define :definesSubject ?s .
+    ?define :definesAction ?alpha .
+    ?define :definesObject ?o .
+    ?define :definesContext ?c .
+
+    ?permission rdf:type :Permission .
+    ?permission :permitsOrganisation ?org .
+    ?permission :permitsActivity ?a .
+    ?permission :permitsVue ?v .
+    ?permission :permitsContext ?c .
+    
+    {
+        # check directly:
+        ?permission :permitsRole ?r .
+    } UNION {
+        # check in parent (for hierarchy):
+        ?permission :permitsRole ?r2 .
+        ?subRole rdf:type :RoleHierarchy .
+        ?subRole :hierarchyOrganisation ?org .
+        ?subRole :hierarchyChild ?r .
+        ?subRole :hierarchyParent ?r2 .
+    }
+}

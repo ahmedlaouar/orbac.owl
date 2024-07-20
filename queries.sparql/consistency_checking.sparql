@@ -1,0 +1,138 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <http://www.co-ode.org/ontologies/ont.owl#> # Adjust the base URI as necessary
+
+# query to check consistency
+ASK {{
+    ?employ rdf:type :Employ .
+    ?employ :employesEmployee ?s .
+    
+    ?use rdf:type :Use .
+    ?use :usesObject ?o .
+    ?use :usesView ?v .
+   
+    ?consider rdf:type :Consider .
+    ?consider :considersAction ?alpha .
+    ?consider :considersActivity ?a .
+    
+    ?define rdf:type :Define .
+    ?define :definesSubject ?s .
+    ?define :definesAction ?alpha .
+    ?define :definesObject ?o .
+    ?define :definesContext ?c .
+
+    ?permission rdf:type :Permission .
+    ?permission :accessTypeRole ?r .
+    ?permission :accessTypeActivity ?a .
+    ?permission :accessTypeView ?v .
+    ?permission :accessTypeContext ?c .
+
+    {{
+    ?employ :employesEmployer ?org .
+    }} UNION    {{
+    ?employ :employesEmployer ?org2 .
+    ?org :subOrganisationOf* ?org2 . 
+    }}
+    {{
+    ?use :usesEmployer ?org .
+    }} UNION    {{
+    ?use :usesEmployer ?org2 .
+    ?org :subOrganisationOf* ?org2 . 
+    }}
+    {{
+    ?consider :considersOrganisation ?org .
+    }} UNION    {{
+    ?consider :considersOrganisation ?org2 .
+    ?org :subOrganisationOf* ?org2 . 
+    }}
+    {{
+    ?define :definesOrganisation ?org .
+    }} UNION    {{
+    ?define :definesOrganisation ?org2 .
+    ?org :subOrganisationOf* ?org2 . 
+    }}
+    {{
+    ?permission :accessTypeOrganisation ?org .
+    }} UNION    {{
+    ?permission :accessTypeOrganisation ?org2 .
+    ?org :subOrganisationOf* ?org2 . 
+    }}
+    {{
+    ?employ :employesRole ?r .
+    }} UNION {{
+    ?employ :employesRole ?r2 .
+    {{?r2 rdf:type :SubRole .}} UNION {{?r2 rdf:type :SeniorRole .}}
+    ?r2 :hasParent+ ?r .
+    ?r2 :subRoleOrganisation ?org .
+    }}
+
+    ?employBiss rdf:type :Employ .
+    ?employBiss :employesEmployee ?s .
+    
+    ?useBiss rdf:type :Use .
+    ?useBiss :usesObject ?o .
+    ?useBiss :usesView ?vBiss .
+   
+    ?considerBiss rdf:type :Consider .
+    ?considerBiss :considersAction ?alpha .
+    ?considerBiss :considersActivity ?aBiss .
+    
+    ?defineBiss rdf:type :Define .
+    ?defineBiss :definesSubject ?s .
+    ?defineBiss :definesAction ?alpha .
+    ?defineBiss :definesObject ?o .
+    ?defineBiss :definesContext ?cBiss .
+
+    ?prohibition rdf:type :Prohibition .
+    ?prohibition :accessTypeRole ?rBiss .
+    ?prohibition :accessTypeActivity ?aBiss .
+    ?prohibition :accessTypeView ?vBiss .
+    ?prohibition :accessTypeContext ?cBiss .
+
+    {{
+    ?employBiss :employesEmployer ?orgBiss .
+    }} UNION    {{
+    ?employBiss :employesEmployer ?org2Biss .
+    ?orgBiss :subOrganisationOf* ?org2Biss . 
+    }}
+    {{
+    ?useBiss :usesEmployer ?orgBiss .
+    }} UNION    {{
+    ?useBiss :usesEmployer ?org2Biss .
+    ?orgBiss :subOrganisationOf* ?org2Biss . 
+    }}
+    {{
+    ?considerBiss :considersOrganisation ?orgBiss .
+    }} UNION    {{
+    ?considerBiss :considersOrganisation ?org2Biss .
+    ?orgBiss :subOrganisationOf* ?org2Biss . 
+    }}
+    {{
+    ?defineBiss :definesOrganisation ?orgBiss .
+    }} UNION    {{
+    ?defineBiss :definesOrganisation ?org2Biss .
+    ?orgBiss :subOrganisationOf* ?org2Biss . 
+    }}
+    {{
+    ?prohibition :accessTypeOrganisation ?orgBiss .
+    }} UNION    {{
+    ?prohibition :accessTypeOrganisation ?org2Biss .
+    ?orgBiss :subOrganisationOf* ?org2Biss . 
+    }}
+    {{
+    ?employBiss :employesRole ?rBiss .
+    }} UNION {{
+    ?employBiss :employesRole ?r2Biss .
+    {{
+    ?r2Biss rdf:type :SubRole .
+    ?r2Biss :hasParent+ ?rBiss .
+    ?r2Biss :subRoleOrganisation ?orgBiss .
+    }} UNION {{
+        ?rBiss rdf:type :SeniorRole .
+        ?rBiss :hasParent+ ?r2Biss .
+        ?rBiss :subRoleOrganisation ?orgBiss .
+    }}
+    }}
+}}

@@ -1,0 +1,151 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <file:/C:/Users/CRIL/OneDrive/Research/PhD%20UCT/INLG%202023/Ontologies/Ontologies%20from%20IJMSO/orbac-owl.owl#>  # Adjust the base URI as necessary
+
+# Permission
+
+SELECT ?permission ?org ?r ?a ?v ?c ?s ?alpha ?o
+WHERE {
+    ?employ rdf:type :Employ .
+    ?employ :employesEmployer ?org .
+    ?employ :employesEmployee ?s .
+    ?employ :employesRole ?r .
+    
+    ?use rdf:type :Use .
+    ?use :usesEmployer ?org .
+    ?use :usesObject ?o .
+    ?use :usesVue ?v .
+   
+    ?consider rdf:type :Consider .
+    ?consider :considersOrganisation ?org .
+    ?consider :considersAction ?alpha .
+    ?consider :considersActivity ?a .
+    
+    ?define rdf:type :Define .
+    ?define :definesOrganisation ?org .
+    ?define :definesSubject ?s .
+    ?define :definesAction ?alpha .
+    ?define :definesObject ?o .
+    ?define :definesContext ?c .
+
+    ?permission rdf:type :Permission .
+    ?permission :permitsOrganisation ?org .
+    ?permission :permitsRole ?r .
+    ?permission :permitsActivity ?a .
+    ?permission :permitsVue ?v .
+    ?permission :permitsContext ?c .
+
+FILTER (?s = :patrick && ?o = :alex-records && ?alpha = :read)
+  
+}
+
+# Prohibition
+
+SELECT ?prohibition ?org ?r ?a ?v ?c ?s ?alpha ?o
+WHERE {
+    ?employ rdf:type :Employ .
+    ?employ :employesEmployer ?org .
+    ?employ :employesEmployee ?s .
+    ?employ :employesRole ?r .
+    
+    ?use rdf:type :Use .
+    ?use :usesEmployer ?org .
+    ?use :usesObject ?o .
+    ?use :usesVue ?v .
+   
+    ?consider rdf:type :Consider .
+    ?consider :considersOrganisation ?org .
+    ?consider :considersAction ?alpha .
+    ?consider :considersActivity ?a .
+    
+    ?define rdf:type :Define .
+    ?define :definesOrganisation ?org .
+    ?define :definesSubject ?s .
+    ?define :definesAction ?alpha .
+    ?define :definesObject ?o .
+    ?define :definesContext ?c .
+
+    ?prohibition rdf:type :Prohibition .
+    ?prohibition :prohibitsOrganisation ?org .
+    ?prohibition :prohibitsRole ?r .
+    ?prohibition :prohibitsActivity ?a .
+    ?prohibition :prohibitsVue ?v .
+    ?prohibition :prohibitsContext ?c .
+
+FILTER (?s = :patrick && ?o = :alex-records && ?alpha = :read)
+  
+}
+
+# Conflit checking
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <file:/C:/Users/CRIL/OneDrive/Research/PhD%20UCT/INLG%202023/Ontologies/Ontologies%20from%20IJMSO/orbac-owl.owl#>  # Adjust the base URI as necessary
+
+SELECT  ?permission ?prohibition
+WHERE {
+    ?employ rdf:type :Employ .
+    ?employ :employesEmployer ?org .
+    ?employ :employesEmployee ?s .
+    ?employ :employesRole ?r .
+    
+    ?use rdf:type :Use .
+    ?use :usesEmployer ?org .
+    ?use :usesObject ?o .
+    ?use :usesVue ?v .
+   
+    ?consider rdf:type :Consider .
+    ?consider :considersOrganisation ?org .
+    ?consider :considersAction ?alpha .
+    ?consider :considersActivity ?a .
+    
+    ?define rdf:type :Define .
+    ?define :definesOrganisation ?org .
+    ?define :definesSubject ?s .
+    ?define :definesAction ?alpha .
+    ?define :definesObject ?o .
+    ?define :definesContext ?c .
+
+    ?permission rdf:type :Permission .
+    ?permission :permitsOrganisation ?org .
+    ?permission :permitsRole ?r .
+    ?permission :permitsActivity ?a .
+    ?permission :permitsVue ?v .
+    ?permission :permitsContext ?c .
+
+    ?employ rdf:type :Employ .
+    ?employ :employesEmployer ?org .
+    ?employ :employesEmployee ?s .
+    ?employ :employesRole ?r2 .
+    
+    ?use rdf:type :Use .
+    ?use :usesEmployer ?org .
+    ?use :usesObject ?o .
+    ?use :usesVue ?v2 .
+   
+    ?consider rdf:type :Consider .
+    ?consider :considersOrganisation ?org .
+    ?consider :considersAction ?alpha .
+    ?consider :considersActivity ?a2 .
+    
+    ?define rdf:type :Define .
+    ?define :definesOrganisation ?org .
+    ?define :definesSubject ?s .
+    ?define :definesAction ?alpha .
+    ?define :definesObject ?o .
+    ?define :definesContext ?c2.
+
+    ?prohibition rdf:type :Prohibition .
+    ?prohibition :prohibitsOrganisation ?org .
+    ?prohibition :prohibitsRole ?r2 .
+    ?prohibition :prohibitsActivity ?a2 .
+    ?prohibition :prohibitsVue ?v .
+    ?prohibition :prohibitsContext ?c2 .
+
+FILTER (?s = :patrick && ?o = :alex-records && ?alpha = :read)
+  
+}

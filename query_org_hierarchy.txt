@@ -1,0 +1,242 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <http://www.co-ode.org/ontologies/ont.owl#> # Adjust the base URI as necessary
+
+# Obligation
+
+SELECT ?permission ?org ?r ?a ?v ?c ?s ?alpha ?o
+WHERE {
+    ?employ rdf:type :Employ .
+    ?employ :employesEmployee ?s .
+    
+    ?use rdf:type :Use .
+    ?use :usesObject ?o .
+    ?use :usesView ?v .
+   
+    ?consider rdf:type :Consider .
+    ?consider :considersAction ?alpha .
+    ?consider :considersActivity ?a .
+    
+    ?define rdf:type :Define .
+    ?define :definesSubject ?s .
+    ?define :definesAction ?alpha .
+    ?define :definesObject ?o .
+    ?define :definesContext ?c .
+
+    ?permission rdf:type :Obligation .
+    ?permission :accessTypeRole ?r .
+    ?permission :accessTypeActivity ?a .
+    ?permission :accessTypeView ?v .
+    ?permission :accessTypeContext ?c .
+
+    {
+    ?employ :employesEmployer ?org .
+    } UNION    {
+    ?employ :employesEmployer ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?use :usesEmployer ?org .
+    } UNION    {
+    ?use :usesEmployer ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?consider :considersOrganisation ?org .
+    } UNION    {
+    ?consider :considersOrganisation ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?define :definesOrganisation ?org .
+    } UNION    {
+    ?define :definesOrganisation ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?permission :accessTypeOrganisation ?org .
+    } UNION    {
+    ?permission :accessTypeOrganisation ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?employ :employesRole ?r .
+    } UNION  {
+    ?employ :employesRole ?r2 .
+    ?subRole rdf:type :SubRole .
+    ?subRole :hierarchyOrganisation :org .
+    ?subRole :hierarchyParent ?r .
+    ?subRole :hierarchyChild ?r2 .
+    }
+}
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <http://www.co-ode.org/ontologies/ont.owl#> # Adjust the base URI as necessary
+
+# Obligation
+
+SELECT ?permission ?org ?r ?a ?v ?c ?s ?alpha ?o
+WHERE {
+    ?employ rdf:type :Employ .
+    ?employ :employesEmployee ?s .
+    
+    ?use rdf:type :Use .
+    ?use :usesObject ?o .
+    ?use :usesView ?v .
+   
+    ?consider rdf:type :Consider .
+    ?consider :considersAction ?alpha .
+    ?consider :considersActivity ?a .
+    
+    ?define rdf:type :Define .
+    ?define :definesSubject ?s .
+    ?define :definesAction ?alpha .
+    ?define :definesObject ?o .
+    ?define :definesContext ?c .
+
+    ?permission rdf:type :Permission .
+    ?permission :accessTypeRole ?r .
+    ?permission :accessTypeActivity ?a .
+    ?permission :accessTypeView ?v .
+    ?permission :accessTypeContext ?c .
+
+    {
+    ?employ :employesEmployer ?org .
+    } UNION    {
+    ?employ :employesEmployer ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?use :usesEmployer ?org .
+    } UNION    {
+    ?use :usesEmployer ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?consider :considersOrganisation ?org .
+    } UNION    {
+    ?consider :considersOrganisation ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?define :definesOrganisation ?org .
+    } UNION    {
+    ?define :definesOrganisation ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?permission :accessTypeOrganisation ?org .
+    } UNION    {
+    ?permission :accessTypeOrganisation ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?employ :employesRole ?r .
+    } UNION {
+    ?employ :employesRole ?r2 .
+    ?subRole rdf:type :SubRole .
+    ?subRole :hierarchyOrganisation ?org .
+    ?subRole :hierarchyParent ?r .
+    ?subRole :hierarchyChild ?r2 .
+    }
+}
+
+SELECT ?org ?childRole ?parentRole
+WHERE {
+    ?subRole rdf:type :SubRole .
+    ?subRole :hierarchyOrganisation ?org .
+    ?subRole :hierarchyChild ?childRole .
+    ?subRole :hierarchyParent ?parentRole .
+}
+
+SELECT ?permission ?org ?r ?a ?v ?c ?s ?alpha ?o
+WHERE {
+    ?employ rdf:type :Employ .
+    ?employ :employesEmployee ?s .
+    
+    ?use rdf:type :Use .
+    ?use :usesObject ?o .
+    ?use :usesView ?v .
+   
+    ?consider rdf:type :Consider .
+    ?consider :considersAction ?alpha .
+    ?consider :considersActivity ?a .
+    
+    ?define rdf:type :Define .
+    ?define :definesSubject ?s .
+    ?define :definesAction ?alpha .
+    ?define :definesObject ?o .
+    ?define :definesContext ?c .
+
+    ?permission rdf:type :Permission .
+    ?permission :accessTypeRole ?r .
+    ?permission :accessTypeActivity ?a .
+    ?permission :accessTypeView ?v .
+    ?permission :accessTypeContext ?c .
+
+    {
+    ?employ :employesEmployer ?org .
+    } UNION    {
+    ?employ :employesEmployer ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?use :usesEmployer ?org .
+    } UNION    {
+    ?use :usesEmployer ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?consider :considersOrganisation ?org .
+    } UNION    {
+    ?consider :considersOrganisation ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?define :definesOrganisation ?org .
+    } UNION    {
+    ?define :definesOrganisation ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?permission :accessTypeOrganisation ?org .
+    } UNION    {
+    ?permission :accessTypeOrganisation ?org2 .
+    ?org :subOrganisationOf ?org2 . 
+    }
+    {
+    ?employ :employesRole ?r .
+    } UNION {
+    ?employ :employesRole ?r2 .
+    ?subRole rdf:type :SubRole .
+    ?subRole :hierarchyOrganisation ?org .
+    ?subRole :hierarchyParent ?r .
+    ?subRole :hierarchyChild ?r2 .
+    } UNION {
+    ?employ :employesRole ?r3 .
+    ?subRole rdf:type :SubRole .
+    ?subRole :hierarchyOrganisation ?org .
+    ?subRole :hierarchyParent ?r2 .
+    ?subRole :hierarchyChild ?r3 .
+    ?subRole2 rdf:type :SubRole .
+    ?subRole2 :hierarchyOrganisation ?org .
+    ?subRole2 :hierarchyParent ?r .
+    ?subRole2 :hierarchyChild ?r2 .
+    } UNION {
+    ?employ :employesRole ?r3 .
+    ?subRole rdf:type :SubRole .
+    ?subRole :hierarchyOrganisation ?org .
+    ?subRole :hierarchyParent ?r2 .
+    ?subRole :hierarchyChild ?r3 .
+    ?subRole2 rdf:type :SubRole .
+    ?subRole2 :hierarchyParent ?r .
+    ?subRole2 :hierarchyChild ?r2 .
+    ?org :subOrganisationOf ?org2 . 
+    ?subRole2 :hierarchyOrganisation ?org2 .
+    }
+}
