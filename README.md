@@ -27,6 +27,7 @@ The algorithm is implemented in python and provided in `compute-accepted.py`.
 
 The different methods used in this work rely on the [__RDFLib__](https://github.com/RDFLib/rdflib), which is a python library to read from the OWL ontology.
 
+## Explanation of the accepatnce decisions
 
 
 ## References:
