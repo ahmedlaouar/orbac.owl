@@ -6,7 +6,7 @@ PREFIX : <http://www.co-ode.org/ontologies/ont.owl#> # Adjust the base URI as ne
 
 # Computing supports of a Permission for a given subject, action, object
 
-SELECT ?employ ?use ?define #?org ?org2 ?v ?a ?c ?r ?r2 ?consider
+SELECT ?employ ?use ?define
 WHERE  {{
     ?use rdf:type :Use .
     ?use :usesObject :{object}.

@@ -23,7 +23,7 @@ WHERE  {{
     ?define :definesObject ?object.
     ?define :definesContext ?c .
 
-    {{?permission rdf:type :Prohibition .}} #UNION {{?permission rdf:type :Obligation .}}
+    ?permission rdf:type :Prohibition .
     ?permission :accessTypeRole ?r .
     ?permission :accessTypeActivity ?a .
     ?permission :accessTypeView ?v .

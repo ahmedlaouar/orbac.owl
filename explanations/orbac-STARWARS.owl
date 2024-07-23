@@ -1,0 +1,2603 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:orbac-owl="http://www.co-ode.org/ontologies/ont.owl#">
+    <Ontology/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessAccessType -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessAccessType">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                    </Restriction>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessAction -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessAction">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                    </Restriction>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessObject -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessObject">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                    </Restriction>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessSubject -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessSubject">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+        <rdfs:domain>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                    </Restriction>
+                </unionOf>
+            </Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeActivity -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeActivity">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeContext -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeContext">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeOrganisation -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeOrganisation">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeRole -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeRole">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeView -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeView">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#considersAction -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#considersAction">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consider"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#considersActivity -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#considersActivity">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consider"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#considersOrganisation -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#considersOrganisation">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consider"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#definesAction -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesAction">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#definesContext -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesContext">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#definesObject -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesObject">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#definesOrganisation -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesOrganisation">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#definesSubject -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesSubject">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employesEmployee -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#employesEmployee">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employesEmployer -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#employesEmployer">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employesRole -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#employesRole">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hasParent -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#hasParent">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#hierarchyChild -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#hierarchyChild">
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#isPreferredTo -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#subOrganisationOf -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#subOrganisationOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#subRoleOrganisation -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#subRoleOrganisation">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#usesEmployer -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#usesEmployer">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#usesObject -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#usesObject">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#usesView -->
+
+    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#usesView">
+        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#AbstractConcept -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Access -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#AccessType -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Action -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Action">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Activity -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Activity">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ConnectionRule -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Consider -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Consider">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Context -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Employ -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Employ">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Object -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Object">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Obligation -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Obligation">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Organisation -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Organisation">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Permission -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Permission">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Prohibition -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Prohibition">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Recommendation -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Recommendation">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Role -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Role">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#SeniorRole -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#SeniorRole">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#SpecializedRole -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#SpecializedRole">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#SubRole -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#SubRole">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Subject -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Subject">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Use -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Use">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    </Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#View -->
+
+    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#View">
+        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Administration -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Administration">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Associate_Professor -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Associate_Professor">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SubRole"/>
+        <orbac-owl:hasParent rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Professor"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University2"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Collaboration -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Collaboration">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Confidential_Data -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Confidential_Data">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Consortium -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Consortium">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Consult -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Consult">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Contracts -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Contracts">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Coordinator -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Coordinator">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Data -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Data">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Dean -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Dean">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SeniorRole"/>
+        <orbac-owl:hasParent rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employee"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University2"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define_employee_I1_datasets -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define_employee_I1_datasets">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#read"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#select"/>
+        <orbac-owl:definesContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#default"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset1"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset5"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset8"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute1"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher1"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher4"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define_engineer2_edit_agreement5 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define_engineer2_edit_agreement5">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#edit"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#sign"/>
+        <orbac-owl:definesContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement5"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#engineer2"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define_phd2_edit_agreement1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define_phd2_edit_agreement1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#edit"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#sign"/>
+        <orbac-owl:definesContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement1"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent2"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define_phd7_edit_agreement3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define_phd7_edit_agreement3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#edit"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#sign"/>
+        <orbac-owl:definesContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement3"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent7"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define_phd7_edit_agreement4 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define_phd7_edit_agreement4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#edit"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#sign"/>
+        <orbac-owl:definesContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement4"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent7"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define_professor2_edit_agreement6 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define_professor2_edit_agreement6">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#edit"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#sign"/>
+        <orbac-owl:definesContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement6"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor2"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define_professor6_edit_agreement2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define_professor6_edit_agreement2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#edit"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#sign"/>
+        <orbac-owl:definesContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement2"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor6"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define_sign_agreement1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define_sign_agreement1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#sign"/>
+        <orbac-owl:definesContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement1"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor1"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor2"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define_sign_agreement2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define_sign_agreement2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#sign"/>
+        <orbac-owl:definesContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement2"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor3"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher2"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define_sign_agreement3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define_sign_agreement3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#sign"/>
+        <orbac-owl:definesContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement3"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher1"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher3"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define_sign_agreement4 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define_sign_agreement4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#sign"/>
+        <orbac-owl:definesContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement4"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor1"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher1"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define_sign_agreement5 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define_sign_agreement5">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#sign"/>
+        <orbac-owl:definesContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement5"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor3"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher2"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Define_sign_agreement6 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define_sign_agreement6">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
+        <orbac-owl:definesAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#sign"/>
+        <orbac-owl:definesContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:definesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement6"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor2"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher3"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Deliverables -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Deliverables">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Director -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Director">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SeniorRole"/>
+        <orbac-owl:hasParent rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employee"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute1"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute3"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Employee -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Employee">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SubRole"/>
+        <orbac-owl:hasParent rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Staff_Member"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Engineer -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Engineer">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SubRole"/>
+        <orbac-owl:hasParent rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employee"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute1"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute3"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Execute -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Execute">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Full_Access -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Full_Access">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Full_Professor -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Full_Professor">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SeniorRole"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SubRole"/>
+        <orbac-owl:hasParent rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Professor"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University2"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Institute1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Institute1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <orbac-owl:subOrganisationOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Institute2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Institute2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <orbac-owl:subOrganisationOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Institute3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Institute3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <orbac-owl:subOrganisationOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Internal_data -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Internal_data">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Modify -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Modify">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Obligation_secondee -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Obligation_secondee">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Obligation"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Modify"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Validation"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondee"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Obligation_validation -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Obligation_validation">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Obligation"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Validation"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Dean"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Director"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Permission_Confidential_Data -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Permission_Confidential_Data">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consult"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#default"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute1"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employee"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Confidential_Data"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Permission_Confidential_Data_Collaboration -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Permission_Confidential_Data_Collaboration">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consult"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Collaboration"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Staff_Member"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Confidential_Data"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Permission_Confidential_Data_Secondment -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Permission_Confidential_Data_Secondment">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consult"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute1"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondee"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Confidential_Data"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Permission_Internal_data_I3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Permission_Internal_data_I3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consult"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#default"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute3"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employee"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Internal_data"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Permission_Internal_data_Secondment -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Permission_Internal_data_Secondment">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consult"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute3"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondee"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Internal_data"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Permission_Public_Data -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Permission_Public_Data">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consult"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#default"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Staff_Member"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Public_Data"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Permission_Secondment_Reports -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Permission_Secondment_Reports">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Modify"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondee"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Report"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#PhD_Student -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#PhD_Student">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SubRole"/>
+        <orbac-owl:hasParent rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employee"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Post_Doc -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Post_Doc">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SubRole"/>
+        <orbac-owl:hasParent rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employee"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Professor -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Professor">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SubRole"/>
+        <orbac-owl:hasParent rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employee"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University2"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Prohibition_Confidential_Data -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Prohibition_Confidential_Data">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consult"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#default"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Staff_Member"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Confidential_Data"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Prohibition_Internal_data -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Prohibition_Internal_data">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consult"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#default"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Staff_Member"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Internal_data"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Prohibition_secondment_reports -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Prohibition_secondment_reports">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Modify"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Collaboration"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.co-ode.org/ontologies/ont.owl#default"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Staff_Member"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Report"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Project_Officer -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Project_Officer">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Public_Data -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Public_Data">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Reports -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Reports">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Researcher -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Researcher">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#SubRole"/>
+        <orbac-owl:hasParent rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employee"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute1"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute3"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Secondee -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Secondee">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Secondment -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Secondment">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Secondment_Report -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Secondment_Report">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Staff_Member -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Staff_Member">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Team_Leader -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Team_Leader">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#University1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#University1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <orbac-owl:subOrganisationOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#University2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#University2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <orbac-owl:subOrganisationOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#University3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#University3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
+        <orbac-owl:subOrganisationOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Validation -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Validation">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#WP1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#WP1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#WP2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#WP2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#WP3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#WP3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#WP4 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#WP4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#WP5 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#WP5">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#WP_Leader -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#WP_Leader">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#add -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#add">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#agreement1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#agreement1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#agreement2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#agreement2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#agreement3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#agreement3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#agreement4 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#agreement4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#agreement5 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#agreement5">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#agreement6 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#agreement6">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ask -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ask">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#audit -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#audit">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#cat -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#cat">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#consider_Consult -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#consider_Consult">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consider"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ask"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#cat"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#describe"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#grep"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#list"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#read"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#select"/>
+        <orbac-owl:considersActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consult"/>
+        <orbac-owl:considersOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#consider_FullAccess -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#consider_FullAccess">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consider"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consult"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Modify"/>
+        <orbac-owl:considersActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Full_Access"/>
+        <orbac-owl:considersOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#consider_Modify -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#consider_Modify">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consider"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#add"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#copy"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#create"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#delete"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#drop"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#edit"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#insert"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#move"/>
+        <orbac-owl:considersActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Modify"/>
+        <orbac-owl:considersOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#consider_Validation -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#consider_Validation">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consider"/>
+        <orbac-owl:considersAction rdf:resource="http://www.co-ode.org/ontologies/ont.owl#sign"/>
+        <orbac-owl:considersActivity rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Validation"/>
+        <orbac-owl:considersOrganisation rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#copy -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#copy">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#create -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#create">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#dataset1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#dataset1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#dataset10 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#dataset10">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#dataset2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#dataset2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#dataset3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#dataset3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#dataset4 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#dataset4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#dataset5 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#dataset5">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#dataset6 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#dataset6">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#dataset7 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#dataset7">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#dataset8 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#dataset8">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#dataset9 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#dataset9">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#default -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#default">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#delete -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#delete">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#deliverable1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#deliverable1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#deliverable2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#deliverable2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#describe -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#describe">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#drop -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#drop">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#edit -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#edit">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Associate_U1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Associate_U1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor4"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Associate_Professor"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Associate_U2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Associate_U2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor5"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University2"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Associate_Professor"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Associate_U3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Associate_U3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor6"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Associate_Professor"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Dean_U1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Dean_U1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor1"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Dean"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Dean_U2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Dean_U2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor2"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University2"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Dean"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Dean_U3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Dean_U3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor3"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Dean"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Director_I1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Director_I1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher1"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute1"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Director"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Director_I2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Director_I2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher2"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Director"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Director_I3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Director_I3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher3"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute3"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Director"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Full_U1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Full_U1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor1"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Full_Professor"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Full_U2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Full_U2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor2"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University2"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Full_Professor"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Full_U3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Full_U3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor3"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Full_Professor"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Project_Officer -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Project_Officer">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#officer"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Project_Officer"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Researcher_I1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Researcher_I1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher4"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute1"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Researcher"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Researcher_I2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Researcher_I2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher5"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Researcher"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Researcher_I3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Researcher_I3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#researcher6"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute3"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Researcher"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Secondee_I2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Secondee_I2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor6"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondee"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Secondee_I3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Secondee_I3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent7"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor2"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute3"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondee"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Secondee_U1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Secondee_U1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent7"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondee"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Secondee_U2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Secondee_U2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent2"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University2"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondee"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_Secondee_U3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_Secondee_U3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#engineer2"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondee"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_coordinator -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_coordinator">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#professor2"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Coordinator"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_engineer_I1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_engineer_I1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#engineer1"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#engineer4"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute1"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Engineer"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_engineer_I2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_engineer_I2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#engineer2"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#engineer5"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Engineer"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_engineer_I3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_engineer_I3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#engineer3"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#engineer6"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute3"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Engineer"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_phd_I1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_phd_I1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent7"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute1"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#PhD_Student"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_phd_I2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_phd_I2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent8"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#PhD_Student"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_phd_I3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_phd_I3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent6"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute3"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#PhD_Student"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_phd_U1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_phd_U1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent1"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent2"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#PhD_Student"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_phd_U2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_phd_U2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent3"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent6"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University2"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#PhD_Student"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_phd_U3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_phd_U3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent4"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#phdStudent5"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#PhD_Student"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_postDoc_I2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_postDoc_I2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#postDoc2"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Post_Doc"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#employ_postDoc_U1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#employ_postDoc_U1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.co-ode.org/ontologies/ont.owl#postDoc1"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:employesRole rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Post_Doc"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#engineer1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#engineer1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#engineer2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#engineer2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#engineer3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#engineer3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#engineer4 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#engineer4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#engineer5 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#engineer5">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#engineer6 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#engineer6">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#grep -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#grep">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#insert -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#insert">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#list -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#list">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#management -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#management">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#move -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#move">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#officer -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#officer">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#phdStudent1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#phdStudent1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#phdStudent2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#phdStudent2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#phdStudent3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#phdStudent3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#phdStudent4 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#phdStudent4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#phdStudent5 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#phdStudent5">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#phdStudent6 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#phdStudent6">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#phdStudent7 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#phdStudent7">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#phdStudent8 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#phdStudent8">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#postDoc1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#postDoc1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#postDoc2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#postDoc2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#professor1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#professor1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#professor2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#professor2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#professor3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#professor3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#professor4 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#professor4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#professor5 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#professor5">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#professor6 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#professor6">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#projectCoordinator -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#projectCoordinator">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#read -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#read">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#report1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#report1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#report2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#report2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#report3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#report3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#report4 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#report4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#report5 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#report5">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#report6 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#report6">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#report7 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#report7">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#researcher1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#researcher1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#researcher2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#researcher2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#researcher3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#researcher3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#researcher4 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#researcher4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#researcher5 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#researcher5">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#researcher6 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#researcher6">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#select -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#select">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#sign -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#sign">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_agreement1_in_U1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_agreement1_in_U1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement1"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_agreement1_in_U2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_agreement1_in_U2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University2"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement1"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_agreement2_in_I2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_agreement2_in_I2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement2"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_agreement2_in_U3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_agreement2_in_U3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement2"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_agreement3_in_I1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_agreement3_in_I1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute1"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement3"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_agreement3_in_I3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_agreement3_in_I3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute3"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement3"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_agreement4_in_I1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_agreement4_in_I1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute1"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement4"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_agreement4_in_U1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_agreement4_in_U1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement4"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_agreement5_in_I2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_agreement5_in_I2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement5"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_agreement5_in_U3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_agreement5_in_U3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement5"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_agreement6_in_I3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_agreement6_in_I3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute3"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement6"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_agreement6_in_U2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_agreement6_in_U2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University2"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#agreement6"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Agreement"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_as_Confidential -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_as_Confidential">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset1"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset2"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset4"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset5"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset6"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Confidential_Data"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_as_Public -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_as_Public">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset10"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset3"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset7"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset8"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Public_Data"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_in_I3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_in_I3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute3"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset2"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset9"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Internal_data"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_in_WP1 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_in_WP1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute1"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset1"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset5"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset8"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#WP1"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_in_WP2 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_in_WP2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University2"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset3"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset7"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset9"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#WP2"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_in_WP3 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_in_WP3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Institute2"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset10"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset4"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#WP3"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_in_WP4 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_in_WP4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University3"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset6"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#WP4"/>
+    </NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#use_in_WP5 -->
+
+    <NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#use_in_WP5">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
+        <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#dataset2"/>
+        <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#WP5"/>
+    </NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <Restriction>
+        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+        <rdfs:subClassOf>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                    </Restriction>
+                </unionOf>
+            </Class>
+        </rdfs:subClassOf>
+    </Restriction>
+    <Restriction>
+        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+        <rdfs:subClassOf>
+            <Class>
+                <unionOf rdf:parseType="Collection">
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                    </Restriction>
+                </unionOf>
+            </Class>
+        </rdfs:subClassOf>
+    </Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
