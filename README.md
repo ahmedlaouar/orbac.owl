@@ -32,4 +32,4 @@ The different methods used in this work rely on the [__RDFLib__](https://github.
 
 ## References:
 
-[1] A. Laouar, S. Belabbes, S. Benferhat, Tractable closure-based possibilistic repair for partially ordered dl-lite ontologies, in: European Conference on Logics in Artificial Intelligence, Springer, 2023, pp. 353–368
+[1] A. Laouar, S. Belabbes, S. Benferhat, Tractable Closure-Based Possibilistic Repair for Partially Ordered DL-Lite Ontologies, in: European Conference on Logics in Artificial Intelligence, Springer, 2023, pp. 353–368
