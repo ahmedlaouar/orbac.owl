@@ -1,0 +1,65 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX orbac: <http://www.co-ode.org/ontologies/ont.owl#> # Adjust the base URI as necessary
+
+ASK {{
+    ?employ rdf:type orbac:Employ .
+    ?employ orbac:employesEmployee :{subject} .
+    {{
+    ?employ orbac:employesEmployer ?org .
+    }} UNION     {{
+    ?employ orbac:employesEmployer ?org2 .
+    ?org orbac:subOrganisationOf* ?org2 . 
+    }}
+    {{
+    ?employ orbac:employesRole ?r .
+    }} UNION  {{
+    ?employ orbac:employesRole ?r2 .
+     {{?r2 rdf:type orbac:SubRole .}} UNION  {{?r2 rdf:type orbac:SeniorRole .}}
+    ?r2 orbac:hasParent+ ?r .
+    ?r2 orbac:subRoleOrganisation ?org .
+    }}
+    
+    ?use rdf:type orbac:Use .
+    ?use orbac:usesObject :{object}.
+    ?use orbac:usesView ?v .
+    {{
+    ?use orbac:usesEmployer ?org .
+    }} UNION     {{
+    ?use orbac:usesEmployer ?org2 .
+    ?org orbac:subOrganisationOf* ?org2 . 
+    }}
+    
+    ?consider rdf:type orbac:Consider .
+    ?consider orbac:considersAction :{action} .
+    ?consider orbac:considersActivity ?a .
+    {{
+    ?consider orbac:considersOrganisation ?org .
+    }} UNION     {{
+    ?consider orbac:considersOrganisation ?org2 .
+    ?org orbac:subOrganisationOf* ?org2 . 
+    }}
+    
+    ?define rdf:type orbac:Define .
+    ?define orbac:definesSubject :{subject} .
+    ?define orbac:definesAction :{action} .
+    ?define orbac:definesObject :{object}.
+    ?define orbac:definesContext ?c .
+    {{
+    ?define orbac:definesOrganisation ?org .
+    }} UNION     {{
+    ?define orbac:definesOrganisation ?org2 .
+    ?org orbac:subOrganisationOf* ?org2 . 
+    }}
+    
+    {{?permission rdf:type orbac:Permission .}} UNION {{?permission rdf:type orbac:Obligation .}}
+    ?permission orbac:accessTypeRole ?r .
+    ?permission orbac:accessTypeActivity ?a .
+    ?permission orbac:accessTypeView ?v .
+    ?permission orbac:accessTypeContext ?c .
+    {{
+    ?permission orbac:accessTypeOrganisation ?org .
+    }} UNION     {{
+    ?permission orbac:accessTypeOrganisation ?org2 .
+    ?org orbac:subOrganisationOf* ?org2 . 
+    }}
+}}

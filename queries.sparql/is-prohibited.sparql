@@ -1,0 +1,75 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX : <http://www.co-ode.org/ontologies/ont.owl#> # Adjust the base URI as necessary
+
+ASK  {{
+    ?use rdf:type :Use .
+    ?use :usesObject :{object}.
+    ?use :usesView ?v .
+   
+    ?consider rdf:type :Consider .
+    ?consider :considersAction :{action} .
+    ?consider :considersActivity ?a .
+    
+    ?define rdf:type :Define .
+    ?define :definesSubject :{subject} .
+    ?define :definesAction :{action} .
+    ?define :definesObject :{object}.
+    ?define :definesContext ?c .
+
+    ?permission rdf:type :Prohibition .
+    ?permission :accessTypeRole ?r .
+    ?permission :accessTypeActivity ?a .
+    ?permission :accessTypeView ?v .
+    ?permission :accessTypeContext ?c .
+
+     {{
+    ?employ :employesEmployer ?org .
+    }} UNION     {{
+    ?employ :employesEmployer ?org2 .
+    ?org :subOrganisationOf* ?org2 . 
+    }}
+     {{
+    ?use :usesEmployer ?org .
+    }} UNION     {{
+    ?use :usesEmployer ?org2 .
+    ?org :subOrganisationOf* ?org2 . 
+    }}
+     {{
+    ?consider :considersOrganisation ?org .
+    }} UNION     {{
+    ?consider :considersOrganisation ?org2 .
+    ?org :subOrganisationOf* ?org2 . 
+    }}
+     {{
+    ?define :definesOrganisation ?org .
+    }} UNION     {{
+    ?define :definesOrganisation ?org2 .
+    ?org :subOrganisationOf* ?org2 . 
+    }}
+     {{
+    ?permission :accessTypeOrganisation ?org .
+    }} UNION     {{
+    ?permission :accessTypeOrganisation ?org2 .
+    ?org :subOrganisationOf* ?org2 . 
+    }}
+
+    ?employ rdf:type :Employ .
+    ?employ :employesEmployee :{subject} .
+     {{
+    ?employ :employesRole ?r .
+    }} UNION  {{
+    ?employ :employesRole ?r2 .
+    {{
+    ?r2 rdf:type :SubRole .
+    ?r2 :hasParent+ ?r .
+    ?r2 :subRoleOrganisation ?org .
+    }} UNION {{
+    ?r rdf:type :SeniorRole .
+    ?r :hasParent+ ?r2 .
+    ?r :subRoleOrganisation ?org .
+    }}
+    }}
+}}

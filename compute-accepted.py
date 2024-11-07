@@ -9,9 +9,9 @@ def compute_supports(graph, subject, action, object, accessType=0):
     # by default, support of a permission is computed when accessType=0
     # for a support of a prohibition set accessType = 1
     if accessType == 0:
-        supports_query_path = "queries.sparql/supports_query.sparql"
+        supports_query_path = "queries.sparql/permission_supports.sparql"
     elif accessType == 1:
-        supports_query_path = "queries.sparql/prohibition_supports_query.sparql"
+        supports_query_path = "queries.sparql/prohibition_supports.sparql"
     else:
         print("Please enter a valid accessType.")
 
@@ -26,7 +26,7 @@ def compute_supports(graph, subject, action, object, accessType=0):
     return results
 
 def check_consistency(graph):
-    consistency_checking_query_path = "queries.sparql/consistency_checking.sparql"
+    consistency_checking_query_path = "queries.sparql/inconsistency_checking.sparql"
     with open(consistency_checking_query_path, 'r') as file:
         query = file.read()
 
@@ -42,7 +42,7 @@ def check_consistency(graph):
         return True
 
 def compute_conflicts(graph):
-    conflicts_query_path = 'queries.sparql/conflicts_query.sparql'
+    conflicts_query_path = 'queries.sparql/compute_conflicts.sparql'
 
     with open(conflicts_query_path, 'r') as file:
         query = file.read()
@@ -62,10 +62,8 @@ def is_strictly_preferred(graph, member1, member2):
     try:
         first_result = next(iter(results))
         if first_result:
-            print(member1+" is Preferred To "+member2)
             return True
-        else: 
-            print(member1+" is Not Preferred To "+member2)
+        else:
             return False
     except StopIteration:
         print("No query results found.")
@@ -117,8 +115,7 @@ def check_acceptance(graph, subject, action, object):
     for perm_support in permission_supports:
         stripped_permission_supports.append(tuple(strip_prefix(str(uri)) for uri in perm_support))
     stripped_permission_supports = list(set(stripped_permission_supports))
-    print(stripped_permission_supports)
-    print(stripped_prohibition_supports)
+    
     accepted = True
     for proh_support in stripped_prohibition_supports:
         conflict_supported = False
@@ -134,21 +131,23 @@ def check_acceptance(graph, subject, action, object):
 graph = Graph()
 graph.parse("ontology/orbac-STARWARS.owl", format="xml")
 
+
 subject, object, action = "Bob", "report1", "edit"
-
-
 
 if check_acceptance(graph, subject, action, object):
     print(f"The permission for {subject} to perform the action {action} on {object} is granted")
 else:
     print(f"The permission for {subject} to perform the action {action} on {object} is denied")
 
-"""
+print("--------------------------------------------------------------------------")
+
 subject, object, action = 'researcher4', 'dataset5', 'select'
 if check_consistency(graph):
     print("The instance is consistent")
 else:
     print("The instance is inconsistent")
+
+print("--------------------------------------------------------------------------")
 
 supports = compute_supports(graph, subject, action, object)
 for support in supports:
@@ -161,4 +160,3 @@ conflicts = compute_conflicts(graph)
 for conflict in conflicts:
     stripped_conflict = tuple(strip_prefix(str(uri)) for uri in conflict)
     print(stripped_conflict)
-"""
