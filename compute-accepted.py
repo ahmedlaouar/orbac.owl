@@ -5,6 +5,44 @@ from urllib.parse import urlparse
 def strip_prefix(uri):
     return uri.split('#')[-1]
 
+def ispermitted(graph, subject, action, object):
+    query_path = "queries.sparql/is-permitted.sparql"
+    with open(query_path, 'r') as file:
+        
+        query_template = file.read()
+        
+        query = query_template.format(subject=subject, action=action, object=object)
+        
+        results = graph.query(query)
+    try:
+        first_result = next(iter(results))
+        if first_result:
+            return True
+        else: 
+            return False
+    except StopIteration:
+        print("No query results found.")
+        return False
+
+def isprohibited(graph, subject, action, object):
+    query_path = "queries.sparql/is-prohibited.sparql"
+    with open(query_path, 'r') as file:
+        
+        query_template = file.read()
+        
+        query = query_template.format(subject=subject, action=action, object=object)
+        
+        results = graph.query(query)
+    try:
+        first_result = next(iter(results))
+        if first_result:
+            return True
+        else: 
+            return False
+    except StopIteration:
+        print("No query results found.")
+        return False
+
 def compute_supports(graph, subject, action, object, accessType=0):
     # by default, support of a permission is computed when accessType=0
     # for a support of a prohibition set accessType = 1
@@ -133,6 +171,7 @@ graph.parse("ontology/orbac-STARWARS.owl", format="xml")
 
 
 subject, object, action = "Bob", "report1", "edit"
+print(ispermitted(graph, subject, action, object))
 
 if check_acceptance(graph, subject, action, object):
     print(f"The permission for {subject} to perform the action {action} on {object} is granted")
