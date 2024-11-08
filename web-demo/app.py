@@ -232,13 +232,13 @@ elif policy_option == "Load an example policy":
                     st.write("The instance is consistent")
                 else:
                     st.write("The instance is inconsistent")
-                    # Only show Compute Conflicts if inconsistent
-                    if st.button("Compute conflicts"):
-                        compute_conflicts(graph)
-                        # Placeholder output for conflicts
-                        conflicts = compute_conflicts(graph)
-                        conflict_data = pd.DataFrame(conflicts, columns=["Employ relation", "Use relation", "Define relation", "Employ relation", "Use relation", "Define relation"])
-                        st.table(conflict_data)
+            # Only show Compute Conflicts if inconsistent
+            if st.button("Compute conflicts"):
+                compute_conflicts(graph)
+                # Placeholder output for conflicts
+                conflicts = compute_conflicts(graph)
+                conflict_data = pd.DataFrame(conflicts, columns=["Employ relation", "Use relation", "Define relation", "Employ relation", "Use relation", "Define relation"])
+                st.table(conflict_data)
 
         # 3. Compute Supports Tab
         with main_tabs[2]:
