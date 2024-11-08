@@ -5,13 +5,13 @@ from rdflib import Graph
 def strip_prefix(uri):
     return uri.split('#')[-1]
 
-def ispermitted(graph, subject, action, object):
+def ispermitted(graph, subject, action, obj):
     query_path = "queries.sparql/is-permitted.sparql"
     with open(query_path, 'r') as file:
         
         query_template = file.read()
         
-        query = query_template.format(subject=subject, action=action, object=object)
+        query = query_template.format(subject=subject, action=action, object=obj)
         
         results = graph.query(query)
     try:
@@ -24,13 +24,13 @@ def ispermitted(graph, subject, action, object):
         print("No query results found.")
         return False
 
-def isprohibited(graph, subject, action, object):
+def isprohibited(graph, subject, action, obj):
     query_path = "queries.sparql/is-prohibited.sparql"
     with open(query_path, 'r') as file:
         
         query_template = file.read()
         
-        query = query_template.format(subject=subject, action=action, object=object)
+        query = query_template.format(subject=subject, action=action, object=obj)
         
         results = graph.query(query)
     try:
@@ -43,7 +43,7 @@ def isprohibited(graph, subject, action, object):
         print("No query results found.")
         return False
 
-def compute_supports(graph, subject, action, object, accessType=0):
+def compute_supports(graph, subject, action, obj, accessType=0):
     # by default, support of a permission is computed when accessType=0
     # for a support of a prohibition set accessType = 1
     if accessType == 0:
@@ -57,7 +57,7 @@ def compute_supports(graph, subject, action, object, accessType=0):
         
         query_template = file.read()
         
-        query = query_template.format(subject=subject, action=action, object=object)
+        query = query_template.format(subject=subject, action=action, object=obj)
         
         results = graph.query(query)
     
@@ -118,12 +118,12 @@ def check_dominance(graph, subset1, subset2):
             return False
     return True
 
-def check_acceptance(graph, subject, action, object):
-    if not (subject and object and action):
+def check_acceptance(graph, subject, action, obj):
+    if not (subject and obj and action):
         return False
     else:
-        permission_supports = compute_supports(graph, subject, action, object, 0)
-        prohibition_supports = compute_supports(graph, subject, action, object, 1)
+        permission_supports = compute_supports(graph, subject, action, obj, 0)
+        prohibition_supports = compute_supports(graph, subject, action, obj, 1)
         
         stripped_prohibition_supports = []
         for proh_support in prohibition_supports:
@@ -162,89 +162,90 @@ policy_option = st.selectbox("Choose an option:", ["Load a policy", "Build a pol
 if policy_option == "Load a policy" or policy_option == "Build a policy":
     st.write("Coming soon")
 elif policy_option == "Load an existing example policy":
-    if st.button("Starwars Policy"):
+    example_option = st.selectbox("Choose an example policy:", ["Starwars Policy"])
+    if example_option == "Starwars Policy":
         st.write("Loading STARWARS policy...")
         graph = load_starwars_policy()
         st.write("STARWARS policy loaded successfully!")
 
-        # Input fields for subject, object, and action
-        subject = st.text_input("Subject")
-        obj = st.text_input("Object")
-        action = st.text_input("Action")
+    # Input fields for subject, object, and action
+    subject = st.text_input("Subject")
+    obj = st.text_input("Object")
+    action = st.text_input("Action")
 
-        # Primary tabs for grouping
-        main_tabs = st.tabs(["Check Privileges", "Check Consistency", "Compute Supports", "Acceptance"])
+    # Primary tabs for grouping
+    main_tabs = st.tabs(["Check Privileges", "Check Consistency", "Compute Supports", "Acceptance"])
 
-        # 1. Checking Privileges Tab
-        with main_tabs[0]:
-            st.caption("Checking the existence of a privilege")
+    # 1. Checking Privileges Tab
+    with main_tabs[0]:
+        st.caption("Checking the existence of a privilege")
 
-            # Nested tabs for permission and prohibition
-            #privilege_tabs = st.tabs(["Check Permission", "Check Prohibition"])
-            
-            #with privilege_tabs[0]:  # Check Permission
-            if st.button("Check Permission"):
-                if not (subject and object and action):
-                    st.write("Please enter a valid subject, action and object!")
-                elif ispermitted(graph, subject, action, obj):
-                    st.write(f"{subject} is permitted to perform {action} on {obj}")
+        # Nested tabs for permission and prohibition
+        #privilege_tabs = st.tabs(["Check Permission", "Check Prohibition"])
+        
+        #with privilege_tabs[0]:  # Check Permission
+        if st.button("Check Permission"):
+            if not (subject and obj and action):
+                st.write("Please enter a valid subject, action and object!")
+            elif ispermitted(graph, subject, action, obj):
+                st.write(f"{subject} is permitted to perform {action} on {obj}")
+            else:
+                st.write(f"{subject} is not permitted to perform {action} on {obj}")
+
+        #with privilege_tabs[1]:  # Check Prohibition
+        if st.button("Check Prohibition"):
+            if not (subject and obj and action):
+                st.write("Please enter a valid subject, action and object!")
+            elif isprohibited(graph, subject, action, obj):
+                st.write(f"{subject} is prohibited from performing {action} on {obj}")
+            else:
+                st.write(f"{subject} is not prohibited from performing {action} on {obj}")
+
+    # 2. Checking Consistency & Conflicts Tab
+    with main_tabs[1]:
+        st.caption("Checking Consistency & Conflicts")
+
+        if st.button("Check Consistency"):
+            consistency = check_consistency(graph)
+            if consistency:
+                st.write("The instance is consistent")
+            else:
+                st.write("The instance is inconsistent")
+                # Only show Compute Conflicts if inconsistent
+                if st.button("Compute Conflicts"):
+                    compute_conflicts(graph)
+                    # Placeholder output for conflicts
+                    conflicts = compute_conflicts(graph)
+                    #conflict_data = pd.DataFrame(conflicts, columns=["Employ relation", "Use relation", "Define relation", "Employ relation", "Use relation", "Define relation"])
+                    #st.table(conflict_data)
+
+    # 3. Compute Supports Tab
+    with main_tabs[2]:
+        st.caption("Compute Supports")
+        
+        # Nested tabs for permission and prohibition supports
+        support_tabs = st.tabs(["Compute Permission Supports", "Compute Prohibition Supports"])
+        
+        with support_tabs[0]:  # Permission Supports
+            if st.button("Compute Permission Supports"):
+                compute_supports(graph, subject, action, obj, 0)
+                # Placeholder output for permission supports
+
+        with support_tabs[1]:  # Prohibition Supports
+            if st.button("Compute Prohibition Supports"):
+                compute_supports(graph, subject, action, obj, 1)
+                # Placeholder output for prohibition supports
+
+    # 4. Acceptance Tab
+    with main_tabs[3]:
+        st.caption("Checking acceptance")
+        if st.button("Check Acceptance"):
+            if not (subject and obj and action):
+                st.write("Please enter a valid subject, action and object!")
+            else:
+                if check_acceptance(graph, subject, action, obj):
+                    st.write(f"The permission for {subject} to perform {action} on {obj} is granted")
                 else:
-                    st.write(f"{subject} is not permitted to perform {action} on {obj}")
-
-            #with privilege_tabs[1]:  # Check Prohibition
-            if st.button("Check Prohibition"):
-                if not (subject and object and action):
-                    st.write("Please enter a valid subject, action and object!")
-                elif isprohibited(graph, subject, action, obj):
-                    st.write(f"{subject} is prohibited from performing {action} on {obj}")
-                else:
-                    st.write(f"{subject} is not prohibited from performing {action} on {obj}")
-
-        # 2. Checking Consistency & Conflicts Tab
-        with main_tabs[1]:
-            st.caption("Checking Consistency & Conflicts")
-
-            if st.button("Check Consistency"):
-                consistency = check_consistency(graph)
-                if consistency:
-                    st.write("The instance is consistent")
-                else:
-                    st.write("The instance is inconsistent")
-                    # Only show Compute Conflicts if inconsistent
-                    if st.button("Compute Conflicts"):
-                        compute_conflicts(graph)
-                        # Placeholder output for conflicts
-                        conflicts = compute_conflicts(graph)
-                        #conflict_data = pd.DataFrame(conflicts, columns=["Employ relation", "Use relation", "Define relation", "Employ relation", "Use relation", "Define relation"])
-                        #st.table(conflict_data)
-
-        # 3. Compute Supports Tab
-        with main_tabs[2]:
-            st.caption("Compute Supports")
-            
-            # Nested tabs for permission and prohibition supports
-            support_tabs = st.tabs(["Compute Permission Supports", "Compute Prohibition Supports"])
-            
-            with support_tabs[0]:  # Permission Supports
-                if st.button("Compute Permission Supports"):
-                    compute_supports(graph, subject, action, obj, 0)
-                    # Placeholder output for permission supports
-
-            with support_tabs[1]:  # Prohibition Supports
-                if st.button("Compute Prohibition Supports"):
-                    compute_supports(graph, subject, action, obj, 1)
-                    # Placeholder output for prohibition supports
-
-        # 4. Acceptance Tab
-        with main_tabs[3]:
-            st.caption("Checking acceptance")
-            if st.button("Check Acceptance"):
-                if not (subject and object and action):
-                    st.write("Please enter a valid subject, action and object!")
-                else:
-                    if check_acceptance(graph, subject, action, obj):
-                        st.write(f"The permission for {subject} to perform {action} on {obj} is granted")
-                    else:
-                        st.write(f"The permission for {subject} to perform {action} on {obj} is denied")
-                #if st.button("Explain"):
-                #    st.write("")
+                    st.write(f"The permission for {subject} to perform {action} on {obj} is denied")
+            #if st.button("Explain"):
+            #    st.write("")
