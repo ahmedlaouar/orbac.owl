@@ -2,7 +2,7 @@ import streamlit as st
 from rdflib import Graph
 import pandas as pd
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide", page_title="OrBAC ontology", page_icon="🧊")
 
 def strip_prefix(uri):
     return uri.split('#')[-1]
