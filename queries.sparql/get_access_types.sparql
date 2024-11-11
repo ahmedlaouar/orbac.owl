@@ -1,0 +1,18 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://www.co-ode.org/ontologies/ont.owl#> # Adjust the base URI as necessary
+
+SELECT ?perm ?type ?org ?r ?act ?v ?c {{
+    ?perm rdf:type :AccessType .
+    ?perm rdf:type ?type .
+    FILTER(?type IN (:Permission, :Prohibition, :Obligation))
+    ?perm :accessTypeRole ?r .
+    ?perm :accessTypeActivity ?act .
+    ?perm :accessTypeView ?v .
+    ?perm :accessTypeContext ?c .
+    {{
+    ?perm :accessTypeOrganisation ?org .
+#    }} UNION {{
+#    ?perm :accessTypeOrganisation ?org2 .
+#    ?org :subOrganisationOf* ?org2 . 
+    }}
+}}

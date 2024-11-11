@@ -145,25 +145,32 @@ def check_acceptance(graph, subject, action, object):
     permission_supports = compute_supports(graph, subject, action, object, 0)
     prohibition_supports = compute_supports(graph, subject, action, object, 1)
     
-    stripped_prohibition_supports = []
-    for proh_support in prohibition_supports:
-        stripped_prohibition_supports.append(tuple(strip_prefix(str(uri)) for uri in proh_support))
-    stripped_prohibition_supports = list(set(stripped_prohibition_supports))
-    stripped_permission_supports = []
-    for perm_support in permission_supports:
-        stripped_permission_supports.append(tuple(strip_prefix(str(uri)) for uri in perm_support))
-    stripped_permission_supports = list(set(stripped_permission_supports))
-    
-    accepted = True
-    for proh_support in stripped_prohibition_supports:
-        conflict_supported = False
-        for perm_support in stripped_permission_supports:
-            if check_dominance(graph,perm_support, proh_support):
-                conflict_supported = True
-                break
-        if not conflict_supported:
-            return False
-    return accepted
+    if len(permission_supports) == len(prohibition_supports) == 0:
+        return False
+    elif len(permission_supports) == 0:
+        return False
+    elif len(prohibition_supports) == 0:
+        return True
+    else:
+        stripped_prohibition_supports = []
+        for proh_support in prohibition_supports:
+            stripped_prohibition_supports.append(tuple(strip_prefix(str(uri)) for uri in proh_support))
+        stripped_prohibition_supports = list(set(stripped_prohibition_supports))
+        stripped_permission_supports = []
+        for perm_support in permission_supports:
+            stripped_permission_supports.append(tuple(strip_prefix(str(uri)) for uri in perm_support))
+        stripped_permission_supports = list(set(stripped_permission_supports))
+        
+        accepted = True
+        for proh_support in stripped_prohibition_supports:
+            conflict_supported = False
+            for perm_support in stripped_permission_supports:
+                if check_dominance(graph,perm_support, proh_support):
+                    conflict_supported = True
+                    break
+            if not conflict_supported:
+                return False
+        return accepted
 
 # Load the ontology
 graph = Graph()

@@ -2,6 +2,8 @@ import streamlit as st
 from rdflib import Graph
 import pandas as pd
 
+st.set_page_config(layout="wide")
+
 def strip_prefix(uri):
     return uri.split('#')[-1]
 
@@ -86,7 +88,7 @@ def compute_conflicts(graph):
         query = file.read()
 
     results = graph.query(query)
-    
+
     return results
 
 def is_strictly_preferred(graph, member1, member2):
@@ -124,26 +126,52 @@ def check_acceptance(graph, subject, action, obj):
     else:
         permission_supports = compute_supports(graph, subject, action, obj, 0)
         prohibition_supports = compute_supports(graph, subject, action, obj, 1)
-        
-        stripped_prohibition_supports = []
-        for proh_support in prohibition_supports:
-            stripped_prohibition_supports.append(tuple(strip_prefix(str(uri)) for uri in proh_support))
-        stripped_prohibition_supports = list(set(stripped_prohibition_supports))
-        stripped_permission_supports = []
-        for perm_support in permission_supports:
-            stripped_permission_supports.append(tuple(strip_prefix(str(uri)) for uri in perm_support))
-        stripped_permission_supports = list(set(stripped_permission_supports))
-        
-        accepted = True
-        for proh_support in stripped_prohibition_supports:
-            conflict_supported = False
-            for perm_support in stripped_permission_supports:
-                if check_dominance(graph,perm_support, proh_support):
-                    conflict_supported = True
-                    break
-            if not conflict_supported:
-                return False
-        return accepted
+        if len(permission_supports) == len(prohibition_supports) == 0:
+            return False
+        elif len(permission_supports) == 0:
+            return False
+        elif len(prohibition_supports) == 0:
+            return True
+        else:
+            stripped_prohibition_supports = []
+            for proh_support in prohibition_supports:
+                stripped_prohibition_supports.append(tuple(strip_prefix(str(uri)) for uri in proh_support))
+            stripped_prohibition_supports = list(set(stripped_prohibition_supports))
+            stripped_permission_supports = []
+            for perm_support in permission_supports:
+                stripped_permission_supports.append(tuple(strip_prefix(str(uri)) for uri in perm_support))
+            stripped_permission_supports = list(set(stripped_permission_supports))
+            
+            accepted = True
+            for proh_support in stripped_prohibition_supports:
+                conflict_supported = False
+                for perm_support in stripped_permission_supports:
+                    if check_dominance(graph,perm_support, proh_support):
+                        conflict_supported = True
+                        break
+                if not conflict_supported:
+                    return False
+            return accepted
+
+def get_abstract_rules(graph):
+    abstract_rules_query_path = 'queries.sparql/get_access_types.sparql'
+
+    with open(abstract_rules_query_path, 'r') as file:
+        query = file.read()
+    
+    results = graph.query(query)
+
+    return results
+
+def get_connection_rules(graph):
+    connection_rules_query_path = 'queries.sparql/get_connection_rules.sparql'
+
+    with open(connection_rules_query_path, 'r') as file:
+        query = file.read()
+    
+    results = graph.query(query)
+
+    return results
 
 # Load the ontology graph
 def load_starwars_policy():
@@ -155,10 +183,12 @@ def load_starwars_policy():
 st.title = "OrBAC ontology demo"
 st.header = "Test some functions of the OrBAC ontology"
 
+with st.expander("About the project",expanded=True):
+    st.caption("The Organisation Based Access Control (OrBAC) ontology:")
+    st.write("This website serves as a demo of the OrBAC ontology and the methods around it. It mainly allows applying conflict resolution methods and explanation mechanisms on some example policies.")
+
 # Policy selection options
 policy_option = st.selectbox("Choose an option:", ["Load a policy", "Build a policy", "Load an example policy"])
-
-
 
 # Display options or load STARWARS policy
 if policy_option == "Load a policy" or policy_option == "Build a policy":
@@ -176,21 +206,35 @@ elif policy_option == "Load an example policy":
     
     with st.expander("Visualize the policy", expanded=True):
         st.caption("A visualization of the policy:")
+        policy_tabs = st.tabs(["Abstract rules", "Connection relations", "Uncertainty"])
 
+        with policy_tabs[0]:
+            st.caption("")
+            abstract_rules = get_abstract_rules(graph)
+            abstract_rules_data = pd.DataFrame(abstract_rules, columns=["Privilege name", "Privilege type", "Organisation", "Role", "Activity", "view", "Context"])
+                
+            abstract_rules_data = abstract_rules_data.map(strip_prefix)
+            st.dataframe(abstract_rules_data, hide_index=True)
 
-    with st.expander("Privilege inference and conflict resolution", expanded=True):
+        with policy_tabs[1]:
+            st.caption("")
+            connection_rules = get_connection_rules(graph)
+            connection_rules_data = pd.DataFrame(connection_rules, columns=["Rule name", "Rule type", "Organisation", "Abstract", "Concrete"])
+                
+            connection_rules_data = connection_rules_data.map(strip_prefix)
+            st.dataframe(connection_rules_data, hide_index=True)
+
+    with st.expander("Privilege inference and conflict resolution methods", expanded=True):
         # Create 3 columns
         col1, col2, col3 = st.columns(3)
 
         # Place the text inputs in the respective columns
         with col1:
             subject = st.text_input("Subject")
-
         with col2:
-            obj = st.text_input("Object")
-
-        with col3:
             action = st.text_input("Action")
+        with col3:
+            obj = st.text_input("Object")
 
         # Primary tabs for grouping
         main_tabs = st.tabs(["Check Privileges", "Check Consistency", "Compute Supports", "Acceptance"])
@@ -237,8 +281,10 @@ elif policy_option == "Load an example policy":
                 compute_conflicts(graph)
                 # Placeholder output for conflicts
                 conflicts = compute_conflicts(graph)
-                conflict_data = pd.DataFrame(conflicts, columns=["Employ relation", "Use relation", "Define relation", "Employ relation", "Use relation", "Define relation"])
-                st.table(conflict_data)
+                conflict_data = pd.DataFrame(conflicts, columns=["Employ relation1", "Use relation1", "Define relation1", "Employ relation2", "Use relation2", "Define relation2"])
+                
+                conflict_data = conflict_data.map(strip_prefix)
+                st.dataframe(conflict_data, hide_index=True)
 
         # 3. Compute Supports Tab
         with main_tabs[2]:
@@ -249,13 +295,17 @@ elif policy_option == "Load an example policy":
             
             with support_tabs[0]:  # Permission Supports
                 if st.button("Compute permission supports"):
-                    compute_supports(graph, subject, action, obj, 0)
-                    # Placeholder output for permission supports
+                    supports = compute_supports(graph, subject, action, obj, 0)
+                    supports_data = pd.DataFrame(supports, columns=["Employ relation", "Use relation", "Define relation"])
+                    supports_data = supports_data.map(strip_prefix)
+                    st.dataframe(supports_data,hide_index=True)
 
             with support_tabs[1]:  # Prohibition Supports
                 if st.button("Compute prohibition supports"):
-                    compute_supports(graph, subject, action, obj, 1)
-                    # Placeholder output for prohibition supports
+                    supports = compute_supports(graph, subject, action, obj, 1)
+                    supports_data = pd.DataFrame(supports, columns=["Employ relation", "Use relation", "Define relation"])
+                    supports_data = supports_data.map(strip_prefix)
+                    st.dataframe(supports_data, hide_index=True)
 
         # 4. Acceptance Tab
         with main_tabs[3]:

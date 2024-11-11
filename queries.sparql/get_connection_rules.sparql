@@ -1,0 +1,38 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX : <http://www.co-ode.org/ontologies/ont.owl#> # Adjust the base URI as necessary
+
+SELECT ?relation ?type ?org ?abstract ?concrete {{
+    ?relation rdf:type :ConnectionRule .
+    ?relation rdf:type ?type .
+    FILTER(?type IN (:Employ, :Use, :Consider))
+    
+    {{
+        {{
+            ?relation :employesEmployer ?org .
+#            }} UNION {{
+#            ?relation :employesEmployer ?org2 .
+#            ?org :subOrganisationOf* ?org2 .
+        }}
+        ?relation :employesEmployee ?concrete .
+        ?relation :employesRole ?abstract .
+    }} UNION {{
+        {{
+            ?relation :considersOrganisation ?org .
+#            }} UNION {{
+#            ?relation :considersOrganisation ?org2 .
+#            ?org :subOrganisationOf* ?org2 .
+        }}
+        ?relation :considersAction ?concrete .
+        ?relation :considersActivity ?abstract .
+    }} UNION {{
+        {{
+            ?relation :usesEmployer ?org .
+#            }} UNION {{
+#            ?relation :usesEmployer ?org2 .
+#            ?org :subOrganisationOf* ?org2 .
+        }}
+        ?relation :usesView ?abstract .
+        ?relation :usesObject ?concrete .
+    }}
+
+}}
