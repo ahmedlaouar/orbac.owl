@@ -557,11 +557,11 @@ def computeAccess(g, accessType, subject, action, obj):
         access.init(accessType, permission, employ, use, consider, define, subject, obj, v, a, action, c, r, org, org2)
 
         accesses.append(access)  
-        print("-> done") 
-        print(access)
+        #print("-> done") 
+        #print(access)
         print("")
-        print(access.getCSV())
-        print("")
+        #print(access.getCSV())
+        #print("")
     
     return accesses
 
@@ -601,16 +601,17 @@ def conflict_case(resultsConflicts):
     index = 0
     for result in resultsConflicts:
         index+=1
-        print(str(index)+" - "+result.getAccessResultText())
-        print("")
-        for access in result.accesses:
-            print(access)
-            print("")
-        print("")
-        print(result.getContrastiveExplanation())
-        print("Outcome_issues")
-        print(result.getOutcomeConflict())
-        print("")
+        #print(str(index)+" - "+result.getAccessResultText())
+        #print("")
+        #for access in result.accesses:
+        #    print(access)
+        #    print("")
+        #print("")
+        # Contrastive Explanation
+        #print(result.getContrastiveExplanation())
+        #print("Outcome_issues")
+        #print(result.getOutcomeConflict())
+        #print("")
         print(result.text)
         textExplanations.append(result.text)
         print("---------------------------------------------------------------")
@@ -649,4 +650,8 @@ lemmatizer = WordNetLemmatizer()
 
 graph = Graph()
 graph.parse("ontology/orbac-STARWARS.owl", format="xml")
+
 generate_explanations(graph, "Bob", "edit", "report1", lemmatizer)
+
+#computeAccess(graph, "Permission", "Bob", "edit", "report1")
+#computeAccess(graph, "Prohibition", "Bob", "edit", "report1")

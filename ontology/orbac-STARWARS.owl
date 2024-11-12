@@ -5076,7 +5076,6 @@
         <orbac-owl:isPreferredTo rdf:resource="http://www.co-ode.org/ontologies/ont.owl#use_as_Public"/>
         <orbac-owl:isPreferredTo rdf:resource="http://www.co-ode.org/ontologies/ont.owl#use_as_secondmentReport"/>
         <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consortium"/>
-        <orbac-owl:usesEmployer rdf:resource="http://www.co-ode.org/ontologies/ont.owl#University1"/>
         <orbac-owl:usesObject rdf:resource="http://www.co-ode.org/ontologies/ont.owl#report1"/>
         <orbac-owl:usesView rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Secondment_Report"/>
     </NamedIndividual>
