@@ -250,24 +250,25 @@ def display_use_part():
             #privilege_tabs = st.tabs(["Check Permission", "Check Prohibition"])
             
             col1, col2 = st.columns(2)
-            #with privilege_tabs[0]:  # Check Permission
             with col1:
-                if st.button("Check Permission", use_container_width=True):
-                    if not (subject and obj and action):
-                        st.write("Please enter a valid subject, action and object!")
-                    elif ispermitted(graph, subject, action, obj):
-                        st.write(f"{subject} is permitted to perform {action} on {obj}")
-                    else:
-                        st.write(f"{subject} is not permitted to perform {action} on {obj}")
+                perm_button = st.button("Check Permission", use_container_width=True)
             with col2:
-                #with privilege_tabs[1]:  # Check Prohibition
-                if st.button("Check Prohibition", use_container_width=True):
-                    if not (subject and obj and action):
-                        st.write("Please enter a valid subject, action and object!")
-                    elif isprohibited(graph, subject, action, obj):
-                        st.write(f"{subject} is prohibited from performing {action} on {obj}")
-                    else:
-                        st.write(f"{subject} is not prohibited from performing {action} on {obj}")
+                proh_button = st.button("Check Prohibition", use_container_width=True)
+            
+            if perm_button:
+                if not (subject and obj and action):
+                    st.write("Please enter a valid subject, action and object!")
+                elif ispermitted(graph, subject, action, obj):
+                    st.write(f"{subject} is permitted to perform {action} on {obj}")
+                else:
+                    st.write(f"{subject} is not permitted to perform {action} on {obj}")
+            if proh_button:
+                if not (subject and obj and action):
+                    st.write("Please enter a valid subject, action and object!")
+                elif isprohibited(graph, subject, action, obj):
+                    st.write(f"{subject} is prohibited from performing {action} on {obj}")
+                else:
+                    st.write(f"{subject} is not prohibited from performing {action} on {obj}")
 
         # 2. Checking Consistency & Conflicts Tab
         with main_tabs[1]:
