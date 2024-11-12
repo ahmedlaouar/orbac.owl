@@ -2,7 +2,7 @@ import streamlit as st
 from rdflib import Graph
 import pandas as pd
 
-st.set_page_config(layout="wide", page_title="OrBAC ontology", page_icon="🧊")
+st.set_page_config(layout="centered", page_title="OrBAC ontology", page_icon="🧊", initial_sidebar_state="expanded", menu_items={'Get help':'https://orbac-owl.streamlit.app/contact','About':'## This is the official OrBAC ontology demo app!'})
 
 def strip_prefix(uri):
     return uri.split('#')[-1]
@@ -180,20 +180,24 @@ def load_starwars_policy():
     return graph
 
 # Streamlit app
-st.title = "OrBAC ontology demo"
-st.header = "Test some functions of the OrBAC ontology"
-
-with st.expander("About the project",expanded=True):
-    st.caption("The Organisation Based Access Control (OrBAC) ontology:")
+st.title("OrBAC ontology demo")
+#st.header("Test some functions of the OrBAC ontology")
+with st.expander("About the project",expanded=False):
+    st.header("The Organisation Based Access Control (OrBAC) ontology:")
     st.write("This website serves as a demo of the OrBAC ontology and the methods around it. It mainly allows applying conflict resolution methods and explanation mechanisms on some example policies.")
 
 # Policy selection options
-policy_option = st.selectbox("Choose an option:", ["Load a policy", "Build a policy", "Load an example policy"])
+policy_option = st.sidebar.selectbox(
+    'Choose an option:',
+    ('Use an example policy', 'Load a policy', 'Build a policy')
+)
+
+#policy_option = st.selectbox("Choose an option:", ["Load a policy", "Build a policy", "Use an example policy"])
 
 # Display options or load STARWARS policy
 if policy_option == "Load a policy" or policy_option == "Build a policy":
     st.write("Coming soon")
-elif policy_option == "Load an example policy":
+elif policy_option == "Use an example policy":
     example_option = st.selectbox("Choose an example policy:", ["Starwars", "Policy 2"])
     if example_option == "Starwars":
         st.write("Loading STARWARS policy...")
@@ -204,12 +208,12 @@ elif policy_option == "Load an example policy":
         graph = load_starwars_policy()
         st.write("Policy 2 loaded successfully!")
     
-    with st.expander("Visualize the policy", expanded=True):
-        st.caption("A visualization of the policy:")
+    with st.expander("Visualize the policy", expanded=False):
+        #st.caption("A visualization of the policy:")
         policy_tabs = st.tabs(["Abstract rules", "Connection relations", "Uncertainty"])
 
         with policy_tabs[0]:
-            st.caption("")
+            #st.caption("")
             abstract_rules = get_abstract_rules(graph)
             abstract_rules_data = pd.DataFrame(abstract_rules, columns=["Privilege name", "Privilege type", "Organisation", "Role", "Activity", "view", "Context"])
                 
@@ -217,7 +221,7 @@ elif policy_option == "Load an example policy":
             st.dataframe(abstract_rules_data, hide_index=True)
 
         with policy_tabs[1]:
-            st.caption("")
+            #st.caption("")
             connection_rules = get_connection_rules(graph)
             connection_rules_data = pd.DataFrame(connection_rules, columns=["Rule name", "Rule type", "Organisation", "Abstract", "Concrete"])
                 
@@ -241,7 +245,7 @@ elif policy_option == "Load an example policy":
 
         # 1. Checking Privileges Tab
         with main_tabs[0]:
-            st.caption("Checking the existence of a privilege")
+            st.caption("Checking the inference of a privilege")
 
             # Nested tabs for permission and prohibition
             #privilege_tabs = st.tabs(["Check Permission", "Check Prohibition"])
@@ -288,7 +292,7 @@ elif policy_option == "Load an example policy":
 
         # 3. Compute Supports Tab
         with main_tabs[2]:
-            st.caption("Compute supports")
+            #st.caption("Compute supports")
             
             # Nested tabs for permission and prohibition supports
             support_tabs = st.tabs(["Permission supports", "Prohibition supports"])
@@ -309,7 +313,7 @@ elif policy_option == "Load an example policy":
 
         # 4. Acceptance Tab
         with main_tabs[3]:
-            st.caption("Checking acceptance")
+            #st.caption("Checking acceptance")
             if st.button("Check acceptance"):
                 if not (subject and obj and action):
                     st.write("Please enter a valid subject, action and object!")
@@ -320,5 +324,4 @@ elif policy_option == "Load an example policy":
                         st.write(f"The permission for {subject} to perform {action} on {obj} is denied")
                 #if st.button("Explain"):
                 #    st.write("")
-
 
