@@ -4,26 +4,25 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX : <http://www.co-ode.org/ontologies/ont.owl#> # Adjust the base URI as necessary
 
-SELECT ?subject ?object ?action
+# Computing all the individuals involved in the inference of a Prohibition for a given subject, action, object
+
+SELECT ?permission ?employ ?use ?consider ?define ?v ?a ?c ?r ?org ?org2
 WHERE  {{
-    ?employ rdf:type :Employ .
-    ?employ :employesEmployee ?subject .
-    
     ?use rdf:type :Use .
-    ?use :usesObject ?object.
+    ?use :usesObject :{object}.
     ?use :usesView ?v .
    
     ?consider rdf:type :Consider .
-    ?consider :considersAction ?action .
+    ?consider :considersAction :{action} .
     ?consider :considersActivity ?a .
     
     ?define rdf:type :Define .
-    ?define :definesSubject ?subject .
-    ?define :definesAction ?action .
-    ?define :definesObject ?object.
+    ?define :definesSubject :{subject} .
+    ?define :definesAction :{action} .
+    ?define :definesObject :{object}.
     ?define :definesContext ?c .
 
-    {{?permission rdf:type :Permission .}} UNION {{?permission rdf:type :Obligation .}}
+    ?permission rdf:type :Prohibition .
     ?permission :accessTypeRole ?r .
     ?permission :accessTypeActivity ?a .
     ?permission :accessTypeView ?v .
@@ -59,12 +58,21 @@ WHERE  {{
     ?permission :accessTypeOrganisation ?org2 .
     ?org :subOrganisationOf* ?org2 . 
     }}
+
+    ?employ rdf:type :Employ .
+    ?employ :employesEmployee :{subject} .
      {{
     ?employ :employesRole ?r .
     }} UNION  {{
     ?employ :employesRole ?r2 .
-     {{?r2 rdf:type :SubRole .}} UNION  {{?r2 rdf:type :SeniorRole .}}
+    {{
+    ?r2 rdf:type :SubRole .
     ?r2 :hasParent+ ?r .
     ?r2 :subRoleOrganisation ?org .
+    }} UNION {{
+    ?r rdf:type :SeniorRole .
+    ?r :hasParent+ ?r2 .
+    ?r :subRoleOrganisation ?org .
+    }}
     }}
 }}
