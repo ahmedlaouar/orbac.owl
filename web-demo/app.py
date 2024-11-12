@@ -179,25 +179,24 @@ def load_starwars_policy():
     graph.parse("ontology/orbac-STARWARS.owl", format="xml")
     return graph
 
+def display_app_heading():
+    st.title("OrBAC ontology demo")
+    #st.header("Test some functions of the OrBAC ontology")
+    with st.expander("About the project",expanded=False):
+        st.header("The Organisation Based Access Control (OrBAC) ontology:")
+        st.write("This website serves as a demo of the OrBAC ontology and the methods around it. It mainly allows applying conflict resolution methods and explanation mechanisms on some example policies.")
+
 # Streamlit app
-st.title("OrBAC ontology demo")
-#st.header("Test some functions of the OrBAC ontology")
-with st.expander("About the project",expanded=False):
-    st.header("The Organisation Based Access Control (OrBAC) ontology:")
-    st.write("This website serves as a demo of the OrBAC ontology and the methods around it. It mainly allows applying conflict resolution methods and explanation mechanisms on some example policies.")
+display_app_heading()
 
-# Policy selection options
-policy_option = st.sidebar.selectbox(
-    'Choose an option:',
-    ('Use an example policy', 'Load a policy', 'Build a policy')
-)
-
-#policy_option = st.selectbox("Choose an option:", ["Load a policy", "Build a policy", "Use an example policy"])
-
-# Display options or load STARWARS policy
-if policy_option == "Load a policy" or policy_option == "Build a policy":
+def display_coming():
     st.write("Coming soon")
-elif policy_option == "Use an example policy":
+
+#if button_load or button_build:
+#    st.write("Coming soon")
+
+#if button_use:
+def display_use_part():
     example_option = st.selectbox("Choose an example policy:", ["Starwars", "Policy 2"])
     if example_option == "Starwars":
         st.write("Loading STARWARS policy...")
@@ -218,7 +217,7 @@ elif policy_option == "Use an example policy":
             abstract_rules_data = pd.DataFrame(abstract_rules, columns=["Privilege name", "Privilege type", "Organisation", "Role", "Activity", "view", "Context"])
                 
             abstract_rules_data = abstract_rules_data.map(strip_prefix)
-            st.dataframe(abstract_rules_data, hide_index=True)
+            st.dataframe(abstract_rules_data, hide_index=True, use_container_width=True)
 
         with policy_tabs[1]:
             #st.caption("")
@@ -226,7 +225,7 @@ elif policy_option == "Use an example policy":
             connection_rules_data = pd.DataFrame(connection_rules, columns=["Rule name", "Rule type", "Organisation", "Abstract", "Concrete"])
                 
             connection_rules_data = connection_rules_data.map(strip_prefix)
-            st.dataframe(connection_rules_data, hide_index=True)
+            st.dataframe(connection_rules_data, hide_index=True, use_container_width=True)
 
     with st.expander("Privilege inference and conflict resolution methods", expanded=True):
         # Create 3 columns
@@ -253,7 +252,7 @@ elif policy_option == "Use an example policy":
             col1, col2 = st.columns(2)
             #with privilege_tabs[0]:  # Check Permission
             with col1:
-                if st.button("Check Permission"):
+                if st.button("Check Permission", use_container_width=True):
                     if not (subject and obj and action):
                         st.write("Please enter a valid subject, action and object!")
                     elif ispermitted(graph, subject, action, obj):
@@ -262,7 +261,7 @@ elif policy_option == "Use an example policy":
                         st.write(f"{subject} is not permitted to perform {action} on {obj}")
             with col2:
                 #with privilege_tabs[1]:  # Check Prohibition
-                if st.button("Check Prohibition"):
+                if st.button("Check Prohibition", use_container_width=True):
                     if not (subject and obj and action):
                         st.write("Please enter a valid subject, action and object!")
                     elif isprohibited(graph, subject, action, obj):
@@ -274,21 +273,21 @@ elif policy_option == "Use an example policy":
         with main_tabs[1]:
             st.caption("Checking consistency & computing the conflicts")
 
-            if st.button("Check consistency"):
+            if st.button("Check consistency", use_container_width=True):
                 consistency = check_consistency(graph)
                 if consistency:
                     st.write("The instance is consistent")
                 else:
                     st.write("The instance is inconsistent")
             # Only show Compute Conflicts if inconsistent
-            if st.button("Compute conflicts"):
+            if st.button("Compute conflicts", use_container_width=True):
                 compute_conflicts(graph)
                 # Placeholder output for conflicts
                 conflicts = compute_conflicts(graph)
                 conflict_data = pd.DataFrame(conflicts, columns=["Employ relation1", "Use relation1", "Define relation1", "Employ relation2", "Use relation2", "Define relation2"])
                 
                 conflict_data = conflict_data.map(strip_prefix)
-                st.dataframe(conflict_data, hide_index=True)
+                st.dataframe(conflict_data, hide_index=True, use_container_width=True)
 
         # 3. Compute Supports Tab
         with main_tabs[2]:
@@ -298,23 +297,23 @@ elif policy_option == "Use an example policy":
             support_tabs = st.tabs(["Permission supports", "Prohibition supports"])
             
             with support_tabs[0]:  # Permission Supports
-                if st.button("Compute permission supports"):
+                if st.button("Compute permission supports", use_container_width=True):
                     supports = compute_supports(graph, subject, action, obj, 0)
                     supports_data = pd.DataFrame(supports, columns=["Employ relation", "Use relation", "Define relation"])
                     supports_data = supports_data.map(strip_prefix)
-                    st.dataframe(supports_data,hide_index=True)
+                    st.dataframe(supports_data,hide_index=True, use_container_width=True)
 
             with support_tabs[1]:  # Prohibition Supports
-                if st.button("Compute prohibition supports"):
+                if st.button("Compute prohibition supports", use_container_width=True):
                     supports = compute_supports(graph, subject, action, obj, 1)
                     supports_data = pd.DataFrame(supports, columns=["Employ relation", "Use relation", "Define relation"])
                     supports_data = supports_data.map(strip_prefix)
-                    st.dataframe(supports_data, hide_index=True)
+                    st.dataframe(supports_data, hide_index=True, use_container_width=True)
 
         # 4. Acceptance Tab
         with main_tabs[3]:
             #st.caption("Checking acceptance")
-            if st.button("Check acceptance"):
+            if st.button("Check acceptance", use_container_width=True):
                 if not (subject and obj and action):
                     st.write("Please enter a valid subject, action and object!")
                 else:
@@ -325,3 +324,11 @@ elif policy_option == "Use an example policy":
                 #if st.button("Explain"):
                 #    st.write("")
 
+#    button_use = st.button('Use an example policy', use_container_width=True, type='primary', on_click=display_use_part)
+
+sidebar_option = st.sidebar.selectbox('Choose an option:',('Use an example policy', 'Load a policy', 'Build your policy'))
+
+if sidebar_option == 'Use an example policy':
+    display_use_part()
+elif sidebar_option == "Load a policy" or sidebar_option == "Build your policy":
+    display_coming()
