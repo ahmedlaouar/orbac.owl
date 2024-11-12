@@ -177,17 +177,17 @@ graph = Graph()
 graph.parse("ontology/orbac-STARWARS.owl", format="xml")
 
 
-subject, object, action = "Bob", "report1", "edit"
-print(ispermitted(graph, subject, action, object))
+subject, obj, action = "Bob", "report1", "edit"
+print(ispermitted(graph, subject, action, obj))
 
-if check_acceptance(graph, subject, action, object):
-    print(f"The permission for {subject} to perform the action {action} on {object} is granted")
+if check_acceptance(graph, subject, action, obj):
+    print(f"The permission for {subject} to perform the action {action} on {obj} is granted")
 else:
-    print(f"The permission for {subject} to perform the action {action} on {object} is denied")
+    print(f"The permission for {subject} to perform the action {action} on {obj} is denied")
 
 print("--------------------------------------------------------------------------")
 
-subject, object, action = 'researcher4', 'dataset5', 'select'
+subject, obj, action = 'researcher4', 'dataset5', 'select'
 if check_consistency(graph):
     print("The instance is consistent")
 else:
@@ -195,7 +195,7 @@ else:
 
 print("--------------------------------------------------------------------------")
 
-supports = compute_supports(graph, subject, action, object)
+supports = compute_supports(graph, subject, action, obj)
 for support in supports:
     stripped_support = tuple(strip_prefix(str(uri)) for uri in support)
     print(stripped_support)
