@@ -180,8 +180,6 @@ def display_use_part():
                 for explanation in explanations:
                     st.write(explanation)#.__str__()
 
-#    button_use = st.button('Use an example policy', use_container_width=True, type='primary', on_click=display_use_part)
-
 def main():
     st.markdown("""
     <style>
