@@ -27,7 +27,10 @@ class ResultWithExplanations:
         self.perm_supports = compute_supports(graph, subject, action, object, 0)       
         self.proh_supports = compute_supports(graph, subject, action, object, 1)     
         self.graph = graph
-    
+
+    def __str__(self): 
+        return self.text
+
     def getAccessResultArray(self):
         resultsStr = []
         for result in self.results:

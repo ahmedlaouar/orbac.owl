@@ -19,7 +19,11 @@ def generate_explanation(graph, subject, action, obj, lemmatizer):
 
     explanations  = Explanations(graph, accessesPermission, accessesProhibition, lemmatizer)
 
-    if len(accessesProhibition) == 0:
+    if len(accessesProhibition) == len(accessesPermission) == 0:
+        explanations = []
+        explanations.append(f"There is no permission or prohibition inferred for {subject} to perform {action} on {obj}")
+        return explanations
+    elif len(accessesProhibition) == 0:
         return explanations.getExplanationsPermissions()
     elif len(accessesPermission) == 0:
         return explanations.getExplanationsProhibitions()
@@ -174,7 +178,7 @@ def display_use_part():
                 lemmatizer = WordNetLemmatizer()
                 explanations = generate_explanation(graph, subject, action, obj, lemmatizer)
                 for explanation in explanations:
-                    st.write(explanation.text)
+                    st.write(explanation)#.__str__()
 
 #    button_use = st.button('Use an example policy', use_container_width=True, type='primary', on_click=display_use_part)
 
