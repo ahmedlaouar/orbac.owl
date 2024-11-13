@@ -17,8 +17,8 @@ import numpy as np
 
 from acceptance import *
 
-tool = language_tool_python.LanguageTool('en-US')
- # Initialize the lexicon, factory, and realiser
+#tool = language_tool_python.LanguageTool('en-US')
+# Initialize the lexicon, factory, and realiser
 
 lexicon = Lexicon.getDefaultLexicon()
 nlgFactory = NLGFactory(lexicon)
