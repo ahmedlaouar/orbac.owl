@@ -2,7 +2,6 @@ streamlit
 streamlit_shadcn_ui
 rdflib
 pandas
-urllib
 simplenlg
 textstat
 language_tool_python
