@@ -645,13 +645,13 @@ def generate_explanations(g, subject, action, obj, lemmatizer):
     conflict_case(resultsConflicts)
 
 # Download WordNet data
-nltk.download('wordnet')
-lemmatizer = WordNetLemmatizer()
+#nltk.download('wordnet')
+#lemmatizer = WordNetLemmatizer()
 
-graph = Graph()
-graph.parse("ontology/orbac-STARWARS.owl", format="xml")
-
-generate_explanations(graph, "Bob", "edit", "report1", lemmatizer)
+#graph = Graph()
+#graph.parse("ontology/orbac-STARWARS.owl", format="xml")
+#
+#generate_explanations(graph, "Bob", "edit", "report1", lemmatizer)
 
 #computeAccess(graph, "Permission", "Bob", "edit", "report1")
 #computeAccess(graph, "Prohibition", "Bob", "edit", "report1")
