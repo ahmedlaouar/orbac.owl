@@ -1,29 +1,20 @@
 from rdflib import Graph, Namespace, URIRef, Literal
 from rdflib.namespace import RDF, RDFS, OWL
 from urllib.parse import urlparse
-
 from simplenlg.framework import NLGFactory, Lexicon
 from simplenlg.realiser.english import Realiser
-
 import textstat
-import language_tool_python
-
 import nltk
 from nltk.stem import WordNetLemmatizer
-
-import matplotlib.pyplot as plt #pip install numpy matplotlib==3.8.3
-
 import numpy as np
-
 from acceptance import *
+from util import *
 
-#tool = language_tool_python.LanguageTool('en-US')
 # Initialize the lexicon, factory, and realiser
-
 lexicon = Lexicon.getDefaultLexicon()
 nlgFactory = NLGFactory(lexicon)
 realiser = Realiser(lexicon) 
-from util import *
+
 # ------------------------------------------ begin classes ------------------------------------------ #
 class ResultWithExplanations:
     def __init__(self, graph, subject, action, object):
