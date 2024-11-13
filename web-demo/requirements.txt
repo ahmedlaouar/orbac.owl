@@ -7,3 +7,4 @@ textstat
 language_tool_python
 nltk
 numpy
+htbuilder

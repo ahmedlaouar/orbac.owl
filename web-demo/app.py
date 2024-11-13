@@ -4,6 +4,9 @@ from rdflib import Graph
 import pandas as pd
 from acceptance import *
 from explanation import *
+from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, classes, fonts
+from htbuilder.units import percent, px
+from htbuilder.funcs import rgba, rgb
 
 st.set_page_config(layout="centered", page_title="OrBAC ontology", page_icon="🧊", initial_sidebar_state="expanded", menu_items={'Get help':'https://orbac-owl.streamlit.app/contact','About':'## This is the official OrBAC ontology demo app!'})
 
@@ -80,7 +83,7 @@ def display_use_part():
     with cent_co1:
         main_tabs = ui.tabs(["Check privileges", "Check consistency", "Compute supports", "Acceptance"], default_value='Check privileges')#, use_container_width=True
 
-    with st.expander("Privilege inference and conflict resolution methods", expanded=True):
+    with st.expander("Privilege inference and text-based explanation methods", expanded=True):
         # Create 3 columns
         col1, col2, col3 = st.columns(3)
 
@@ -180,6 +183,60 @@ def display_use_part():
                 for explanation in explanations:
                     st.write(explanation)#.__str__()
 
+def link(link, text, **style):
+    return a(_href=link, _target="_blank", style=styles(textDecoration="none", **style))(text)
+
+def link2(link, text, **style):
+    return a(_href=link, _target="_blank", style=styles(**style))(text)
+def layout(*args):
+
+    style = """
+    <style>
+      # MainMenu {visibility: hidden;}
+      footer {visibility: hidden;}
+    </style>
+    """
+
+    style_div = styles(
+        left=0,
+        bottom=0,
+        margin=px(0, 0, 0, 0),
+        width=percent(100),
+        text_align="center",
+        height="100px",
+        # opacity=0.9
+    )
+
+    style_hr = styles(
+    )
+
+    body = p()
+    foot = div(style=style_div)(hr(style=style_hr), body)
+
+    st.markdown(style, unsafe_allow_html=True)
+
+    for arg in args:
+        if isinstance(arg, str):
+            body(arg)
+        elif isinstance(arg, HtmlElement):
+            body(arg)
+
+    st.markdown(str(foot), unsafe_allow_html=True)
+
+def footer():
+    myargs = [
+        " Copyright © 2024, Created by ",
+        link("https://github.com/ahmedlaouar", "Ahmed Laouar"),
+        ", ",
+        link("https://www.tokyraboanary.org/", "Toky Raboanary"),
+        ", ",
+        link("https://scholar.google.fr/citations?user=-3kO5x0AAAAJ&hl=fr", "Salem Benferhat"),
+        br(),
+        "Funded by STARWARS-project: ",
+        link2("https://sites.google.com/view/horizoneurope2020-starwars/", "Horizon Europe 2020"),
+    ]
+    layout(*myargs)
+
 def main():
     st.markdown("""
     <style>
@@ -196,6 +253,8 @@ def main():
         display_use_part()
     elif sidebar_option == "Load a policy" or sidebar_option == "Build your policy":
         display_coming()
+
+    footer()
 
 if __name__ == "__main__":
     main()
