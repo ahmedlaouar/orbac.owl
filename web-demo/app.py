@@ -33,24 +33,6 @@ def generate_explanation(graph, subject, action, obj, lemmatizer):
     else:
         return explanations.getExplanationsConflicts()
 
-def display_app_heading():
-    st.title("OrBAC ontology demo")
-    #st.header("Test some functions of the OrBAC ontology")
-    with st.expander("About the project",expanded=False):
-        #st.header("The Organisation Based Access Control (OrBAC) ontology:")
-        #st.write("This website serves as a demo of the OrBAC ontology and the methods around it. It mainly allows applying conflict resolution methods and explanation mechanisms on some example policies.")
-
-        # Path to markdown file
-        markdown_file = "web-demo/content/orbac.md"
-        # Read and display the markdown content
-        with open(markdown_file, "r") as file:
-            orbac_summary = file.read()
-        # Display markdown content at a specific location in your Streamlit app
-        st.markdown(orbac_summary, unsafe_allow_html=True)
-
-# Streamlit app
-display_app_heading()
-
 def display_coming():
     st.write("Coming soon")
 
@@ -255,12 +237,25 @@ def main():
     </style>
     """, unsafe_allow_html=True)
 
+    st.title("OrBAC ontology demo")
+
+    st.sidebar.title("OrBAC ontology")
+
+    st.sidebar.page_link("app.py", label='Home')
+    st.sidebar.page_link("pages/overview.py", label='About the project')
+    st.sidebar.page_link("pages/contact.py", label='Contact us')
+    #st.sidebar.page_link("pages/contact.py", label='COntact us')
+
+    # Streamlit app
+    #display_app_heading()
+
     sidebar_option = st.sidebar.selectbox('Choose an option:',('Use an example policy', 'Load a policy', 'Build your policy'))
 
     if sidebar_option == 'Use an example policy':
         display_use_part()
     elif sidebar_option == "Load a policy" or sidebar_option == "Build your policy":
         display_coming()
+
 
     footer()
 
