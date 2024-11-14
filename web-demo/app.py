@@ -40,6 +40,14 @@ def display_app_heading():
         st.header("The Organisation Based Access Control (OrBAC) ontology:")
         st.write("This website serves as a demo of the OrBAC ontology and the methods around it. It mainly allows applying conflict resolution methods and explanation mechanisms on some example policies.")
 
+        # Path to markdown file
+        markdown_file = "web-demo/content/orbac.md"
+        # Read and display the markdown content
+        with open(markdown_file, "r") as file:
+            orbac_summary = file.read()
+        # Display markdown content at a specific location in your Streamlit app
+        st.markdown(orbac_summary, unsafe_allow_html=True)
+
 # Streamlit app
 display_app_heading()
 
