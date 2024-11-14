@@ -37,8 +37,8 @@ def display_app_heading():
     st.title("OrBAC ontology demo")
     #st.header("Test some functions of the OrBAC ontology")
     with st.expander("About the project",expanded=False):
-        st.header("The Organisation Based Access Control (OrBAC) ontology:")
-        st.write("This website serves as a demo of the OrBAC ontology and the methods around it. It mainly allows applying conflict resolution methods and explanation mechanisms on some example policies.")
+        #st.header("The Organisation Based Access Control (OrBAC) ontology:")
+        #st.write("This website serves as a demo of the OrBAC ontology and the methods around it. It mainly allows applying conflict resolution methods and explanation mechanisms on some example policies.")
 
         # Path to markdown file
         markdown_file = "web-demo/content/orbac.md"
