@@ -86,7 +86,7 @@ def footer():
         ", ",
         link("https://scholar.google.fr/citations?user=-3kO5x0AAAAJ&hl=fr", "Salem Benferhat"),
         br(),
-        "Funded by STARWARS-project: ",
+        "Funded by the STARWARS-project: ",
         link2("https://sites.google.com/view/horizoneurope2020-starwars/", "Horizon Europe 2020"),
     ]
     layout(*myargs)
@@ -103,7 +103,7 @@ def main():
 
     st.sidebar.title("OrBAC ontology")
 
-    st.sidebar.page_link("app.py", label='Home')
+    st.sidebar.page_link("app.py", label='Demo')
     st.sidebar.page_link("pages/overview.py", label='About the project')
     st.sidebar.page_link("pages/contact.py", label='Contact us')
     #st.sidebar.page_link("pages/contact.py", label='COntact us')
