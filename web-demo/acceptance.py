@@ -223,12 +223,12 @@ def check_dominance_with_details_original(graph, subset1, subset2):
             return (False,None)
     return preference
 
-def check_acceptance_with_details_original(graph, subject, action, object):
+def check_acceptance_with_details_original(graph, subject, action, obj):
     if not (subject and obj and action):
         return False
     else:
-        permission_supports = compute_supports(graph, subject, action, object, 0)
-        prohibition_supports = compute_supports(graph, subject, action, object, 1)
+        permission_supports = compute_supports(graph, subject, action, obj, 0)
+        prohibition_supports = compute_supports(graph, subject, action, obj, 1)
         if len(permission_supports) == len(prohibition_supports) == 0:
             return False
         elif len(permission_supports) == 0:

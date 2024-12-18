@@ -17,15 +17,15 @@ realiser = Realiser(lexicon)
 
 # ------------------------------------------ begin classes ------------------------------------------ #
 class ResultWithExplanations:
-    def __init__(self, graph, subject, action, object):
+    def __init__(self, graph, subject, action, obj):
         self.subject = subject
         self.action = action
-        self.object = object
+        self.obj = obj
         self.results = []
         self.accesses = []
         self.text =""
-        self.perm_supports = compute_supports(graph, subject, action, object, 0)       
-        self.proh_supports = compute_supports(graph, subject, action, object, 1)     
+        self.perm_supports = compute_supports(graph, subject, action, obj, 0)       
+        self.proh_supports = compute_supports(graph, subject, action, obj, 1)     
         self.graph = graph
 
     def __str__(self): 
@@ -34,7 +34,7 @@ class ResultWithExplanations:
     def getAccessResultArray(self):
         resultsStr = []
         for result in self.results:
-            resultsStr.append("Access("+self.subject+","+self.action+","+self.object+") = "+result)
+            resultsStr.append("Access("+self.subject+","+self.action+","+self.obj+") = "+result)
         return resultsStr
     
     def getPermissionAccesses(self):
@@ -91,7 +91,7 @@ class ResultWithExplanations:
                 text += access.getLogicalExplanationDetailsStr()+"\n"
                 
         text+= self.getLogicBasedSupports()
-        diff_supports = difference_supports(self.graph, self.subject, self.action, self.object)
+        diff_supports = difference_supports(self.graph, self.subject, self.action, self.obj)
         text_supports_logic_based = get_diff_supports_logic_based(diff_supports) 
         text += text_supports_logic_based+"\n"
        
@@ -168,12 +168,12 @@ class ResultWithExplanations:
             else:
                 outcome_logic = self.getLogicExplanationPreferance(outcome_logic_raw) # orbac form
 
-            text+="Is-permitted("+self.subject+","+self.action+","+self.object+") because "+outcome_logic+"\n"
+            text+="Is-permitted("+self.subject+","+self.action+","+self.obj+") because "+outcome_logic+"\n"
             # if outcome_logic_raw != None: # This was just a test if verbalisation related the preference works well
             #     text+=self.getNaturalLanguagePreference( outcome_logic_raw)
 
         else:
-            text+="Is-prohibited("+self.subject+","+self.action+","+self.object+")"
+            text+="Is-prohibited("+self.subject+","+self.action+","+self.obj+")"
         return text
     
     def getLogicExplanationPreferance(self, preference):
@@ -198,7 +198,7 @@ class Access:
         self.consider = consider
         self.define = define
         self.subject = s
-        self.object = o
+        self.obj = o
         self.view = v
         self.activity = a
         self.action = alpha
@@ -221,7 +221,7 @@ class Access:
         self.consider = elements[4]
         self.define = elements[5]
         self.subject = elements[6]
-        self.object = elements[7]
+        self.obj = elements[7]
         self.view = elements[8]
         self.activity = elements[9]
         self.action = elements[10]
@@ -239,11 +239,11 @@ class Access:
         explanations=[]
         explanations.append(self.accessType+"("+self.org+","+self.role+","+self.activity+","+self.view+","+self.context+") $\wedge$")
         explanations.append("Employ("+self.org+","+self.subject+","+self.role+") $\wedge$")
-        explanations.append("Use("+self.org+","+self.object+","+self.view+") $\wedge$")
+        explanations.append("Use("+self.org+","+self.obj+","+self.view+") $\wedge$")
         explanations.append("Consider("+self.org+","+self.action+","+self.activity+") $\wedge$")
         explanations.append("Define("+self.org+","+self.subject+","+self.action+","+self.view+","+self.context+") $\wedge$")
         explanations.append("SubOrganisationOf"+"("+self.org+","+self.org2+") $\models$")
-        explanations.append(self.outcome+"("+self.subject+","+self.action+","+self.object+")")
+        explanations.append(self.outcome+"("+self.subject+","+self.action+","+self.obj+")")
 
         return explanations
     
@@ -251,16 +251,16 @@ class Access:
         explanations=[]
         explanations.append(self.accessType+"("+self.org+","+self.role+","+self.activity+","+self.view+","+self.context+") $\wedge$")
         explanations.append(self.employ+"("+self.org+","+self.subject+","+self.role+") $\wedge$")
-        explanations.append(self.use+"("+self.org+","+self.object+","+self.view+") $\wedge$")
+        explanations.append(self.use+"("+self.org+","+self.obj+","+self.view+") $\wedge$")
         explanations.append(self.consider+"("+self.org+","+self.action+","+self.activity+") $\wedge$")
         explanations.append(self.define+"("+self.org+","+self.subject+","+self.action+","+self.view+","+self.context+") $\wedge$")
         explanations.append("SubOrganisationOf"+"("+self.org+","+self.org2+") $\models$")
-        explanations.append(self.outcome+"("+self.subject+","+self.action+","+self.object+")")
+        explanations.append(self.outcome+"("+self.subject+","+self.action+","+self.obj+")")
 
         return explanations
     
     def getCSV(self):
-        csv = self.accessType+";"+ self.access+";"+ self.employ+";"+self.use+";"+self.consider+";"+self.define+";"+self.subject+";"+self.object+";"+self.view+";"+self.activity+";"+self.action+";"+self.context+";"+self.role+";"+self.org+";"+self.org2
+        csv = self.accessType+";"+ self.access+";"+ self.employ+";"+self.use+";"+self.consider+";"+self.define+";"+self.subject+";"+self.obj+";"+self.view+";"+self.activity+";"+self.action+";"+self.context+";"+self.role+";"+self.org+";"+self.org2
         return csv
 
     
@@ -280,7 +280,7 @@ class Explanations:
         self.graph = graph
         self.lemmatizer = lemmatizer
 
-    def getAccessFor(self, subject, action, object, accessType):
+    def getAccessFor(self, subject, action, obj, accessType):
         results = []
         accesses = []
         if (accessType == "Permission"):
@@ -291,7 +291,7 @@ class Explanations:
             else:
                 return
         for access in accesses:
-            if (access.subject == subject and access.action == action and access.object == object):
+            if (access.subject == subject and access.action == action and access.obj == obj):
                 results.append(access)
         return results
     
@@ -308,7 +308,7 @@ class Explanations:
         # Define the input values
         subject = access.subject.capitalize().replace("_"," ")
         action = access.action.lower().replace("-"," ").replace("_"," ")
-        object = access.object.lower().replace("-"," ").replace("_"," ")
+        obj = access.obj.lower().replace("-"," ").replace("_"," ")
 
         view = access.view.lower().replace("-"," ").replace("_"," ")
         noun_phrase = nlgFactory.createNounPhrase(view)
@@ -368,7 +368,7 @@ class Explanations:
         output = template.format(
             Subject=subject,
             action=action,
-            object=object,
+            object=obj,
             view=view,
             activity=activity,
             context=context,
@@ -388,8 +388,8 @@ class Explanations:
         # Define the input values
         subject = resultWithExplanaitons.accesses[0].subject.capitalize().replace("_"," ")
         action = resultWithExplanaitons.accesses[0].action.lower().replace("-"," ").replace("_"," ")
-        object = resultWithExplanaitons.accesses[0].object.lower().replace("-"," ").replace("_"," ")
-        # We use [0] because so far it doesn't matter if it is a prohibition or a permission. subject, action and object are always the same.
+        obj = resultWithExplanaitons.accesses[0].obj.lower().replace("-"," ").replace("_"," ")
+        # We use [0] because so far it doesn't matter if it is a prohibition or a permission. subject, action and obj are always the same.
         
         # ------ SIMPLE ------ #
         template = (
@@ -399,7 +399,7 @@ class Explanations:
         simple = template.format(
             Subject=subject,
             action=action,
-            object=object
+            object=obj
         )
         i = 0
         for permission in accessPermissions:            
@@ -412,7 +412,7 @@ class Explanations:
 
         # ------ CONTRAST ------ #
         contrast = " There are contrasts. "
-        diff_supports_short = difference_supports_short(resultWithExplanaitons.graph, resultWithExplanaitons.subject, resultWithExplanaitons.action, resultWithExplanaitons.object)        
+        diff_supports_short = difference_supports_short(resultWithExplanaitons.graph, resultWithExplanaitons.subject, resultWithExplanaitons.action, resultWithExplanaitons.obj)        
         diff_supports_text = diff_supports_verbalisation(self.graph, diff_supports_short)
         contrast += diff_supports_text
 
@@ -421,14 +421,14 @@ class Explanations:
         no_support_prohibition = False
         acceptance = resultWithExplanaitons.check_acceptance_with_details()
         if acceptance[0]:
-            outcome = capitalize_first_letter(subject)+" can "+action+" "+object+" because "
+            outcome = capitalize_first_letter(subject)+" can "+action+" "+obj+" because "
             if acceptance[1] != None:
                 outcome += resultWithExplanaitons.getNaturalLanguagePreference(acceptance[1]) 
             else:
                 outcome += "there is no support for the prohibition."
                 no_support_prohibition = True
         else:
-            outcome = "Therefore, because of the conflicts, "+ capitalize_first_letter(subject)+" can "+action+" "+object+"."
+            outcome = "Therefore, because of the conflicts, "+ capitalize_first_letter(subject)+" can "+action+" "+obj+"."
         
         # ------ OUTPUT ------ #
 
@@ -444,14 +444,14 @@ class Explanations:
         results = []
         i = 0
         for permission in self.accessesPermission:
-            prohibitions = self.getAccessFor(permission.subject, permission.action, permission.object, "Prohibition")
+            prohibitions = self.getAccessFor(permission.subject, permission.action, permission.obj, "Prohibition")
             if (len(prohibitions) == 0): 
                 result = None
                 for currentResult in results:
-                    if (currentResult.subject == permission.subject and currentResult.action == permission.action and currentResult.object == permission.object):
+                    if (currentResult.subject == permission.subject and currentResult.action == permission.action and currentResult.obj == permission.obj):
                         result = currentResult
                 if result == None:
-                    result = ResultWithExplanations(self.graph, permission.subject, permission.action, permission.object)
+                    result = ResultWithExplanations(self.graph, permission.subject, permission.action, permission.obj)
                     results.append(result)    
                 result.accesses.append(permission)
                 result.results.append("Permitted")
@@ -464,14 +464,14 @@ class Explanations:
         results = []
         i = 0
         for prohibition in self.accessesProhibition:
-            permissions = self.getAccessFor(prohibition.subject, prohibition.action, prohibition.object, "Permission")
+            permissions = self.getAccessFor(prohibition.subject, prohibition.action, prohibition.obj, "Permission")
             if (len(permissions) == 0):  
                 result = None
                 for currentResult in results:
-                    if (currentResult.subject == prohibition.subject and currentResult.action == prohibition.action and currentResult.object == prohibition.object):
+                    if (currentResult.subject == prohibition.subject and currentResult.action == prohibition.action and currentResult.obj == prohibition.obj):
                         result = currentResult
                 if result == None:
-                    result = ResultWithExplanations(self.graph, prohibition.subject, prohibition.action, prohibition.object)
+                    result = ResultWithExplanations(self.graph, prohibition.subject, prohibition.action, prohibition.obj)
                     results.append(result) 
                 result.accesses.append(prohibition)
                 result.result = "Prohibited"
@@ -488,14 +488,14 @@ class Explanations:
         # c) final automatic decision based on the preference (compute_accepted?)
         results = []
         for permission in self.accessesPermission:
-            prohibitions = self.getAccessFor(permission.subject, permission.action, permission.object, "Prohibition")
+            prohibitions = self.getAccessFor(permission.subject, permission.action, permission.obj, "Prohibition")
             if (len(prohibitions) != 0): 
                 result = None
                 for currentResult in results:
-                    if (currentResult.subject == permission.subject and currentResult.action == permission.action and currentResult.object == permission.object):
+                    if (currentResult.subject == permission.subject and currentResult.action == permission.action and currentResult.obj == permission.obj):
                         result = currentResult
                 if result == None:
-                    result = ResultWithExplanations(self.graph, permission.subject, permission.action, permission.object)
+                    result = ResultWithExplanations(self.graph, permission.subject, permission.action, permission.obj)
                     results.append(result)
                 result.accesses.append(permission)
                 for prohibition in prohibitions:
@@ -618,7 +618,7 @@ def generate_explanations(g, subject, action, obj, lemmatizer):
 
     explanations  = Explanations(g, accessesPermission, accessesProhibition, lemmatizer)
     
-    # test here if there is no prohibition fir subject, action, obj
+    # test here if there is no prohibition fir subject, action, object
     resultsPermissions = explanations.getExplanationsPermissions()
     no_prohibition_case(resultsPermissions)
     print("")
@@ -626,7 +626,7 @@ def generate_explanations(g, subject, action, obj, lemmatizer):
     print("###############################################################")
     print("")
 
-    # test here if there is no permission for subject, action, obj
+    # test here if there is no permission for subject, action, object
     resultsProhibitions = explanations.getExplanationsProhibitions()
     no_permission_case(resultsProhibitions)
     print("")
@@ -634,7 +634,7 @@ def generate_explanations(g, subject, action, obj, lemmatizer):
     print("###############################################################")
     print("")
 
-    # if there are both permission and prohibition for subject, action, obj (conflict)
+    # if there are both permission and prohibition for subject, action, object (conflict)
     resultsConflicts = explanations.getExplanationsConflicts()
     conflict_case(resultsConflicts)
 

@@ -36,6 +36,36 @@ def generate_explanation(graph, subject, action, obj, lemmatizer):
 def display_coming():
     st.write("Coming soon")
 
+def get_example_subjects(graph):
+    query_path = "queries.sparql/get_example_subjects.sparql"
+    with open(query_path, 'r') as file:
+        query = file.read()        
+        results = list(graph.query(query))
+    print(results)
+    res = [strip_prefix(result[0]) for result in results]
+    print(res)
+    return res
+
+def get_example_actions(graph):
+    query_path = "queries.sparql/get_example_actions.sparql"
+    with open(query_path, 'r') as file:
+        query = file.read()        
+        results = graph.query(query)
+    
+    res = [strip_prefix(result[0]) for result in results]
+    print(res)
+    return res
+
+def get_example_objects(graph):
+    query_path = "queries.sparql/get_example_objects.sparql"
+    with open(query_path, 'r') as file:
+        query = file.read()        
+        results = graph.query(query)
+    
+    res = [strip_prefix(result[0]) for result in results]
+    print(res)
+    return res
+
 def display_use_part():
     example_option = st.selectbox("Choose an example policy:", ["Starwars", "Policy 2"])
     if example_option == "Starwars":
@@ -64,6 +94,14 @@ def display_use_part():
             action = st.text_input("Action")
         with col3:
             obj = st.text_input("Object")
+        # Place the text inputs in the respective columns
+        with col1:
+            subject = st.selectbox("Subject", get_example_subjects(graph))
+        with col2:
+            action = st.selectbox("Action", get_example_actions(graph))
+        with col3:
+            obj = st.selectbox("Object", get_example_objects(graph))
+                
         # 1. Visualize the policy
         if main_tabs == "Visualize policy":
             #st.caption("A visualization of the policy:")
