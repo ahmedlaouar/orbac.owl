@@ -9,7 +9,7 @@
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
-     xmlns:orbac-owl="http://www.co-ode.org/ontologies/ont.owl#">
+     xmlns:orbac-owl="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#">
     <Ontology/>
     
 
@@ -42,350 +42,350 @@
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#accessAccessType -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessAccessType">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Access"/>
         <rdfs:domain>
             <Class>
                 <unionOf rdf:parseType="Collection">
                     <Restriction>
-                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
                     </Restriction>
                 </unionOf>
             </Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#accessAction -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAction -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessAction">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAction">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Access"/>
         <rdfs:domain>
             <Class>
                 <unionOf rdf:parseType="Collection">
                     <Restriction>
-                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
                     </Restriction>
                 </unionOf>
             </Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#accessObject -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessObject -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessObject">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessObject">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Access"/>
         <rdfs:domain>
             <Class>
                 <unionOf rdf:parseType="Collection">
                     <Restriction>
-                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
                     </Restriction>
                 </unionOf>
             </Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#accessSubject -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessSubject -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessSubject">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessSubject">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Access"/>
         <rdfs:domain>
             <Class>
                 <unionOf rdf:parseType="Collection">
                     <Restriction>
-                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
                     </Restriction>
                 </unionOf>
             </Class>
         </rdfs:domain>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeActivity -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeActivity -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeActivity">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeActivity">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeContext -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeContext -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeContext">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeContext">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeOrganisation -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeOrganisation -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeOrganisation">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeOrganisation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeRole -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeRole -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeRole">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeRole">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#accessTypeView -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeView -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#accessTypeView">
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeView">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#considersAction -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersAction -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#considersAction">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consider"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersAction">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#considersActivity -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersActivity -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#considersActivity">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consider"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersActivity">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#considersOrganisation -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersOrganisation -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#considersOrganisation">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Consider"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersOrganisation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#definesAction -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesAction -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesAction">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Action"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesAction">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#definesContext -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesContext -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesContext">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesContext">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#definesObject -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesObject -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesObject">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesObject">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#definesOrganisation -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesOrganisation -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesOrganisation">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesOrganisation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#definesSubject -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesSubject -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#definesSubject">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Define"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesSubject">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#employesEmployee -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployee -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#employesEmployee">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployee">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#employesEmployer -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployer -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#employesEmployer">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployer">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#employesRole -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#employesRole">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Employ"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#hasParent -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#hasParent -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#hasParent">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#hasParent">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#isPreferredTo -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo">
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#subOrganisationOf -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#subOrganisationOf -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#subOrganisationOf">
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#subOrganisationOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#subRoleOrganisation -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#subRoleOrganisation -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#subRoleOrganisation">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#subRoleOrganisation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#usesEmployer -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesEmployer -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#usesEmployer">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Organisation"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesEmployer">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#usesObject -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesObject -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#usesObject">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Object"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesObject">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
     </ObjectProperty>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#usesView -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesView -->
 
-    <ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#usesView">
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Use"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+    <ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesView">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
     </ObjectProperty>
     
 
@@ -401,188 +401,188 @@
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#AbstractConcept -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Access -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Access -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Access"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Access"/>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#AccessType -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Action -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Action">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Activity -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Activity">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#ConnectionRule -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Consider -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Consider">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Context -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Define -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Define">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Employ -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Employ">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Object -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Object">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Obligation -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Obligation -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Obligation">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
-        <disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Obligation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <disjointWith rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Organisation -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Organisation">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Subject"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Permission -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Permission">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
-        <disjointWith rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <disjointWith rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Prohibition -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Prohibition">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Recommendation -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Recommendation -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Recommendation">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Recommendation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Role -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Role">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#SeniorRole -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SeniorRole -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#SeniorRole">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SeniorRole">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#SpecializedRole -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SpecializedRole -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#SpecializedRole">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SpecializedRole">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#SubRole -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SubRole -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#SubRole">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SubRole">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Subject -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Subject">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConcreteConcept"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#Use -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#Use">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
     </Class>
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#View -->
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View -->
 
-    <Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#View">
-        <rdfs:subClassOf rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AbstractConcept"/>
+    <Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
     </Class>
     
 
@@ -596,36 +596,36 @@
      -->
 
     <Restriction>
-        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
         <rdfs:subClassOf>
             <Class>
                 <unionOf rdf:parseType="Collection">
                     <Restriction>
-                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
                     </Restriction>
                 </unionOf>
             </Class>
         </rdfs:subClassOf>
     </Restriction>
     <Restriction>
-        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
         <rdfs:subClassOf>
             <Class>
                 <unionOf rdf:parseType="Collection">
                     <Restriction>
-                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Permission"/>
+                        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
                     </Restriction>
                     <Restriction>
-                        <onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#accessAccessType"/>
-                        <allValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Prohibition"/>
+                        <onProperty rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessAccessType"/>
+                        <allValuesFrom rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
                     </Restriction>
                 </unionOf>
             </Class>
@@ -713,7 +713,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#AccessType"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#p1"/>
                     </rdf:Description>
                 </rdf:first>
@@ -723,7 +723,7 @@
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ConnectionRule"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#r1"/>
                             </rdf:Description>
                         </rdf:first>
@@ -738,7 +738,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#p1"/>
                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#r1"/>
                     </rdf:Description>
@@ -758,7 +758,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#activity1"/>
                     </rdf:Description>
                 </rdf:first>
@@ -768,7 +768,7 @@
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Activity"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#activity2"/>
                             </rdf:Description>
                         </rdf:first>
@@ -778,7 +778,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
                                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#activity1"/>
                                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#activity2"/>
                                     </rdf:Description>
@@ -789,7 +789,7 @@
                                         <rdf:first>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#considersActivity"/>
+                                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersActivity"/>
                                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#consider1"/>
                                                 <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#activity1"/>
                                             </rdf:Description>
@@ -800,7 +800,7 @@
                                                 <rdf:first>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#considersActivity"/>
+                                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersActivity"/>
                                                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#consider2"/>
                                                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#activity2"/>
                                                     </rdf:Description>
@@ -822,7 +822,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#consider1"/>
                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#consider2"/>
                     </rdf:Description>
@@ -842,7 +842,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#context1"/>
                     </rdf:Description>
                 </rdf:first>
@@ -852,7 +852,7 @@
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Context"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#context2"/>
                             </rdf:Description>
                         </rdf:first>
@@ -862,7 +862,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
                                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#context1"/>
                                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#context2"/>
                                     </rdf:Description>
@@ -873,7 +873,7 @@
                                         <rdf:first>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#definesContext"/>
+                                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesContext"/>
                                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#define1"/>
                                                 <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#context1"/>
                                             </rdf:Description>
@@ -884,7 +884,7 @@
                                                 <rdf:first>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#definesContext"/>
+                                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesContext"/>
                                                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#define2"/>
                                                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#context2"/>
                                                     </rdf:Description>
@@ -906,7 +906,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#define1"/>
                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#define2"/>
                     </rdf:Description>
@@ -926,7 +926,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#role1"/>
                     </rdf:Description>
                 </rdf:first>
@@ -936,7 +936,7 @@
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Role"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#role2"/>
                             </rdf:Description>
                         </rdf:first>
@@ -946,7 +946,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
                                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#role1"/>
                                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#role2"/>
                                     </rdf:Description>
@@ -957,7 +957,7 @@
                                         <rdf:first>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#employesRole"/>
+                                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole"/>
                                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#employ1"/>
                                                 <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#role1"/>
                                             </rdf:Description>
@@ -968,7 +968,7 @@
                                                 <rdf:first>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#employesRole"/>
+                                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole"/>
                                                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#employ2"/>
                                                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#role2"/>
                                                     </rdf:Description>
@@ -990,7 +990,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#employ1"/>
                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#employ2"/>
                     </rdf:Description>
@@ -1010,7 +1010,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#view1"/>
                     </rdf:Description>
                 </rdf:first>
@@ -1020,7 +1020,7 @@
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#View"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#view2"/>
                             </rdf:Description>
                         </rdf:first>
@@ -1030,7 +1030,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
                                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#view1"/>
                                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#view2"/>
                                     </rdf:Description>
@@ -1041,7 +1041,7 @@
                                         <rdf:first>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#usesView"/>
+                                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesView"/>
                                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#use1"/>
                                                 <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#view1"/>
                                             </rdf:Description>
@@ -1052,7 +1052,7 @@
                                                 <rdf:first>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#usesView"/>
+                                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesView"/>
                                                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#use2"/>
                                                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#view2"/>
                                                     </rdf:Description>
@@ -1074,7 +1074,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#use1"/>
                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#use2"/>
                     </rdf:Description>
@@ -1094,7 +1094,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#hasParent"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#hasParent"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#R1"/>
                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#R2"/>
                     </rdf:Description>
@@ -1108,7 +1108,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.co-ode.org/ontologies/ont.owl#isPreferredTo"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#R1"/>
                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#R2"/>
                     </rdf:Description>
