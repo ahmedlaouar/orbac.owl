@@ -4,16 +4,10 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX : <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
 
-# Obtaining the parameters of a specific definition
+# Obtaining the objects of an example
 
-SELECT ?org ?subject ?action ?object ?c
+SELECT ?object
 
 WHERE  {
-    
-    :{define} rdf:type :Define .
-    :{define} :definesSubject ?subject .
-    :{define} :definesAction ?action .
-    :{define} :definesObject ?object.
-    :{define} :definesContext ?c .
-    :{define} :definesOrganisation ?org .
+    ?object rdf:type :Object .
 }
