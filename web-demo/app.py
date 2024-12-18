@@ -41,9 +41,9 @@ def get_example_subjects(graph):
     with open(query_path, 'r') as file:
         query = file.read()        
         results = list(graph.query(query))
-    print(results)
+    
     res = [strip_prefix(result[0]) for result in results]
-    print(res)
+    
     return res
 
 def get_example_actions(graph):
@@ -53,7 +53,7 @@ def get_example_actions(graph):
         results = graph.query(query)
     
     res = [strip_prefix(result[0]) for result in results]
-    print(res)
+    
     return res
 
 def get_example_objects(graph):
@@ -63,7 +63,7 @@ def get_example_objects(graph):
         results = graph.query(query)
     
     res = [strip_prefix(result[0]) for result in results]
-    print(res)
+    
     return res
 
 def display_use_part():
@@ -87,13 +87,6 @@ def display_use_part():
         # Create 3 columns
         col1, col2, col3 = st.columns(3)
 
-        # Place the text inputs in the respective columns
-        with col1:
-            subject = st.text_input("Subject")
-        with col2:
-            action = st.text_input("Action")
-        with col3:
-            obj = st.text_input("Object")
         # Place the text inputs in the respective columns
         with col1:
             subject = st.selectbox("Subject", get_example_subjects(graph))
