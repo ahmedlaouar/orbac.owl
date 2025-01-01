@@ -244,7 +244,7 @@ def layout(*args):
 def footer():
     myargs = [
         " Copyright © 2024, Created by ",
-        link("https://github.com/ahmedlaouar", "Ahmed Laouar"),
+        link("http://ahmedlaouar.me", "Ahmed Laouar"),
         ", ",
         link("https://www.tokyraboanary.org/", "Toky Raboanary"),
         ", ",

@@ -13,17 +13,9 @@ st.set_page_config(layout="centered", page_title="OrBAC ontology", page_icon="ðŸ
 def display_app_heading():
     st.title("OrBAC ontology demo")
     #st.header("Test some functions of the OrBAC ontology")
-    with st.expander("Overview of the OrBAC Model",expanded=False):
-        #st.header("The Organisation Based Access Control (OrBAC) ontology:")
-        #st.write("This website serves as a demo of the OrBAC ontology and the methods around it. It mainly allows applying conflict resolution methods and explanation mechanisms on some example policies.")
-
-        # Path to markdown file
-        markdown_file = "web-demo/content/orbac.md"
-        # Read and display the markdown content
-        with open(markdown_file, "r") as file:
-            orbac_summary = file.read()
-        # Display markdown content at a specific location in your Streamlit app
-        st.markdown(orbac_summary, unsafe_allow_html=True)
+    
+    st.image("web-demo/content/static/images/https___raw.githubusercontent.com_ahmedlaouar_orbac.owl_refs_heads_main_ontology_orbac.owl.svg",use_container_width=True,caption="The OrBAC ontology graph")
+    st.markdown("<p style='text-align: center;color:grey;'><small>Created with <a href='http://vowl.visualdataweb.org'>WebVOWL</a> (version 1.1.7)</small></p>", unsafe_allow_html=True)
 
     with st.expander("The OrBAC ontology",expanded=False):
         #st.header("The Organisation Based Access Control (OrBAC) ontology:")
@@ -37,6 +29,21 @@ def display_app_heading():
         # Display markdown content at a specific location in your Streamlit app
         st.markdown(orbac_summary, unsafe_allow_html=True)
 
+
+    with st.expander("Overview of the OrBAC Model",expanded=False):
+        #st.header("The Organisation Based Access Control (OrBAC) ontology:")
+        #st.write("This website serves as a demo of the OrBAC ontology and the methods around it. It mainly allows applying conflict resolution methods and explanation mechanisms on some example policies.")
+
+        # Path to markdown file
+        markdown_file = "web-demo/content/orbac.md"
+        # Read and display the markdown content
+        with open(markdown_file, "r") as file:
+            orbac_summary = file.read()
+        # Display markdown content at a specific location in your Streamlit app
+        st.markdown(orbac_summary, unsafe_allow_html=True)
+
+    
+    
 def link(link, text, **style):
     return a(_href=link, _target="_blank", style=styles(textDecoration="none", **style))(text)
 
@@ -80,7 +87,7 @@ def layout(*args):
 def footer():
     myargs = [
         " Copyright Â© 2024, Created by ",
-        link("https://github.com/ahmedlaouar", "Ahmed Laouar"),
+        link("http://ahmedlaouar.me", "Ahmed Laouar"),
         ", ",
         link("https://www.tokyraboanary.org/", "Toky Raboanary"),
         ", ",
