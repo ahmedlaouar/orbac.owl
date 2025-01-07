@@ -7,21 +7,32 @@ from explanation import *
 from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, classes, fonts
 from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
+from os import listdir
+from os.path import isfile, join
 
 st.set_page_config(layout="centered", page_title="OrBAC ontology", page_icon="🧊", initial_sidebar_state="expanded", menu_items={'Get help':'https://orbac-owl.streamlit.app/contact','About':'## This is the official OrBAC ontology demo app!'})
 
 # Load the ontology graph
-def load_starwars_policy():
+def load_policy(policy_name):
     graph = Graph()
-    graph.parse("ontology/orbac-STARWARS.owl", format="xml")
+    # Paths to the base ontology and the instance file
+    base_ontology_path = "ontology/orbac.owl"
+    
+    instance_file_path = "ontology/examples/"+policy_name
+
+    # Parse the base ontology into the graph
+    graph.parse(base_ontology_path, format="xml")
+
+    # Parse the instance file into the same graph
+    graph.parse(instance_file_path, format="xml")
     return graph
 
-def generate_explanation(graph, subject, action, obj, lemmatizer):
-    accessesPermission = computeAccess(graph, "Permission", subject, action, obj)
-    accessesProhibition = computeAccess(graph, "Prohibition", subject, action, obj)
+def generate_explanation(graph, example_uri, subject, action, obj, lemmatizer):
+    accessesPermission = computeAccess(graph, example_uri, "Permission", subject, action, obj)
+    accessesProhibition = computeAccess(graph, example_uri, "Prohibition", subject, action, obj)
 
-    explanations  = Explanations(graph, accessesPermission, accessesProhibition, lemmatizer)
-
+    explanations  = Explanations(graph, example_uri, accessesPermission, accessesProhibition, lemmatizer)
+    
     if len(accessesProhibition) == len(accessesPermission) == 0:
         explanations = []
         explanations.append(f"There is no permission or prohibition inferred for {subject} to perform {action} on {obj}")
@@ -67,16 +78,27 @@ def get_example_objects(graph):
     return res
 
 def display_use_part():
-    example_option = st.selectbox("Choose an example policy:", ["Starwars", "Policy 2"])
-    if example_option == "Starwars":
-        st.write("Loading STARWARS policy...")
-        graph = load_starwars_policy()
-        st.write("STARWARS policy loaded successfully!")
-    elif example_option == "Policy 2":
-        st.write("Loading Policy 2...")
-        graph = load_starwars_policy()
-        st.write("Policy 2 loaded successfully!")
+
+    onlyfiles = [f for f in listdir("ontology/examples") if isfile(join("ontology/examples", f))]
+    example_option = st.selectbox("Choose an example policy:", onlyfiles)
+    for e in onlyfiles:
+        if example_option == e:
+            st.write("Loading "+e+" policy...")
+            policy_name = e #"secondee-example.owl"
+            graph = load_policy(policy_name)
+            st.write(e + " policy loaded successfully!")
         
+    example_uri = "#"
+    base_uri = ""
+    for s, p, o in graph.triples((None, RDF.type, OWL.Ontology)):
+        base_uri = s
+        #break  # Assuming there is only one owl:Ontology
+
+    if base_uri:
+        example_uri = base_uri + example_uri
+    else:
+        print("Base URI not found in the graph.")
+
     # Primary tabs for grouping
     left_co1, cent_co1, right_co1 = st.columns([0.02,0.95,0.01])
     
@@ -132,14 +154,14 @@ def display_use_part():
             if perm_button:
                 if not (subject and obj and action):
                     st.write("Please enter a valid subject, action and object!")
-                elif ispermitted(graph, subject, action, obj):
+                elif ispermitted(graph, example_uri, subject, action, obj):
                     st.write(f"{subject} is permitted to perform {action} on {obj}")
                 else:
                     st.write(f"{subject} is not permitted to perform {action} on {obj}")
             if proh_button:
                 if not (subject and obj and action):
                     st.write("Please enter a valid subject, action and object!")
-                elif isprohibited(graph, subject, action, obj):
+                elif isprohibited(graph, example_uri, subject, action, obj):
                     st.write(f"{subject} is prohibited from performing {action} on {obj}")
                 else:
                     st.write(f"{subject} is not prohibited from performing {action} on {obj}")
@@ -149,14 +171,14 @@ def display_use_part():
             
             with support_tabs[0]:  # Permission Supports
                 if st.button("Compute permission supports", use_container_width=True):
-                    supports = compute_raw_supports(graph, subject, action, obj, 0)
+                    supports = compute_raw_supports(graph, example_uri, subject, action, obj, 0)
                     supports_data = pd.DataFrame(supports, columns=["Access type", "Employ relation", "Consider relation", "Use relation", "Define relation"])
                     supports_data = supports_data.map(strip_prefix)
                     st.dataframe(supports_data,hide_index=True, use_container_width=True)
 
             with support_tabs[1]:  # Prohibition Supports
                 if st.button("Compute prohibition supports", use_container_width=True):
-                    supports = compute_raw_supports(graph, subject, action, obj, 1)
+                    supports = compute_raw_supports(graph, example_uri, subject, action, obj, 1)
                     supports_data = pd.DataFrame(supports, columns=["Access type", "Employ relation", "Consider relation", "Use relation", "Define relation"])
                     supports_data = supports_data.map(strip_prefix)
                     st.dataframe(supports_data, hide_index=True, use_container_width=True)
@@ -188,7 +210,7 @@ def display_use_part():
                 if not (subject and obj and action):
                     st.write("Please enter a valid subject, action and object!")
                 else:
-                    if check_acceptance(graph, subject, action, obj):
+                    if check_acceptance(graph, example_uri, subject, action, obj):
                         st.write(f"The permission for {subject} to perform {action} on {obj} is granted")
                     else:
                         st.write(f"The permission for {subject} to perform {action} on {obj} is denied")
@@ -197,7 +219,7 @@ def display_use_part():
             if st.button("Explain"):
                 nltk.download('wordnet')
                 lemmatizer = WordNetLemmatizer()
-                explanations = generate_explanation(graph, subject, action, obj, lemmatizer)
+                explanations = generate_explanation(graph, example_uri, subject, action, obj, lemmatizer)
                 for explanation in explanations:
                     st.write(explanation)#.__str__()
 

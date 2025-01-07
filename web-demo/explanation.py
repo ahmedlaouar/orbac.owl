@@ -17,16 +17,17 @@ realiser = Realiser(lexicon)
 
 # ------------------------------------------ begin classes ------------------------------------------ #
 class ResultWithExplanations:
-    def __init__(self, graph, subject, action, obj):
+    def __init__(self, graph, example_uri, subject, action, obj):
         self.subject = subject
         self.action = action
         self.obj = obj
         self.results = []
         self.accesses = []
         self.text =""
-        self.perm_supports = compute_supports(graph, subject, action, obj, 0)       
-        self.proh_supports = compute_supports(graph, subject, action, obj, 1)     
+        self.perm_supports = compute_supports(graph, example_uri, subject, action, obj, 0)       
+        self.proh_supports = compute_supports(graph, example_uri, subject, action, obj, 1)     
         self.graph = graph
+        self.example_uri = example_uri
 
     def __str__(self): 
         return self.text
@@ -97,12 +98,12 @@ class ResultWithExplanations:
        
         return text
     
-    def is_strictly_preferred_with_details(self, member1, member2):
+    def is_strictly_preferred_with_details(self, example_uri, member1, member2):
         dominance_query_path = "queries.sparql/dominance_query.sparql"
         with open(dominance_query_path, 'r') as file:
             query_template = file.read()
 
-        query = query_template.format(member1=member1, member2=member2)
+        query = query_template.format(example_uri=example_uri, member1=member1, member2=member2)
 
         results = self.graph.query(query)
         try:
@@ -117,12 +118,12 @@ class ResultWithExplanations:
             # print("No query results found.")
             return (False,None)
 
-    def check_dominance_with_details(self, subset1, subset2):
+    def check_dominance_with_details(self, example_uri, subset1, subset2):
         preference = (False,None)
         for member1 in subset1:
             dominates_at_least_one = False
             for member2 in subset2:   
-                preference = self.is_strictly_preferred_with_details(member1, member2)         
+                preference = self.is_strictly_preferred_with_details(example_uri, member1, member2)         
                 if preference[0]:
                     dominates_at_least_one = True                
                     break 
@@ -130,7 +131,7 @@ class ResultWithExplanations:
                 return (False,None)
         return preference
 
-    def check_acceptance_with_details(self):
+    def check_acceptance_with_details(self, example_uri):
         permission_supports = self.perm_supports
         prohibition_supports = self.proh_supports
         
@@ -148,7 +149,7 @@ class ResultWithExplanations:
         for proh_support in stripped_prohibition_supports:
             conflict_supported = False
             for perm_support in stripped_permission_supports:
-                dominance = self.check_dominance_with_details(perm_support, proh_support)
+                dominance = self.check_dominance_with_details(example_uri, perm_support, proh_support)
                 if dominance[0]:
                     conflict_supported = True
                     detail = dominance[1]
@@ -159,7 +160,7 @@ class ResultWithExplanations:
 
     def getOutcomeConflict(self):
         text = "Outcome\n"
-        outcome = self.check_acceptance_with_details()                
+        outcome = self.check_acceptance_with_details(self.example_uri)                
 
         if outcome[0]:
             outcome_logic_raw = outcome[1] # X>Y
@@ -183,7 +184,7 @@ class ResultWithExplanations:
     
     def getNaturalLanguagePreference(self, preference):
         variables = preference.split(sep='>')
-        text = "'"+variable_verbalisation(self.graph, variables[0])+"' is preferred to '"+variable_verbalisation(self.graph, variables[1])+"'."
+        text = "'"+variable_verbalisation(self.graph, self.example_uri, variables[0])+"' is preferred to '"+variable_verbalisation(self.graph, self.example_uri, variables[1])+"'."
         return text
         
 class Access:
@@ -274,10 +275,11 @@ class Access:
         return str
 
 class Explanations:
-    def __init__(self, graph, accessesPermission, accessesProhibition, lemmatizer):
+    def __init__(self, graph, example_uri, accessesPermission, accessesProhibition, lemmatizer):
         self.accessesPermission = accessesPermission
         self.accessesProhibition = accessesProhibition
         self.graph = graph
+        self.example_uri = example_uri
         self.lemmatizer = lemmatizer
 
     def getAccessFor(self, subject, action, obj, accessType):
@@ -413,17 +415,18 @@ class Explanations:
         # ------ CONTRAST ------ #
         contrast = " There are contrasts. "
         diff_supports_short = difference_supports_short(resultWithExplanaitons.graph, resultWithExplanaitons.subject, resultWithExplanaitons.action, resultWithExplanaitons.obj)        
-        diff_supports_text = diff_supports_verbalisation(self.graph, diff_supports_short)
+        diff_supports_text = diff_supports_verbalisation(self.graph, self.example_uri, diff_supports_short)
         contrast += diff_supports_text
 
         # ------ AUTOMATIC RESOLUTION ------ #
         outcome = ""
         no_support_prohibition = False
-        acceptance = resultWithExplanaitons.check_acceptance_with_details()
+        acceptance = resultWithExplanaitons.check_acceptance_with_details(self.example_uri)
         if acceptance[0]:
             outcome = capitalize_first_letter(subject)+" can "+action+" "+obj+" because "
             if acceptance[1] != None:
                 outcome += resultWithExplanaitons.getNaturalLanguagePreference(acceptance[1]) 
+                print(outcome) 
             else:
                 outcome += "there is no support for the prohibition."
                 no_support_prohibition = True
@@ -451,7 +454,7 @@ class Explanations:
                     if (currentResult.subject == permission.subject and currentResult.action == permission.action and currentResult.obj == permission.obj):
                         result = currentResult
                 if result == None:
-                    result = ResultWithExplanations(self.graph, permission.subject, permission.action, permission.obj)
+                    result = ResultWithExplanations(self.graph, self.example_uri, permission.subject, permission.action, permission.obj)
                     results.append(result)    
                 result.accesses.append(permission)
                 result.results.append("Permitted")
@@ -471,7 +474,7 @@ class Explanations:
                     if (currentResult.subject == prohibition.subject and currentResult.action == prohibition.action and currentResult.obj == prohibition.obj):
                         result = currentResult
                 if result == None:
-                    result = ResultWithExplanations(self.graph, prohibition.subject, prohibition.action, prohibition.obj)
+                    result = ResultWithExplanations(self.graph, self.example_uri, prohibition.subject, prohibition.action, prohibition.obj)
                     results.append(result) 
                 result.accesses.append(prohibition)
                 result.result = "Prohibited"
@@ -489,13 +492,14 @@ class Explanations:
         results = []
         for permission in self.accessesPermission:
             prohibitions = self.getAccessFor(permission.subject, permission.action, permission.obj, "Prohibition")
-            if (len(prohibitions) != 0): 
+            if (len(prohibitions) != 0):
                 result = None
                 for currentResult in results:
                     if (currentResult.subject == permission.subject and currentResult.action == permission.action and currentResult.obj == permission.obj):
                         result = currentResult
+                        
                 if result == None:
-                    result = ResultWithExplanations(self.graph, permission.subject, permission.action, permission.obj)
+                    result = ResultWithExplanations(self.graph, self.example_uri, permission.subject, permission.action, permission.obj)
                     results.append(result)
                 result.accesses.append(permission)
                 for prohibition in prohibitions:
@@ -505,12 +509,13 @@ class Explanations:
 
                 newText = ""
                 # for prohibition in prohibitions:
-                newText += self.renderExplanationConflict(result) 
-                result.text = newText                                     
+                newText += self.renderExplanationConflict(result)
+                
+                result.text = newText                                    
         return results
 # ------------------------------------------ end classes ------------------------------------------ #
 
-def inference_query(graph, accessType, subject, action, obj):
+def inference_query(graph, example_uri, accessType, subject, action, obj):
     # returns a tuple of the individuals involved in deriving a privilege in the form: ?permission/?prohibition ?employ ?use ?consider ?define ?v ?a ?c ?r ?org ?org2
     if accessType == "Permission":
         inference_query = 'queries.sparql/get_all_permission_ind.sparql' #Permission
@@ -522,15 +527,15 @@ def inference_query(graph, accessType, subject, action, obj):
     with open(inference_query, 'r') as file:
         query_template = file.read()
         
-        query = query_template.format(subject=subject, action=action, object=obj)   
+        query = query_template.format(example_uri=example_uri, subject=subject, action=action, object=obj)   
     
     results = graph.query(query)
     
     return results
     
-def computeAccess(g, accessType, subject, action, obj):
+def computeAccess(g, example_uri, accessType, subject, action, obj):
 
-    results = inference_query(g, accessType, subject, action, obj)
+    results = inference_query(g, example_uri, accessType, subject, action, obj)
 
     #?permission/?prohibition ?employ ?use ?consider ?define ?v ?a ?c ?r ?org ?org2
     accesses = []
@@ -611,10 +616,10 @@ def conflict_case(resultsConflicts):
         print("---------------------------------------------------------------")
         print("")
 
-def generate_explanations(g, subject, action, obj, lemmatizer):
+def generate_explanations(g, example_uri, subject, action, obj, lemmatizer):
 
-    accessesPermission = computeAccess(g, "Permission", subject, action, obj)
-    accessesProhibition = computeAccess(g, "Prohibition", subject, action, obj)
+    accessesPermission = computeAccess(g, example_uri, "Permission", subject, action, obj)
+    accessesProhibition = computeAccess(g, example_uri, "Prohibition", subject, action, obj)
 
     explanations  = Explanations(g, accessesPermission, accessesProhibition, lemmatizer)
     

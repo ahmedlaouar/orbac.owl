@@ -1,4 +1,7 @@
 from acceptance import *
+from simplenlg.framework import NLGFactory, Lexicon
+from simplenlg.realiser.english import Realiser
+
 def capitalize_first_letter(s):
     # Capitalize the first letter of the string
     return s[0].upper() + s[1:]
@@ -13,11 +16,11 @@ def noun_with_article_a(noun):
     noun = realiser.realise(noun_phrase).getRealisation()
     return noun
 
-def employ_verbalisation(graph, employ):        
+def employ_verbalisation(graph, example_uri, employ):        
     employ_query_path = "queries.sparql/employ_query.sparql"
     with open(employ_query_path, 'r') as file:        
         query_template = file.read()              
-        query = query_template.replace("{employ}",employ)   
+        query = query_template.format(example_uri=example_uri, employ=employ)   
         
     results = list(graph.query(query))    
     row = results[0]    
@@ -27,11 +30,11 @@ def employ_verbalisation(graph, employ):
     text = subject+ " is "+role+" at "+org
     return text
 
-def define_verbalisation(graph, define):    
+def define_verbalisation(graph, example_uri, define):    
     define_query_path = "queries.sparql/define_query.sparql"
     with open(define_query_path, 'r') as file:        
         query_template = file.read()              
-        query = query_template.replace("{define}", define)   
+        query = query_template.format(example_uri=example_uri, define=define)   
 
     results = list(graph.query(query))    
     row = results[0]    
@@ -44,47 +47,47 @@ def define_verbalisation(graph, define):
     text = "in "+ org +", the "+context.lower()+" context holds between "+subject+", "+object+" and "+action+""
     return text  
 
-def defines_verbalisation(graph, defines):
+def defines_verbalisation(graph, example_uri, defines):
     text = ""    
     if (len(defines) > 0):
-        text += capitalize_first_letter(define_verbalisation(graph, defines[0]))
+        text += capitalize_first_letter(define_verbalisation(graph, example_uri, defines[0]))
         for i in range(1,len(defines)-1):
-            text+=", "+define_verbalisation(graph, defines[i])
+            text+=", "+define_verbalisation(graph, example_uri, defines[i])
         if (len(defines) > 1):
-            text += ", and "+define_verbalisation(graph, defines[len(defines)-1])
+            text += ", and "+define_verbalisation(graph, example_uri, defines[len(defines)-1])
         return text
     else:
         return text
 
-def employs_verbalisation(graph, employs):
+def employs_verbalisation(graph, example_uri, employs):
     text = ""    
     if (len(employs) > 0):
-        text += capitalize_first_letter(employ_verbalisation(graph, employs[0]))
+        text += capitalize_first_letter(employ_verbalisation(graph, example_uri, employs[0]))
         for i in range(1,len(employs)-1):
-            text+=", "+employ_verbalisation(graph, employs[i])
+            text+=", "+employ_verbalisation(graph, example_uri, employs[i])
         if (len(employs) > 1):
-            text += ", and "+employ_verbalisation(graph, employs[len(employs)-1])
+            text += ", and "+employ_verbalisation(graph, example_uri, employs[len(employs)-1])
         return text
     else:
         return text
     
-def uses_verbalisation(graph, uses):
+def uses_verbalisation(graph, example_uri, uses):
     text = ""    
     if (len(uses) > 0):
-        text += capitalize_first_letter(use_verbalisation(graph, uses[0]))
+        text += capitalize_first_letter(use_verbalisation(graph, example_uri, uses[0]))
         for i in range(1,len(uses)-1):
-            text+=", "+use_verbalisation(graph, uses[i])
+            text+=", "+use_verbalisation(graph, example_uri, uses[i])
         if (len(uses) > 1):
-            text += ", and "+use_verbalisation(graph, uses[len(uses)-1])
+            text += ", and "+use_verbalisation(graph, example_uri, uses[len(uses)-1])
         return text
     else:
         return text
     
-def use_verbalisation(graph, use):
+def use_verbalisation(graph, example_uri, use):
     use_query_path = "queries.sparql/use_query.sparql"
     with open(use_query_path, 'r') as file:        
         query_template = file.read()              
-        query = query_template.replace("{use}", use)
+        query = query_template.format(example_uri=example_uri, use=use)
 
     results = list(graph.query(query))    
     row = results[0]    
@@ -94,13 +97,13 @@ def use_verbalisation(graph, use):
     text = "the "+object+" is used in the view "+view.lower()+" within "+org+""
     return text
 
-def variable_verbalisation(graph, variable):
-    if check_variable_type(graph, variable, "Employ"):
-        return employ_verbalisation(graph, variable)
-    if check_variable_type(graph, variable, "Use"):
-        return use_verbalisation(graph, variable)
-    if check_variable_type(graph, variable, "Define"):
-        return define_verbalisation(graph, variable)
+def variable_verbalisation(graph, example_uri, variable):
+    if check_variable_type(graph, example_uri, variable, "Employ"):
+        return employ_verbalisation(graph, example_uri, variable)
+    if check_variable_type(graph, example_uri, variable, "Use"):
+        return use_verbalisation(graph, example_uri, variable)
+    if check_variable_type(graph, example_uri, variable, "Define"):
+        return define_verbalisation(graph, example_uri, variable)
     return "The type of the variable "+variable+" is not found."
 
 def set_difference(list1, list2): # This is useful to compute the difference between the 2 supports (permission and prohibition)
@@ -220,30 +223,29 @@ def get_diff_supports_logic_based(diff_supports):
         text = text[0:len(text)-2]
     return text+"}"
 
-def diff_supports_verbalisation(graph, diff_supports):
+def diff_supports_verbalisation(graph, example_uri, diff_supports):
     text = ""
     puces = ("a) ","b) ","c) ","d) ","e) ")
     i = 0
     if (len(diff_supports[0])>0):
-        text += puces[i]+employs_verbalisation(graph, diff_supports[0])+". "
+        text += puces[i]+employs_verbalisation(graph, example_uri, diff_supports[0])+". "
         i+=1
 
     if (len(diff_supports[1])>0):
-        text += puces[i]+uses_verbalisation(graph, diff_supports[1])+". "
+        text += puces[i]+uses_verbalisation(graph, example_uri, diff_supports[1])+". "
         i+=1
 
     if (len(diff_supports[2])>0):
-        text += puces[i]+defines_verbalisation(graph, diff_supports[2])+". "
+        text += puces[i]+defines_verbalisation(graph, example_uri, diff_supports[2])+". "
         i+=1
 
     return text
 
-def check_variable_type(graph, variable, type):
+def check_variable_type(graph, example_uri, variable, type):
     variable_type_checking_query_path = "queries.sparql/variable_type_checking.sparql"
     with open(variable_type_checking_query_path, 'r') as file:
         query_template = file.read()
-    query = query_template.replace("{variable}",variable)
-    query = query.replace("{type}",type)
+    query = query_template.format(example_uri=example_uri, variable=variable, type=type)
 
     # print(query)
 
