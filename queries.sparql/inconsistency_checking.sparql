@@ -2,137 +2,137 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX : <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
+PREFIX orbac-owl: <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
 
 # query to check consistency
 ASK {{
-    ?employ rdf:type :Employ .
-    ?employ :employesEmployee ?s .
+    ?employ rdf:type orbac-owl:Employ .
+    ?employ orbac-owl:employesEmployee ?s .
     
-    ?use rdf:type :Use .
-    ?use :usesObject ?o .
-    ?use :usesView ?v .
+    ?use rdf:type orbac-owl:Use .
+    ?use orbac-owl:usesObject ?o .
+    ?use orbac-owl:usesView ?v .
    
-    ?consider rdf:type :Consider .
-    ?consider :considersAction ?alpha .
-    ?consider :considersActivity ?a .
+    ?consider rdf:type orbac-owl:Consider .
+    ?consider orbac-owl:considersAction ?alpha .
+    ?consider orbac-owl:considersActivity ?a .
     
-    ?define rdf:type :Define .
-    ?define :definesSubject ?s .
-    ?define :definesAction ?alpha .
-    ?define :definesObject ?o .
-    ?define :definesContext ?c .
+    ?define rdf:type orbac-owl:Define .
+    ?define orbac-owl:definesSubject ?s .
+    ?define orbac-owl:definesAction ?alpha .
+    ?define orbac-owl:definesObject ?o .
+    ?define orbac-owl:definesContext ?c .
 
-    ?permission rdf:type :Permission .
-    ?permission :accessTypeRole ?r .
-    ?permission :accessTypeActivity ?a .
-    ?permission :accessTypeView ?v .
-    ?permission :accessTypeContext ?c .
+    ?permission rdf:type orbac-owl:Permission .
+    ?permission orbac-owl:accessTypeRole ?r .
+    ?permission orbac-owl:accessTypeActivity ?a .
+    ?permission orbac-owl:accessTypeView ?v .
+    ?permission orbac-owl:accessTypeContext ?c .
 
     {{
-    ?employ :employesEmployer ?org .
+    ?employ orbac-owl:employesEmployer ?org .
     }} UNION    {{
-    ?employ :employesEmployer ?org2 .
-    ?org :subOrganisationOf* ?org2 . 
+    ?employ orbac-owl:employesEmployer ?org2 .
+    ?org orbac-owl:subOrganisationOf* ?org2 . 
     }}
     {{
-    ?use :usesEmployer ?org .
+    ?use orbac-owl:usesEmployer ?org .
     }} UNION    {{
-    ?use :usesEmployer ?org2 .
-    ?org :subOrganisationOf* ?org2 . 
+    ?use orbac-owl:usesEmployer ?org2 .
+    ?org orbac-owl:subOrganisationOf* ?org2 . 
     }}
     {{
-    ?consider :considersOrganisation ?org .
+    ?consider orbac-owl:considersOrganisation ?org .
     }} UNION    {{
-    ?consider :considersOrganisation ?org2 .
-    ?org :subOrganisationOf* ?org2 . 
+    ?consider orbac-owl:considersOrganisation ?org2 .
+    ?org orbac-owl:subOrganisationOf* ?org2 . 
     }}
     {{
-    ?define :definesOrganisation ?org .
+    ?define orbac-owl:definesOrganisation ?org .
     }} UNION    {{
-    ?define :definesOrganisation ?org2 .
-    ?org :subOrganisationOf* ?org2 . 
+    ?define orbac-owl:definesOrganisation ?org2 .
+    ?org orbac-owl:subOrganisationOf* ?org2 . 
     }}
     {{
-    ?permission :accessTypeOrganisation ?org .
+    ?permission orbac-owl:accessTypeOrganisation ?org .
     }} UNION    {{
-    ?permission :accessTypeOrganisation ?org2 .
-    ?org :subOrganisationOf* ?org2 . 
+    ?permission orbac-owl:accessTypeOrganisation ?org2 .
+    ?org orbac-owl:subOrganisationOf* ?org2 . 
     }}
     {{
-    ?employ :employesRole ?r .
+    ?employ orbac-owl:employesRole ?r .
     }} UNION {{
-    ?employ :employesRole ?r2 .
-    {{?r2 rdf:type :SubRole .}} UNION {{?r2 rdf:type :SeniorRole .}}
-    ?r2 :hasParent+ ?r .
-    ?r2 :subRoleOrganisation ?org .
+    ?employ orbac-owl:employesRole ?r2 .
+    {{?r2 rdf:type orbac-owl:SubRole .}} UNION {{?r2 rdf:type orbac-owl:SeniorRole .}}
+    ?r2 orbac-owl:hasParent+ ?r .
+    ?r2 orbac-owl:subRoleOrganisation ?org .
     }}
 
-    ?employBiss rdf:type :Employ .
-    ?employBiss :employesEmployee ?s .
+    ?employBiss rdf:type orbac-owl:Employ .
+    ?employBiss orbac-owl:employesEmployee ?s .
     
-    ?useBiss rdf:type :Use .
-    ?useBiss :usesObject ?o .
-    ?useBiss :usesView ?vBiss .
+    ?useBiss rdf:type orbac-owl:Use .
+    ?useBiss orbac-owl:usesObject ?o .
+    ?useBiss orbac-owl:usesView ?vBiss .
    
-    ?considerBiss rdf:type :Consider .
-    ?considerBiss :considersAction ?alpha .
-    ?considerBiss :considersActivity ?aBiss .
+    ?considerBiss rdf:type orbac-owl:Consider .
+    ?considerBiss orbac-owl:considersAction ?alpha .
+    ?considerBiss orbac-owl:considersActivity ?aBiss .
     
-    ?defineBiss rdf:type :Define .
-    ?defineBiss :definesSubject ?s .
-    ?defineBiss :definesAction ?alpha .
-    ?defineBiss :definesObject ?o .
-    ?defineBiss :definesContext ?cBiss .
+    ?defineBiss rdf:type orbac-owl:Define .
+    ?defineBiss orbac-owl:definesSubject ?s .
+    ?defineBiss orbac-owl:definesAction ?alpha .
+    ?defineBiss orbac-owl:definesObject ?o .
+    ?defineBiss orbac-owl:definesContext ?cBiss .
 
-    ?prohibition rdf:type :Prohibition .
-    ?prohibition :accessTypeRole ?rBiss .
-    ?prohibition :accessTypeActivity ?aBiss .
-    ?prohibition :accessTypeView ?vBiss .
-    ?prohibition :accessTypeContext ?cBiss .
+    ?prohibition rdf:type orbac-owl:Prohibition .
+    ?prohibition orbac-owl:accessTypeRole ?rBiss .
+    ?prohibition orbac-owl:accessTypeActivity ?aBiss .
+    ?prohibition orbac-owl:accessTypeView ?vBiss .
+    ?prohibition orbac-owl:accessTypeContext ?cBiss .
 
     {{
-    ?employBiss :employesEmployer ?orgBiss .
+    ?employBiss orbac-owl:employesEmployer ?orgBiss .
     }} UNION    {{
-    ?employBiss :employesEmployer ?org2Biss .
-    ?orgBiss :subOrganisationOf* ?org2Biss . 
+    ?employBiss orbac-owl:employesEmployer ?org2Biss .
+    ?orgBiss orbac-owl:subOrganisationOf* ?org2Biss . 
     }}
     {{
-    ?useBiss :usesEmployer ?orgBiss .
+    ?useBiss orbac-owl:usesEmployer ?orgBiss .
     }} UNION    {{
-    ?useBiss :usesEmployer ?org2Biss .
-    ?orgBiss :subOrganisationOf* ?org2Biss . 
+    ?useBiss orbac-owl:usesEmployer ?org2Biss .
+    ?orgBiss orbac-owl:subOrganisationOf* ?org2Biss . 
     }}
     {{
-    ?considerBiss :considersOrganisation ?orgBiss .
+    ?considerBiss orbac-owl:considersOrganisation ?orgBiss .
     }} UNION    {{
-    ?considerBiss :considersOrganisation ?org2Biss .
-    ?orgBiss :subOrganisationOf* ?org2Biss . 
+    ?considerBiss orbac-owl:considersOrganisation ?org2Biss .
+    ?orgBiss orbac-owl:subOrganisationOf* ?org2Biss . 
     }}
     {{
-    ?defineBiss :definesOrganisation ?orgBiss .
+    ?defineBiss orbac-owl:definesOrganisation ?orgBiss .
     }} UNION    {{
-    ?defineBiss :definesOrganisation ?org2Biss .
-    ?orgBiss :subOrganisationOf* ?org2Biss . 
+    ?defineBiss orbac-owl:definesOrganisation ?org2Biss .
+    ?orgBiss orbac-owl:subOrganisationOf* ?org2Biss . 
     }}
     {{
-    ?prohibition :accessTypeOrganisation ?orgBiss .
+    ?prohibition orbac-owl:accessTypeOrganisation ?orgBiss .
     }} UNION    {{
-    ?prohibition :accessTypeOrganisation ?org2Biss .
-    ?orgBiss :subOrganisationOf* ?org2Biss . 
+    ?prohibition orbac-owl:accessTypeOrganisation ?org2Biss .
+    ?orgBiss orbac-owl:subOrganisationOf* ?org2Biss . 
     }}
     {{
-    ?employBiss :employesRole ?rBiss .
+    ?employBiss orbac-owl:employesRole ?rBiss .
     }} UNION {{
-    ?employBiss :employesRole ?r2Biss .
+    ?employBiss orbac-owl:employesRole ?r2Biss .
     {{
-    ?r2Biss rdf:type :SubRole .
-    ?r2Biss :hasParent+ ?rBiss .
-    ?r2Biss :subRoleOrganisation ?orgBiss .
+    ?r2Biss rdf:type orbac-owl:SubRole .
+    ?r2Biss orbac-owl:hasParent+ ?rBiss .
+    ?r2Biss orbac-owl:subRoleOrganisation ?orgBiss .
     }} UNION {{
-        ?rBiss rdf:type :SeniorRole .
-        ?rBiss :hasParent+ ?r2Biss .
-        ?rBiss :subRoleOrganisation ?orgBiss .
+        ?rBiss rdf:type orbac-owl:SeniorRole .
+        ?rBiss orbac-owl:hasParent+ ?r2Biss .
+        ?rBiss orbac-owl:subRoleOrganisation ?orgBiss .
     }}
     }}
 }}

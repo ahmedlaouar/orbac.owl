@@ -2,12 +2,13 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX : <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
+PREFIX orbac-owl: <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
+PREFIX : <{example_uri}>
 
 # query to check dominance of member1 over member2
 ASK {{
-  :{member1} :isPreferredTo :{member2} .
+  :{member1} orbac-owl:isPreferredTo :{member2} .
   FILTER NOT EXISTS {{
-    :{member2} :isPreferredTo :{member1} .
+     :{member2} orbac-owl:isPreferredTo :{member1} .
   }}
 }}

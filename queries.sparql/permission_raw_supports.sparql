@@ -2,71 +2,72 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX : <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
+PREFIX orbac-owl: <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
+PREFIX : <{example_uri}>
 
 # Computing supports of a Permission for a given subject, action, object
 
 SELECT ?permission ?employ ?consider ?use ?define
 WHERE  {{
-    ?use rdf:type :Use .
-    ?use :usesObject :{object}.
-    ?use :usesView ?v .
+    ?use rdf:type orbac-owl:Use .
+    ?use orbac-owl:usesObject :{object}.
+    ?use orbac-owl:usesView ?v .
    
-    ?consider rdf:type :Consider .
-    ?consider :considersAction :{action} .
-    ?consider :considersActivity ?a .
+    ?consider rdf:type orbac-owl:Consider .
+    ?consider orbac-owl:considersAction :{action} .
+    ?consider orbac-owl:considersActivity ?a .
     
-    ?define rdf:type :Define .
-    ?define :definesSubject :{subject} .
-    ?define :definesAction :{action} .
-    ?define :definesObject :{object}.
-    ?define :definesContext ?c .
+    ?define rdf:type orbac-owl:Define .
+    ?define orbac-owl:definesSubject :{subject} .
+    ?define orbac-owl:definesAction :{action} .
+    ?define orbac-owl:definesObject :{object}.
+    ?define orbac-owl:definesContext ?c .
 
-    {{?permission rdf:type :Permission .}} UNION {{?permission rdf:type :Obligation .}}
-    ?permission :accessTypeRole ?r .
-    ?permission :accessTypeActivity ?a .
-    ?permission :accessTypeView ?v .
-    ?permission :accessTypeContext ?c .
+    {{?permission rdf:type orbac-owl:Permission .}} UNION {{?permission rdf:type orbac-owl:Obligation .}}
+    ?permission orbac-owl:accessTypeRole ?r .
+    ?permission orbac-owl:accessTypeActivity ?a .
+    ?permission orbac-owl:accessTypeView ?v .
+    ?permission orbac-owl:accessTypeContext ?c .
 
      {{
-    ?employ :employesEmployer ?org .
+    ?employ orbac-owl:employesEmployer ?org .
     }} UNION     {{
-    ?employ :employesEmployer ?org2 .
-    ?org :subOrganisationOf* ?org2 . 
+    ?employ orbac-owl:employesEmployer ?org2 .
+    ?org orbac-owl:subOrganisationOf* ?org2 . 
     }}
      {{
-    ?use :usesEmployer ?org .
+    ?use orbac-owl:usesEmployer ?org .
     }} UNION     {{
-    ?use :usesEmployer ?org2 .
-    ?org :subOrganisationOf* ?org2 . 
+    ?use orbac-owl:usesEmployer ?org2 .
+    ?org orbac-owl:subOrganisationOf* ?org2 . 
     }}
      {{
-    ?consider :considersOrganisation ?org .
+    ?consider orbac-owl:considersOrganisation ?org .
     }} UNION     {{
-    ?consider :considersOrganisation ?org2 .
-    ?org :subOrganisationOf* ?org2 . 
+    ?consider orbac-owl:considersOrganisation ?org2 .
+    ?org orbac-owl:subOrganisationOf* ?org2 . 
     }}
      {{
-    ?define :definesOrganisation ?org .
+    ?define orbac-owl:definesOrganisation ?org .
     }} UNION     {{
-    ?define :definesOrganisation ?org2 .
-    ?org :subOrganisationOf* ?org2 . 
+    ?define orbac-owl:definesOrganisation ?org2 .
+    ?org orbac-owl:subOrganisationOf* ?org2 . 
     }}
      {{
-    ?permission :accessTypeOrganisation ?org .
+    ?permission orbac-owl:accessTypeOrganisation ?org .
     }} UNION     {{
-    ?permission :accessTypeOrganisation ?org2 .
-    ?org :subOrganisationOf* ?org2 . 
+    ?permission orbac-owl:accessTypeOrganisation ?org2 .
+    ?org orbac-owl:subOrganisationOf* ?org2 . 
     }}
 
-    ?employ rdf:type :Employ .
-    ?employ :employesEmployee :{subject} .
+    ?employ rdf:type orbac-owl:Employ .
+    ?employ orbac-owl:employesEmployee :{subject} .
      {{
-    ?employ :employesRole ?r .
+    ?employ orbac-owl:employesRole ?r .
     }} UNION  {{
-    ?employ :employesRole ?r2 .
-     {{?r2 rdf:type :SubRole .}} UNION  {{?r2 rdf:type :SeniorRole .}}
-    ?r2 :hasParent+ ?r .
-    ?r2 :subRoleOrganisation ?org .
+    ?employ orbac-owl:employesRole ?r2 .
+     {{?r2 rdf:type orbac-owl:SubRole .}} UNION  {{?r2 rdf:type orbac-owl:SeniorRole .}}
+    ?r2 orbac-owl:hasParent+ ?r .
+    ?r2 orbac-owl:subRoleOrganisation ?org .
     }}
 }}

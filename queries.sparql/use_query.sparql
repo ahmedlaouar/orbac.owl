@@ -2,15 +2,16 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-PREFIX : <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
+PREFIX orbac-owl: <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
+PREFIX : <{example_uri}>
 
 # Computing supports of a Permission for a given subject, action, object
 
 SELECT ?object ?view ?org
 
-WHERE  {    
-    :{use} rdf:type :Use .
-    :{use} :usesObject ?object.
-    :{use} :usesView ?view .
-    :{use} :usesEmployer ?org .
-}
+WHERE  {{    
+    :{use} rdf:type orbac-owl:Use .
+    :{use} orbac-owl:usesObject ?object.
+    :{use} orbac-owl:usesView ?view .
+    :{use} orbac-owl:usesEmployer ?org .
+}}
