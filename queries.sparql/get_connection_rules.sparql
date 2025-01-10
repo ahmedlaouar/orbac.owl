@@ -2,7 +2,7 @@ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX : <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
 
 SELECT ?relation ?type ?org ?abstract ?concrete {{
-    ?relation rdf:type :ConnectionRule .
+#    ?relation rdf:type :ConnectionRule .
     ?relation rdf:type ?type .
     FILTER(?type IN (:Employ, :Use, :Consider))
     
