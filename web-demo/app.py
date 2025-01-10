@@ -217,7 +217,7 @@ def display_use_part():
             st.header('Explain the desicion')
             st.caption("Generate text-based explanations.")
             if st.button("Explain"):
-                #nltk.download('wordnet')
+                nltk.download('wordnet')
                 lemmatizer = WordNetLemmatizer()
                 explanations = generate_explanation(graph, example_uri, subject, action, obj, lemmatizer)
                 for explanation in explanations:
