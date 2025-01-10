@@ -5,7 +5,6 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX orbac-owl: <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
 PREFIX : <{example_uri}>
 
-# query to check consistency
 ASK {{
     :{variable} rdf:type orbac-owl:{type} .
 }}
