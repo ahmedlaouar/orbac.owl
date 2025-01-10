@@ -2,6 +2,11 @@ from acceptance import *
 from simplenlg.framework import NLGFactory, Lexicon
 from simplenlg.realiser.english import Realiser
 
+# Initialize the lexicon, factory, and realiser
+lexicon = Lexicon.getDefaultLexicon()
+nlgFactory = NLGFactory(lexicon)
+realiser = Realiser(lexicon) 
+
 def capitalize_first_letter(s):
     # Capitalize the first letter of the string
     return s[0].upper() + s[1:]
@@ -11,9 +16,9 @@ def remove_special_char(s):
 
 def noun_with_article_a(noun):
     noun = noun.lower().replace("-"," ").replace("_"," ")
-    noun_phrase = nlgFactory.createNounPhrase(noun)
+    noun_phrase = NLGFactory.createNounPhrase(noun)
     noun_phrase.setSpecifier("a")
-    noun = realiser.realise(noun_phrase).getRealisation()
+    noun = Realiser.realise(noun_phrase).getRealisation()
     return noun
 
 def employ_verbalisation(graph, example_uri, employ):        
@@ -22,7 +27,7 @@ def employ_verbalisation(graph, example_uri, employ):
         query_template = file.read()              
         query = query_template.format(example_uri=example_uri, employ=employ)   
         
-    results = list(graph.query(query))    
+    results = list(graph.query(query))
     row = results[0]    
     role = noun_with_article_a(row[1].fragment)
     subject = remove_special_char(row[0].fragment)
@@ -247,7 +252,7 @@ def check_variable_type(graph, example_uri, variable, type):
         query_template = file.read()
     query = query_template.format(example_uri=example_uri, variable=variable, type=type)
 
-    # print(query)
+    #print(query)
 
     results = graph.query(query)
 
