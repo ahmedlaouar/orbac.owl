@@ -214,14 +214,19 @@ def display_use_part():
                         st.write(f"The permission for {subject} to perform {action} on {obj} is granted")
                     else:
                         st.write(f"The permission for {subject} to perform {action} on {obj} is denied")
-            st.header('Explain the desicion')
-            st.caption("Generate text-based explanations.")
-            if st.button("Explain"):
+            st.header("Text-based explanations:")
+            #st.caption("Generate text-based explanations.")
+            if st.button("Explain the desicion", use_container_width=True):
                 nltk.download('wordnet')
                 lemmatizer = WordNetLemmatizer()
                 explanations = generate_explanation(graph, example_uri, subject, action, obj, lemmatizer)
                 for explanation in explanations:
-                    st.write(explanation)#.__str__()
+                    #st.caption("Text-based explanations:")
+                    st.write(explanation.__str__())#
+                    #st.caption("Logic-based explanations:")
+                    #st.write(explanation.getContrastiveExplanation())
+                    #st.write(explanation.getOutcomeConflict())
+                
 
 def link(link, text, **style):
     return a(_href=link, _target="_blank", style=styles(textDecoration="none", **style))(text)

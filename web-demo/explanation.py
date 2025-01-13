@@ -92,7 +92,7 @@ class ResultWithExplanations:
                 text += access.getLogicalExplanationDetailsStr()+"\n"
                 
         text+= self.getLogicBasedSupports()
-        diff_supports = difference_supports(self.graph, self.subject, self.action, self.obj)
+        diff_supports = difference_supports(self.graph, self.example_uri, self.subject, self.action, self.obj)
         text_supports_logic_based = get_diff_supports_logic_based(diff_supports) 
         text += text_supports_logic_based+"\n"
        
@@ -176,7 +176,7 @@ class ResultWithExplanations:
 
                 text+="Is-permitted("+self.subject+","+self.action+","+self.obj+") because " #+outcome_logic+"\n"
                 for outcome_logic_element in outcome_logic:
-                    text+= outcome_logic+", and "
+                    text+= outcome_logic_element+", and "
                 text = text[:-6] + "\n"
 
             #outcome_logic_raw = outcome[1] # X>Y
@@ -254,24 +254,24 @@ class Access:
 
     def logicalExplanation(self):        
         explanations=[]
-        explanations.append(self.accessType+"("+self.org+","+self.role+","+self.activity+","+self.view+","+self.context+") $\wedge$")
-        explanations.append("Employ("+self.org+","+self.subject+","+self.role+") $\wedge$")
-        explanations.append("Use("+self.org+","+self.obj+","+self.view+") $\wedge$")
-        explanations.append("Consider("+self.org+","+self.action+","+self.activity+") $\wedge$")
-        explanations.append("Define("+self.org+","+self.subject+","+self.action+","+self.view+","+self.context+") $\wedge$")
-        explanations.append("SubOrganisationOf"+"("+self.org+","+self.org2+") $\models$")
+        explanations.append(self.accessType+"("+self.org+","+self.role+","+self.activity+","+self.view+","+self.context+") $\\wedge$")
+        explanations.append("Employ("+self.org+","+self.subject+","+self.role+") $\\wedge$")
+        explanations.append("Use("+self.org+","+self.obj+","+self.view+") $\\wedge$")
+        explanations.append("Consider("+self.org+","+self.action+","+self.activity+") $\\wedge$")
+        explanations.append("Define("+self.org+","+self.subject+","+self.action+","+self.view+","+self.context+") $\\wedge$")
+        explanations.append("SubOrganisationOf"+"("+self.org+","+self.org2+") $\\models$")
         explanations.append(self.outcome+"("+self.subject+","+self.action+","+self.obj+")")
 
         return explanations
     
     def logicalExplanationDetails(self):        
         explanations=[]
-        explanations.append(self.accessType+"("+self.org+","+self.role+","+self.activity+","+self.view+","+self.context+") $\wedge$")
-        explanations.append(self.employ+"("+self.org+","+self.subject+","+self.role+") $\wedge$")
-        explanations.append(self.use+"("+self.org+","+self.obj+","+self.view+") $\wedge$")
-        explanations.append(self.consider+"("+self.org+","+self.action+","+self.activity+") $\wedge$")
-        explanations.append(self.define+"("+self.org+","+self.subject+","+self.action+","+self.view+","+self.context+") $\wedge$")
-        explanations.append("SubOrganisationOf"+"("+self.org+","+self.org2+") $\models$")
+        explanations.append(self.accessType+"("+self.org+","+self.role+","+self.activity+","+self.view+","+self.context+") $\\wedge$")
+        explanations.append(self.employ+"("+self.org+","+self.subject+","+self.role+") $\\wedge$")
+        explanations.append(self.use+"("+self.org+","+self.obj+","+self.view+") $\\wedge$")
+        explanations.append(self.consider+"("+self.org+","+self.action+","+self.activity+") $\\wedge$")
+        explanations.append(self.define+"("+self.org+","+self.subject+","+self.action+","+self.view+","+self.context+") $\\wedge$")
+        explanations.append("SubOrganisationOf"+"("+self.org+","+self.org2+") $\\models$")
         explanations.append(self.outcome+"("+self.subject+","+self.action+","+self.obj+")")
 
         return explanations
@@ -528,6 +528,9 @@ class Explanations:
                 result.results.append("Permitted")
                 result.results.append("Prohibited")
 
+                #print(result.getContrastiveExplanation())
+                #print(result.getOutcomeConflict())
+
                 newText = ""
                 # for prohibition in prohibitions:
                 newText += self.renderExplanationConflict(result)
@@ -783,34 +786,34 @@ def variable_verbalisation(graph, example_uri, variable):
 def set_difference(list1, list2): # This is useful to compute the difference between the 2 supports (permission and prohibition)
     return list(set(list1).symmetric_difference(set(list2)))
 
-def difference_supports(g, subject, action, object):
-    perm_supports = compute_supports(g, subject, action, object, 0)
+def difference_supports(g, example_uri, subject, action, object):
+    perm_supports = compute_supports(g, example_uri, subject, action, object, 0)
     # print(" len(perm_supports)= ", len(list(perm_supports)))
-    proh_supports = compute_supports(g, subject, action, object, 1)
+    proh_supports = compute_supports(g, example_uri, subject, action, object, 1)
     # print(" len(proh_supports)= ", len(list(proh_supports)))
 
     employs_perm = []
-    uses_perm = []
+    #uses_perm = []
     defines_perm = []
     for  perm_support in perm_supports:        
         # print("Permission support")
         # print(perm_support)
         employs_perm.append(perm_support[0].fragment)
-        uses_perm.append(perm_support[1].fragment)                
-        defines_perm.append(perm_support[2].fragment)
+        #uses_perm.append(perm_support[1].fragment)                
+        defines_perm.append(perm_support[1].fragment)
 
     employs_proh = []
-    uses_proh = []
+    #uses_proh = []
     defines_proh = []
     for proh_support in proh_supports:   
         employs_proh.append(proh_support[0].fragment)
-        uses_proh.append(proh_support[1].fragment)
-        defines_proh.append(proh_support[2].fragment)
+        #uses_proh.append(proh_support[1].fragment)
+        defines_proh.append(proh_support[1].fragment)
 
     employs_diff, uses_diff, defines_diff= "", "", ""
   
     employs_diff = set_difference(employs_perm, employs_proh)
-    uses_diff = set_difference(uses_perm, uses_proh)
+    #uses_diff = set_difference(uses_perm, uses_proh)
     defines_diff = set_difference(defines_proh, defines_perm)
     
     return (employs_diff, uses_diff, defines_diff)
