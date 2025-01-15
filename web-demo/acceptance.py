@@ -1,4 +1,4 @@
-from rdflib import Graph
+from rdflib import RDF, Graph, URIRef
 
 def strip_prefix(uri):
     return uri.split('#')[-1]
@@ -259,3 +259,42 @@ def check_acceptance_with_details_original(graph, example_uri, subject, action, 
                 if not conflict_supported:
                     return False
             return (accepted,detail)
+
+
+def check_if_role_from_hierarchy(graph, example_uri, access_type_relation, employ_relation):
+    # Test if some roles are inferred from hierarchy
+    # amounts to checking if an employ relation exists and connects subject to role
+    # return True if the role is inferred from a hierarchy, False instead. The negation of the result of the query
+    verif_query= """PREFIX orbac-owl: <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#>
+    PREFIX : <{example_uri}>
+    ASK {{
+    :{access_type_relation} orbac-owl:accessTypeRole ?role .
+    :{employ_relation} orbac-owl:employesRole ?role .
+    }}
+    """
+    query = verif_query.format(example_uri=example_uri, access_type_relation=access_type_relation, employ_relation=employ_relation)
+    results = graph.query(query)
+    return not(next(iter(results)))
+
+def add_new_employ(graph, example_uri, access_type_relation, subject):
+    accessTypeRole = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeRole")
+    accessTypeOrganisation = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeOrganisation")
+    Employ = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ")
+    employesEmployer = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployer")
+    employesEmploee = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployee")
+    employesRole = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole")
+    
+    for _, _, o in graph.triples((URIRef(example_uri+access_type_relation), accessTypeRole, None)):
+        role = o
+    for _, _, o in graph.triples((URIRef(example_uri+access_type_relation), accessTypeOrganisation, None)):
+        organisation = o    
+
+    s = URIRef(example_uri+subject)
+    org = organisation
+    rel_name = URIRef(example_uri+"employ_"+subject+"_"+role.fragment)
+    graph.add((rel_name, RDF.type, Employ))
+    graph.add((rel_name, employesEmployer, org))
+    graph.add((rel_name, employesRole, role))
+    graph.add((rel_name, employesEmploee, s))
+
+    return graph

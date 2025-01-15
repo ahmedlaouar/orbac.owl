@@ -373,13 +373,13 @@ class Explanations:
             "{Subject}, "+role+" at {Organisation}, "+ability+" {action} the {object}. "
             +part_result+view+" in "+context+" context, where "
             "{object} is considered as "+view+", "+action_ing+" it is classified as "+activity_ing+" activity, and "
-            "{Organisation} is part of the {Organisation2}."
+            "{Organisation} is part of the {Organisation2}. "
                 )
         else:
             template = (            
             part_result+view+" in "+context+" context, where "
             "{object} is considered as "+view+", "+action_ing+" it is classified as "+activity_ing+" activity, and "
-            "{Organisation} is part of the {Organisation2}."
+            "{Organisation} is part of the {Organisation2}. "
                 )
 
         # Fill in the template
@@ -411,7 +411,7 @@ class Explanations:
         
         # ------ SIMPLE ------ #
         template = (
-    "There is a conflict in the access of {object} for {Subject}.")        
+    "There is a conflict in the access of {object} for {Subject}: \n\n")        
 
         # Fill in the template         
         simple = template.format(
@@ -423,14 +423,15 @@ class Explanations:
         for permission in accessPermissions:            
             simple+= " "+self.renderExplanationSimple(permission, "Permission", i)
             i = i+1
+        simple+="\n\n"
         j = 0
         for prohibition in accessProhibitions:
             simple+= " "+self.renderExplanationSimple(prohibition, "Prohibition", j)
             j= j+1
 
         # ------ CONTRAST ------ #
-        contrast = " There are contrasts. "
-        diff_supports_short = difference_supports_short(resultWithExplanaitons.graph, resultWithExplanaitons.subject, resultWithExplanaitons.action, resultWithExplanaitons.obj)        
+        contrast = "There are contrasts: "
+        diff_supports_short = difference_supports_short(resultWithExplanaitons.graph, resultWithExplanaitons.example_uri, resultWithExplanaitons.subject, resultWithExplanaitons.action, resultWithExplanaitons.obj)
         diff_supports_text = diff_supports_verbalisation(self.graph, self.example_uri, diff_supports_short)
         contrast += diff_supports_text
 
@@ -457,9 +458,9 @@ class Explanations:
         # ------ OUTPUT ------ #
 
         if no_support_prohibition:
-            output = simple + " "+outcome
+            output = simple + " " + outcome
         else:
-            output = simple + contrast + outcome
+            output = simple +"\n\n"+ contrast +"\n\n"+ outcome
 
         # Return the result  
         return output
@@ -574,7 +575,8 @@ def computeAccess(g, example_uri, accessType, subject, action, obj):
         c = row[7].fragment
         r = row[8].fragment
         org = row[9].fragment
-        org2 = row[10].fragment        
+        if row[10]: org2 = row[10].fragment 
+        else: org2 = row[10]         
 
         access = Access()
         access.init(accessType, permission, employ, use, consider, define, subject, obj, v, a, action, c, r, org, org2)
@@ -582,7 +584,7 @@ def computeAccess(g, example_uri, accessType, subject, action, obj):
         accesses.append(access)  
         #print("-> done") 
         #print(access)
-        print("")
+        #print("")
         #print(access.getCSV())
         #print("")
     
@@ -818,31 +820,31 @@ def difference_supports(g, example_uri, subject, action, object):
     
     return (employs_diff, uses_diff, defines_diff)
 
-def difference_supports_short(g, subject, action, object):
-    perm_supports = compute_supports(g, subject, action, object, 0)
+def difference_supports_short(g, example_uri, subject, action, object):
+    perm_supports = compute_supports(g, example_uri, subject, action, object, 0)
     # print(" len(perm_supports)= ", len(list(perm_supports)))
-    proh_supports = compute_supports(g, subject, action, object, 1)
+    proh_supports = compute_supports(g, example_uri, subject, action, object, 1)
     # print(" len(proh_supports)= ", len(list(proh_supports)))
 
     employs_perm = []
-    uses_perm = []
+    #uses_perm = []
     defines_perm = []
-    for  perm_support in perm_supports:        
+    for perm_support in perm_supports:        
         # print("Permission support")
         # print(perm_support)
         employs_perm.append(perm_support[0].fragment)
-        uses_perm.append(perm_support[1].fragment)                
-        defines_perm.append(perm_support[2].fragment)
+        #uses_perm.append(perm_support[1].fragment)                
+        defines_perm.append(perm_support[1].fragment)
 
     employs_proh = []
-    uses_proh = []
+    #uses_proh = []
     defines_proh = []
     for proh_support in proh_supports:   
         # print("Prohibition support")
         # print(proh_support)     
         employs_proh.append(proh_support[0].fragment)
-        uses_proh.append(proh_support[1].fragment)
-        defines_proh.append(proh_support[2].fragment)
+        #uses_proh.append(proh_support[1].fragment)
+        defines_proh.append(proh_support[1].fragment)
 
     # print("")
     # print("All permission supports")
@@ -855,13 +857,13 @@ def difference_supports_short(g, subject, action, object):
     # print(defines_proh)
     # print(uses_proh)
 
-    employs_diff, uses_diff, defines_diff= "", "",""
+    employs_diff, defines_diff = "", ""
 
     if len(employs_perm)>0 and len(employs_proh)>0:
         employs_diff = set_difference(employs_perm, employs_proh)
 
-    if len(uses_perm)>0 and len(uses_proh)>0:
-        uses_diff = set_difference(uses_perm, uses_proh)
+    #if len(uses_perm)>0 and len(uses_proh)>0:
+    #    uses_diff = set_difference(uses_perm, uses_proh)
     
     if len(defines_proh)>0 and len(defines_perm)>0:
         defines_diff = set_difference(defines_proh, defines_perm)
@@ -871,7 +873,7 @@ def difference_supports_short(g, subject, action, object):
     # print(defines_diff)
     # print("")
     
-    return (employs_diff, uses_diff, defines_diff)
+    return (employs_diff, defines_diff)
 
 
 def print_diff_supports(diff_supports):
@@ -908,12 +910,12 @@ def diff_supports_verbalisation(graph, example_uri, diff_supports):
         text += puces[i]+employs_verbalisation(graph, example_uri, diff_supports[0])+". "
         i+=1
 
-    if (len(diff_supports[1])>0):
-        text += puces[i]+uses_verbalisation(graph, example_uri, diff_supports[1])+". "
-        i+=1
+    #if (len(diff_supports[1])>0):
+    #    text += puces[i]+uses_verbalisation(graph, example_uri, diff_supports[1])+". "
+    #    i+=1
 
-    if (len(diff_supports[2])>0):
-        text += puces[i]+defines_verbalisation(graph, example_uri, diff_supports[2])+". "
+    if (len(diff_supports[1])>0):
+        text += puces[i]+defines_verbalisation(graph, example_uri, diff_supports[1])+". "
         i+=1
 
     return text

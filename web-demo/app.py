@@ -172,6 +172,11 @@ def display_use_part():
             with support_tabs[0]:  # Permission Supports
                 if st.button("Compute permission supports", use_container_width=True):
                     supports = compute_raw_supports(graph, example_uri, subject, action, obj, 0)
+                    #for support in supports:
+                    #    if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
+                    #        add_new_employ(graph, example_uri, support[0].fragment, subject)
+                    #supports = compute_raw_supports(graph, example_uri, subject, action, obj, 0)
+                    
                     supports_data = pd.DataFrame(supports, columns=["Access type", "Employ relation", "Consider relation", "Use relation", "Define relation"])
                     supports_data = supports_data.map(strip_prefix)
                     st.dataframe(supports_data,hide_index=True, use_container_width=True)
@@ -179,6 +184,11 @@ def display_use_part():
             with support_tabs[1]:  # Prohibition Supports
                 if st.button("Compute prohibition supports", use_container_width=True):
                     supports = compute_raw_supports(graph, example_uri, subject, action, obj, 1)
+                    #for support in supports:
+                    #    if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
+                    #        add_new_employ(graph, example_uri, support[0].fragment, subject)
+                    #supports = compute_raw_supports(graph, example_uri, subject, action, obj, 1)
+                    
                     supports_data = pd.DataFrame(supports, columns=["Access type", "Employ relation", "Consider relation", "Use relation", "Define relation"])
                     supports_data = supports_data.map(strip_prefix)
                     st.dataframe(supports_data, hide_index=True, use_container_width=True)
@@ -195,8 +205,12 @@ def display_use_part():
                     st.write("The instance is inconsistent")
             # Only show Compute Conflicts if inconsistent
             if st.button("Compute conflicts", use_container_width=True):
-                compute_conflicts(graph)
-                # Placeholder output for conflicts
+                # Check if any indirect role inferred from hierarchy exist and add it to graph
+                #supports = list(compute_raw_supports(graph, example_uri, subject, action, obj, 0)) + list(compute_raw_supports(graph, example_uri, subject, action, obj, 1))
+                #for support in supports:
+                #    if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
+                #        add_new_employ(graph, example_uri, support[0].fragment, subject)
+                # Compute and display conflicts
                 conflicts = compute_conflicts(graph)
                 conflict_data = pd.DataFrame(conflicts, columns=["Employ relation1", "Use relation1", "Define relation1", "Employ relation2", "Use relation2", "Define relation2"])
                 
@@ -210,6 +224,11 @@ def display_use_part():
                 if not (subject and obj and action):
                     st.write("Please enter a valid subject, action and object!")
                 else:
+                    # Check if any indirect role inferred from hierarchy exist and add it to graph
+                    #supports = list(compute_raw_supports(graph, example_uri, subject, action, obj, 0)) + list(compute_raw_supports(graph, example_uri, subject, action, obj, 1))
+                    #for support in supports:
+                    #    if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
+                    #        add_new_employ(graph, example_uri, support[0].fragment, subject)
                     if check_acceptance(graph, example_uri, subject, action, obj):
                         st.write(f"The permission for {subject} to perform {action} on {obj} is granted")
                     else:
@@ -219,10 +238,15 @@ def display_use_part():
             if st.button("Explain the desicion", use_container_width=True):
                 nltk.download('wordnet')
                 lemmatizer = WordNetLemmatizer()
+                # Check if any indirect role inferred from hierarchy exist and add it to graph
+                #supports = list(compute_raw_supports(graph, example_uri, subject, action, obj, 0)) + list(compute_raw_supports(graph, example_uri, subject, action, obj, 1))
+                #for support in supports:
+                #    if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
+                #        add_new_employ(graph, example_uri, support[0].fragment, subject)
                 explanations = generate_explanation(graph, example_uri, subject, action, obj, lemmatizer)
                 for explanation in explanations:
                     #st.caption("Text-based explanations:")
-                    st.write(explanation.__str__())#
+                    st.markdown(explanation)#.__str__()
                     #st.caption("Logic-based explanations:")
                     #st.write(explanation.getContrastiveExplanation())
                     #st.write(explanation.getOutcomeConflict())
@@ -271,7 +295,7 @@ def layout(*args):
 def footer():
     myargs = [
         " Copyright © 2024, Created by ",
-        link("http://ahmedlaouar.me", "Ahmed Laouar"),
+        link("https://ahmedlaouar.me", "Ahmed Laouar"),
         ", ",
         link("https://www.tokyraboanary.org/", "Toky Raboanary"),
         ", ",
