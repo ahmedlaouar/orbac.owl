@@ -7,7 +7,7 @@ PREFIX : <{example_uri}>
 
 # Computing all the individuals involved in the inference of a Permission for a given subject, action, object
 
-SELECT ?permission ?employ ?use ?consider ?define ?v ?a ?c ?r ?org ?org2 
+SELECT DISTINCT ?permission ?employ ?use ?consider ?define ?v ?a ?c ?r ?org ?org2 
 WHERE  {{
     ?employ rdf:type orbac-owl:Employ .
     ?employ orbac-owl:employesEmployee :{subject} .
@@ -36,31 +36,31 @@ WHERE  {{
     ?employ orbac-owl:employesEmployer ?org .
     }} UNION     {{
     ?employ orbac-owl:employesEmployer ?org2 .
-    ?org orbac-owl:subOrganisationOf* ?org2 . 
+    ?org orbac-owl:subOrganisationOf+ ?org2 . 
     }}
      {{
     ?use orbac-owl:usesEmployer ?org .
     }} UNION     {{
     ?use orbac-owl:usesEmployer ?org2 .
-    ?org orbac-owl:subOrganisationOf* ?org2 . 
+    ?org orbac-owl:subOrganisationOf+ ?org2 . 
     }}
      {{
     ?consider orbac-owl:considersOrganisation ?org .
     }} UNION     {{
     ?consider orbac-owl:considersOrganisation ?org2 .
-    ?org orbac-owl:subOrganisationOf* ?org2 . 
+    ?org orbac-owl:subOrganisationOf+ ?org2 . 
     }}
      {{
     ?define orbac-owl:definesOrganisation ?org .
     }} UNION     {{
     ?define orbac-owl:definesOrganisation ?org2 .
-    ?org orbac-owl:subOrganisationOf* ?org2 . 
+    ?org orbac-owl:subOrganisationOf+ ?org2 . 
     }}
      {{
     ?permission orbac-owl:accessTypeOrganisation ?org .
     }} UNION     {{
     ?permission orbac-owl:accessTypeOrganisation ?org2 .
-    ?org orbac-owl:subOrganisationOf* ?org2 . 
+    ?org orbac-owl:subOrganisationOf+ ?org2 . 
     }}
      {{
     ?employ orbac-owl:employesRole ?r .

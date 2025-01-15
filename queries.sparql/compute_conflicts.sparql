@@ -5,7 +5,7 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX orbac-owl: <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
 
 # query for conflicts
-SELECT ?employ ?use ?define ?employBiss ?useBiss ?defineBiss
+SELECT DISTINCT ?employ ?use ?define ?employBiss ?useBiss ?defineBiss
 WHERE {{
     ?employ rdf:type orbac-owl:Employ .
     ?employ orbac-owl:employesEmployee ?s .
@@ -34,31 +34,31 @@ WHERE {{
     ?employ orbac-owl:employesEmployer ?org .
     }} UNION    {{
     ?employ orbac-owl:employesEmployer ?org2 .
-    ?org orbac-owl:subOrganisationOf* ?org2 . 
+    ?org orbac-owl:subOrganisationOf+ ?org2 . 
     }}
     {{
     ?use orbac-owl:usesEmployer ?org .
     }} UNION    {{
     ?use orbac-owl:usesEmployer ?org2 .
-    ?org orbac-owl:subOrganisationOf* ?org2 . 
+    ?org orbac-owl:subOrganisationOf+ ?org2 . 
     }}
     {{
     ?consider orbac-owl:considersOrganisation ?org .
     }} UNION    {{
     ?consider orbac-owl:considersOrganisation ?org2 .
-    ?org orbac-owl:subOrganisationOf* ?org2 . 
+    ?org orbac-owl:subOrganisationOf+ ?org2 . 
     }}
     {{
     ?define orbac-owl:definesOrganisation ?org .
     }} UNION    {{
     ?define orbac-owl:definesOrganisation ?org2 .
-    ?org orbac-owl:subOrganisationOf* ?org2 . 
+    ?org orbac-owl:subOrganisationOf+ ?org2 . 
     }}
     {{
     ?permission orbac-owl:accessTypeOrganisation ?org .
     }} UNION    {{
     ?permission orbac-owl:accessTypeOrganisation ?org2 .
-    ?org orbac-owl:subOrganisationOf* ?org2 . 
+    ?org orbac-owl:subOrganisationOf+ ?org2 . 
     }}
     {{
     ?employ orbac-owl:employesRole ?r .
@@ -93,31 +93,31 @@ WHERE {{
     ?employBiss orbac-owl:employesEmployer ?orgBiss .
     }} UNION    {{
     ?employBiss orbac-owl:employesEmployer ?org2Biss .
-    ?orgBiss orbac-owl:subOrganisationOf* ?org2Biss . 
+    ?orgBiss orbac-owl:subOrganisationOf+ ?org2Biss . 
     }}
     {{
     ?useBiss orbac-owl:usesEmployer ?orgBiss .
     }} UNION    {{
     ?useBiss orbac-owl:usesEmployer ?org2Biss .
-    ?orgBiss orbac-owl:subOrganisationOf* ?org2Biss . 
+    ?orgBiss orbac-owl:subOrganisationOf+ ?org2Biss . 
     }}
     {{
     ?considerBiss orbac-owl:considersOrganisation ?orgBiss .
     }} UNION    {{
     ?considerBiss orbac-owl:considersOrganisation ?org2Biss .
-    ?orgBiss orbac-owl:subOrganisationOf* ?org2Biss . 
+    ?orgBiss orbac-owl:subOrganisationOf+ ?org2Biss . 
     }}
     {{
     ?defineBiss orbac-owl:definesOrganisation ?orgBiss .
     }} UNION    {{
     ?defineBiss orbac-owl:definesOrganisation ?org2Biss .
-    ?orgBiss orbac-owl:subOrganisationOf* ?org2Biss . 
+    ?orgBiss orbac-owl:subOrganisationOf+ ?org2Biss . 
     }}
     {{
     ?prohibition orbac-owl:accessTypeOrganisation ?orgBiss .
     }} UNION    {{
     ?prohibition orbac-owl:accessTypeOrganisation ?org2Biss .
-    ?orgBiss orbac-owl:subOrganisationOf* ?org2Biss . 
+    ?orgBiss orbac-owl:subOrganisationOf+ ?org2Biss . 
     }}
     ?employBiss rdf:type orbac-owl:Employ .
     ?employBiss orbac-owl:employesEmployee ?s .
