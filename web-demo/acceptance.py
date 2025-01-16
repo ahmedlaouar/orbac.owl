@@ -327,7 +327,4 @@ def add_new_employ(graph, example_uri, access_type_relation, subject):
         for employ2, _, _ in graph.triples((None, employesRole, role2)):
             graph.add((employ2, isPreferredTo, rel_name))
 
-    for s, p, o in graph.triples((None, isPreferredTo, None)):
-        print(s.fragment, p.fragment, o.fragment)
-
     return graph
