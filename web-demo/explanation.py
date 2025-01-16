@@ -371,31 +371,43 @@ class Explanations:
 
         if index == 0: # It's the first time. Therefore, a little introduction seems to be needed.
             template = (
-            "{Subject}, "+role+" at {Organisation}, "+ability+" {action} the {object}. "
-            +part_result+view+" in "+context+" context, where "
-            "{object} is considered as "+view+", "+action_ing+" it is classified as "+activity_ing+" activity, and "
-            "{Organisation} is part of the {Organisation2}. "
-                )
+            "{Subject}, "+role+" at {Organisation}, "+ability+" {action} the {object}. ")
         else:
-            template = (            
-            part_result+view+" in "+context+" context, where "
+            template = ("")
+
+        if organisation2 == "":
+            template += (part_result+view+" in "+context+" context, where "
+            "{object} is considered as "+view+", "+action_ing+" it is classified as "+activity_ing+" activity. ")
+        else:
+            template += (part_result+view+" in "+context+" context, where "
             "{object} is considered as "+view+", "+action_ing+" it is classified as "+activity_ing+" activity, and "
-            "{Organisation} is part of the {Organisation2}. "
-                )
+            "{Organisation} is part of the {Organisation2}. ")
 
         # Fill in the template
-        output = template.format(
-            Subject=subject,
-            action=action,
-            object=obj,
-            view=view,
-            activity=activity,
-            context=context,
-            role=role,
-            Organisation=organisation,
-            Organisation2=organisation2, 
-
-        )
+        if organisation2 == "":
+            output = template.format(
+                Subject=subject,
+                action=action,
+                object=obj,
+                view=view,
+                activity=activity,
+                context=context,
+                role=role,
+                Organisation=organisation,
+                Organisation2=organisation2
+            )
+        else:
+            output = template.format(
+                Subject=subject,
+                action=action,
+                object=obj,
+                view=view,
+                activity=activity,
+                context=context,
+                role=role,
+                Organisation=organisation,
+                Organisation2=organisation2
+            )
         # Return the result        
         return output
     
