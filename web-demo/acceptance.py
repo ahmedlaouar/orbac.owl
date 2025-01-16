@@ -81,6 +81,26 @@ def compute_raw_supports(graph, example_uri, subject, action, obj, accessType=0)
     
     return results
 
+def compute_hierarchy_supports(graph, example_uri, subject, action, obj, accessType=0):
+    # by default, support of a permission is computed when accessType=0
+    # for a support of a prohibition set accessType = 1
+    if accessType == 0:
+        supports_query_path = "queries.sparql/permission_hierarchy_supports.sparql"
+    elif accessType == 1:
+        supports_query_path = "queries.sparql/prohibition_hierarchy_supports.sparql"
+    else:
+        print("Please enter a valid accessType.")
+
+    with open(supports_query_path, 'r') as file:
+        
+        query_template = file.read()
+        
+        query = query_template.format(example_uri= example_uri, subject=subject, action=action, object=obj)
+        
+        results = graph.query(query)
+    
+    return results
+
 def check_consistency(graph):
     consistency_checking_query_path = "queries.sparql/inconsistency_checking.sparql"
     with open(consistency_checking_query_path, 'r') as file:
@@ -283,6 +303,7 @@ def add_new_employ(graph, example_uri, access_type_relation, subject):
     employesEmployer = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployer")
     employesEmploee = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployee")
     employesRole = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole")
+    isPreferredTo = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo")
     
     for _, _, o in graph.triples((URIRef(example_uri+access_type_relation), accessTypeRole, None)):
         role = o
@@ -292,9 +313,21 @@ def add_new_employ(graph, example_uri, access_type_relation, subject):
     s = URIRef(example_uri+subject)
     org = organisation
     rel_name = URIRef(example_uri+"employ_"+subject+"_"+role.fragment)
+
     graph.add((rel_name, RDF.type, Employ))
     graph.add((rel_name, employesEmployer, org))
     graph.add((rel_name, employesRole, role))
     graph.add((rel_name, employesEmploee, s))
+
+    for _, _, role2 in graph.triples((role, isPreferredTo, None)):
+        for employ2, _, _ in graph.triples((None, employesRole, role2)):
+            graph.add((rel_name, isPreferredTo, employ2))
+
+    for role2, _, _ in graph.triples((None, isPreferredTo, role)):
+        for employ2, _, _ in graph.triples((None, employesRole, role2)):
+            graph.add((employ2, isPreferredTo, rel_name))
+
+    for s, p, o in graph.triples((None, isPreferredTo, None)):
+        print(s.fragment, p.fragment, o.fragment)
 
     return graph

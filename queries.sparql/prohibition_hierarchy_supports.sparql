@@ -5,13 +5,10 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX orbac-owl: <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
 PREFIX : <{example_uri}>
 
-# Computing all the individuals involved in the inference of a Permission for a given subject, action, object
+# Computing supports of a Permission for a given subject, action, object
 
-SELECT DISTINCT ?permission ?employ ?use ?consider ?define ?v ?a ?c ?r ?org ?org2 
+SELECT DISTINCT ?permission ?employ ?consider ?use ?define
 WHERE  {{
-    ?employ rdf:type orbac-owl:Employ .
-    ?employ orbac-owl:employesEmployee :{subject} .
-    
     ?use rdf:type orbac-owl:Use .
     ?use orbac-owl:usesObject :{object}.
     ?use orbac-owl:usesView ?v .
@@ -26,7 +23,7 @@ WHERE  {{
     ?define orbac-owl:definesObject :{object}.
     ?define orbac-owl:definesContext ?c .
 
-    {{?permission rdf:type orbac-owl:Permission .}} UNION {{?permission rdf:type orbac-owl:Obligation .}}
+    ?permission rdf:type orbac-owl:Prohibition .
     ?permission orbac-owl:accessTypeRole ?r .
     ?permission orbac-owl:accessTypeActivity ?a .
     ?permission orbac-owl:accessTypeView ?v .
@@ -62,5 +59,21 @@ WHERE  {{
     ?permission orbac-owl:accessTypeOrganisation ?org2 .
     ?org orbac-owl:subOrganisationOf+ ?org2 . 
     }}
+
+    ?employ rdf:type orbac-owl:Employ .
+    ?employ orbac-owl:employesEmployee :{subject} .
+     {{
     ?employ orbac-owl:employesRole ?r .
+    }} UNION  {{
+    ?employ orbac-owl:employesRole ?r2 .
+    {{
+    ?r2 rdf:type orbac-owl:SubRole .
+    ?r2 orbac-owl:hasParent+ ?r .
+    ?r2 orbac-owl:subRoleOrganisation ?org .
+    }} UNION {{
+    ?r rdf:type orbac-owl:SeniorRole .
+    ?r orbac-owl:hasParent+ ?r2 .
+    ?r orbac-owl:subRoleOrganisation ?org .
+    }}
+    }}
 }}

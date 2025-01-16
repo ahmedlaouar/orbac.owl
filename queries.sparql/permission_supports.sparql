@@ -62,12 +62,5 @@ WHERE  {{
 
     ?employ rdf:type orbac-owl:Employ .
     ?employ orbac-owl:employesEmployee :{subject} .
-     {{
     ?employ orbac-owl:employesRole ?r .
-    }} UNION  {{
-    ?employ orbac-owl:employesRole ?r2 .
-     {{?r2 rdf:type orbac-owl:SubRole .}} UNION  {{?r2 rdf:type orbac-owl:SeniorRole .}}
-    ?r2 orbac-owl:hasParent+ ?r .
-    ?r2 orbac-owl:subRoleOrganisation ?org .
-    }}
 }}

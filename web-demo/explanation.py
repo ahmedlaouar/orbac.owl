@@ -155,29 +155,30 @@ class ResultWithExplanations:
                 dominance = self.check_dominance_with_details(example_uri, perm_support, proh_support)
                 if dominance[0]:
                     conflict_supported = True
-                    detail = dominance[1]
+                    detail.append(dominance[1])
                     break
             if not conflict_supported:
                 return (False,[])
         return (accepted,detail)
 
     def getOutcomeConflict(self):
-        text = "Outcome\n"
+        text = "Outcome: \n\n"
         outcome = self.check_acceptance_with_details(self.example_uri)                
 
         if outcome[0]:
-            outcome_logic_list = outcome[1]
-            if len(outcome_logic_list) == 0:
-                outcome_logic = "there is no support for prohibition."
-            else:
-                outcome_logic = []
-                for outcome_logic_raw in outcome_logic_list:
-                    outcome_logic.append(self.getLogicExplanationPreferance(outcome_logic_raw)) # orbac form
+            outcome_logic_lists = outcome[1]
+            for outcome_logic_list in outcome_logic_lists:
+                if len(outcome_logic_list) == 0:
+                    outcome_logic = "there is no support for prohibition."
+                else:
+                    outcome_logic = []
+                    for outcome_logic_raw in outcome_logic_list:
+                        outcome_logic.append(self.getLogicExplanationPreferance(outcome_logic_raw)) # orbac form
 
-                text+="Is-permitted("+self.subject+","+self.action+","+self.obj+") because " #+outcome_logic+"\n"
-                for outcome_logic_element in outcome_logic:
-                    text+= outcome_logic_element+", and "
-                text = text[:-6] + "\n"
+                    text+="Is-permitted("+self.subject+","+self.action+","+self.obj+") because " #+outcome_logic+"\n"
+                    for outcome_logic_element in outcome_logic:
+                        text+= outcome_logic_element+", and "
+                    text = text[:-6] + "\n"
 
             #outcome_logic_raw = outcome[1] # X>Y
             #if outcome_logic_raw == None:
@@ -442,13 +443,13 @@ class Explanations:
         if acceptance[0]:
             outcome = capitalize_first_letter(subject)+" can "+action+" "+obj+" because "
             if len(acceptance[1]) != 0:
-                for acceptance_detail in acceptance[1]:
-                    # This outcome is comparaison between two contrasts
-                    outcome += resultWithExplanaitons.getNaturalLanguagePreference(acceptance_detail)+", and "
-                outcome = outcome[:-6]+"."
-            #if acceptance[1] != None:
-            #    # This outcome is comparaison between two contrasts
-            #    outcome += resultWithExplanaitons.getNaturalLanguagePreference(acceptance[1])  
+                for acceptance_details in acceptance[1]:
+                    for acceptance_detail in acceptance_details:
+                        # This outcome is comparaison between two contrasts
+                        outcome += resultWithExplanaitons.getNaturalLanguagePreference(acceptance_detail)+", and "
+                    outcome = outcome[:-6]+". And also because: "
+                outcome = outcome[:-18]
+             
             else:
                 outcome += "there is no support for the prohibition."
                 no_support_prohibition = True
@@ -576,12 +577,15 @@ def computeAccess(g, example_uri, accessType, subject, action, obj):
         r = row[8].fragment
         org = row[9].fragment
         if row[10]: org2 = row[10].fragment 
-        else: org2 = row[10]         
+        else: org2 = ""         
 
         access = Access()
         access.init(accessType, permission, employ, use, consider, define, subject, obj, v, a, action, c, r, org, org2)
-
-        accesses.append(access)  
+        duplicate = False
+        for access2 in accesses:
+            if access2.accessType == access.accessType and access2.access == access.access and access2.employ == access.employ and access2.use == access.use and access2.consider == access.consider and access2.define == access.define and access2.view == access.view and access2.activity == access.activity and access2.context == access.context and access2.role == access.role :
+                duplicate = True
+        if not duplicate: accesses.append(access)  
         #print("-> done") 
         #print(access)
         #print("")

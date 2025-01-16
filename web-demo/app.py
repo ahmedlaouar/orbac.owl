@@ -116,7 +116,13 @@ def display_use_part():
             action = st.selectbox("Action", get_example_actions(graph))
         with col3:
             obj = st.selectbox("Object", get_example_objects(graph))
-                
+        
+        # add inferred employ(s) here
+        supps = list(compute_hierarchy_supports(graph, example_uri, subject, action, obj, 0)) + list(compute_hierarchy_supports(graph, example_uri, subject, action, obj, 1))
+        for support in supps:
+            if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
+                add_new_employ(graph, example_uri, support[0].fragment, subject)
+        
         # 1. Visualize the policy
         if main_tabs == "Visualize policy":
             #st.caption("A visualization of the policy:")
@@ -139,7 +145,7 @@ def display_use_part():
                 st.dataframe(connection_rules_data, hide_index=True, use_container_width=True)
         
         # 2. Checking Privileges Tab        
-        if main_tabs == "Privileges & supports":
+        elif main_tabs == "Privileges & supports":
             st.caption("Checking the inference of a privilege")
 
             # Nested tabs for permission and prohibition
