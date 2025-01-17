@@ -143,7 +143,14 @@ def display_use_part():
                     
                 connection_rules_data = connection_rules_data.map(strip_prefix)
                 st.dataframe(connection_rules_data, hide_index=True, use_container_width=True)
+
+                define_rules = get_define_rules(graph)
+                define_rules_data = pd.DataFrame(define_rules, columns=["Rule name", "Organisation", "Subject", "Action", "Object", "Context"])
+                define_rules_data = define_rules_data.map(strip_prefix)
+                st.dataframe(define_rules_data, hide_index=True, use_container_width=True)
         
+            #if policy_tabs == "Uncertainty":
+
         # 2. Checking Privileges Tab        
         elif main_tabs == "Privileges & supports":
             st.caption("Checking the inference of a privilege")

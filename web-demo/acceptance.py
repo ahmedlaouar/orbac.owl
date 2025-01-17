@@ -210,6 +210,16 @@ def get_connection_rules(graph):
 
     return results
 
+def get_define_rules(graph):
+    connection_rules_query_path = 'queries.sparql/get_define_rules.sparql'
+
+    with open(connection_rules_query_path, 'r') as file:
+        query = file.read()
+    
+    results = graph.query(query)
+
+    return results
+
 # Toky's code [begin]
 def is_strictly_preferred_with_details_original(graph, example_uri, member1, member2):
     dominance_query_path = "queries.sparql/dominance_query.sparql"
