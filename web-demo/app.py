@@ -4,6 +4,7 @@ from rdflib import Graph
 import pandas as pd
 from acceptance import *
 from explanation import *
+from AccessRight import AccessRight
 from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, classes, fonts
 from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
@@ -18,14 +19,26 @@ def load_policy(policy_name):
     # Paths to the base ontology and the instance file
     base_ontology_path = "ontology/orbac.owl"
     
-    instance_file_path = "ontology/examples/"+policy_name
-
     # Parse the base ontology into the graph
     graph.parse(base_ontology_path, format="xml")
 
+    instance_file_path = "ontology/examples/"+policy_name
     # Parse the instance file into the same graph
     graph.parse(instance_file_path, format="xml")
-    return graph
+
+    for s, p, o in graph.triples((None, RDF.type, OWL.Ontology)):
+        base_uri = s
+        #break  # Assuming there is only one owl:Ontology
+
+    if base_uri:
+        example_uri = base_uri
+    else:
+        print("Base URI not found in the graph.")
+
+    if example_uri[-1] != "#":
+        example_uri += "#"
+
+    return graph, example_uri
 
 def generate_explanation(graph, example_uri, subject, action, obj, lemmatizer):
     accessesPermission = computeAccess(graph, example_uri, "Permission", subject, action, obj)
@@ -47,44 +60,20 @@ def generate_explanation(graph, example_uri, subject, action, obj, lemmatizer):
 def display_coming():
     st.write("Coming soon")
 
-def get_example_subjects(graph):
-    query_path = "queries.sparql/get_example_subjects.sparql"
-    with open(query_path, 'r') as file:
-        query = file.read()        
-        results = list(graph.query(query))
-    
-    res = [strip_prefix(result[0]) for result in results]
-    
-    return res
+def get_concrete_concepts(graph):
+    query = """PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX : <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
 
-def get_example_actions(graph):
-    query_path = "queries.sparql/get_example_actions.sparql"
-    with open(query_path, 'r') as file:
-        query = file.read()        
-        results = graph.query(query)
+            SELECT ?s ?alpha ?o {{
+                ?relation rdf:type :Define .
+                ?relation :definesSubject ?s .
+                ?relation :definesAction ?alpha .
+                ?relation :definesObject ?o .
+            }}"""
     
-    res = [strip_prefix(result[0]) for result in results]
-    
-    return res
+    results = graph.query(query)
 
-def get_example_objects(graph):
-    query_path = "queries.sparql/get_example_objects.sparql"
-    with open(query_path, 'r') as file:
-        query = file.read()        
-        results = graph.query(query)
-    
-    res = [strip_prefix(result[0]) for result in results]
-    
-    return res
-
-def test_acceptance(graph, example_uri, combinations):
-    """test which combination returns granted!"""
-    for row in combinations.itertuples(index=False):
-        subject, action, obj = row.Subject, row.Action, row.Object 
-        if check_acceptance(graph, example_uri, subject, action, obj):
-            print(f"The combination {subject}, {action}, {obj} should return True.")
-        else:
-            print(f"The combination {subject}, {action}, {obj} should return False.")
+    return results
 
 def display_use_part():
 
@@ -94,23 +83,9 @@ def display_use_part():
         if example_option == e:
             st.write("Loading "+e+" policy...")
             policy_name = e #"secondee-example.owl"
-            graph = load_policy(policy_name)
+            graph, example_uri = load_policy(policy_name)
             st.write(e + " policy loaded successfully!")
-        
-    example_uri = "" ##
-    base_uri = ""
-    for s, p, o in graph.triples((None, RDF.type, OWL.Ontology)):
-        base_uri = s
-        #break  # Assuming there is only one owl:Ontology
-
-    if base_uri:
-        example_uri = base_uri + example_uri
-    else:
-        print("Base URI not found in the graph.")
-
-    if example_uri[-1] != "#":
-        example_uri += "#"
-
+    
     # Primary tabs for grouping
     left_co1, cent_co1, right_co1 = st.columns([0.02,0.95,0.01])
     
@@ -120,10 +95,10 @@ def display_use_part():
     with st.expander("Privilege inference and text-based explanation methods", expanded=True):
         # Create 3 columns
         col1, col2, col3 = st.columns([0.25,0.5,0.25])
-               
+
         with col2:
-            define_rules = get_define_rules(graph)
-            define_rules_data = pd.DataFrame(define_rules, columns=["Rule name", "Organisation", "Subject", "Action", "Object", "Context"])
+            define_rules = get_concrete_concepts(graph)
+            define_rules_data = pd.DataFrame(define_rules, columns=["Subject", "Action", "Object"])
             define_rules_data = define_rules_data.map(strip_prefix)
             combinations = define_rules_data[["Subject", "Action", "Object"]].drop_duplicates()
             combinations['Combination'] = combinations.apply(lambda row: f"{row['Subject']} → {row['Action']} → {row['Object']}", axis=1)
@@ -135,18 +110,19 @@ def display_use_part():
             obj = selected_combination['Object']
         
         # add inferred employ(s) here
-        supps = list(compute_hierarchy_supports(graph, example_uri, subject, action, obj, 0)) + list(compute_hierarchy_supports(graph, example_uri, subject, action, obj, 1))
-        for support in supps:
-            if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
-                add_new_employ(graph, example_uri, support[0].fragment, subject)
+        #supps = list(compute_hierarchy_supports(graph, example_uri, subject, action, obj, 0)) + list(compute_hierarchy_supports(graph, example_uri, subject, action, obj, 1))
+        #for support in supps:
+        #    if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
+        #        add_new_employ(graph, example_uri, support[0].fragment, subject)
         
+        new_access = AccessRight(subject, action, obj, graph, example_uri)
         # 1. Visualize the policy
+        # TODO : in preference create a Policy class, it should contain a graph, uri and list of all combinations of (subject, action, object), it should have methods to return rules and relations of the following tab
+        # the goal is also to avoid unnecessary IO operations from system files since app is hosted in github
         if main_tabs == "Visualize policy":
-            #st.caption("A visualization of the policy:")
             policy_tabs = ui.tabs(["Abstract rules", "Connection relations", "Uncertainty"], default_value='Abstract rules')
 
             if policy_tabs == "Abstract rules":
-                #st.caption("")
                 abstract_rules = get_abstract_rules(graph)
                 abstract_rules_data = pd.DataFrame(abstract_rules, columns=["Privilege name", "Privilege type", "Organisation", "Role", "Activity", "view", "Context"])
                     
@@ -154,7 +130,6 @@ def display_use_part():
                 st.dataframe(abstract_rules_data, hide_index=True, use_container_width=True)
 
             if policy_tabs == "Connection relations":
-                #st.caption("")
                 connection_rules = get_connection_rules(graph)
                 connection_rules_data = pd.DataFrame(connection_rules, columns=["Rule name", "Rule type", "Organisation", "Abstract", "Concrete"])
                     
@@ -166,15 +141,10 @@ def display_use_part():
                 define_rules_data = define_rules_data.map(strip_prefix)
                 st.dataframe(define_rules_data, hide_index=True, use_container_width=True)
         
-            #if policy_tabs == "Uncertainty":
-
         # 2. Checking Privileges Tab        
         elif main_tabs == "Privileges & supports":
             st.caption("Checking the inference of a privilege")
-
-            # Nested tabs for permission and prohibition
-            #privilege_tabs = st.tabs(["Check Permission", "Check Prohibition"])
-            
+            # Nested tabs for permission and prohibition            
             col1, col2 = st.columns(2)
             with col1:
                 perm_button = st.button("Check Permission", use_container_width=True)
@@ -184,43 +154,30 @@ def display_use_part():
             if perm_button:
                 if not (subject and obj and action):
                     st.write("Please enter a valid subject, action and object!")
-                elif ispermitted(graph, example_uri, subject, action, obj):
+                elif len(new_access.permission_supports) != 0:
                     st.write(f"{subject} is permitted to perform {action} on {obj}")
                 else:
                     st.write(f"{subject} is not permitted to perform {action} on {obj}")
             if proh_button:
                 if not (subject and obj and action):
                     st.write("Please enter a valid subject, action and object!")
-                elif isprohibited(graph, example_uri, subject, action, obj):
+                elif len(new_access.prohibition_supports) != 0:
                     st.write(f"{subject} is prohibited from performing {action} on {obj}")
                 else:
                     st.write(f"{subject} is not prohibited from performing {action} on {obj}")
 
             # Nested tabs for permission and prohibition supports
-            support_tabs = st.tabs(["Permission supports", "Prohibition supports"])
-            
+            support_tabs = st.tabs(["Permission supports", "Prohibition supports"])            
             with support_tabs[0]:  # Permission Supports
                 if st.button("Compute permission supports", use_container_width=True):
-                    supports = compute_raw_supports(graph, example_uri, subject, action, obj, 0)
-                    #for support in supports:
-                    #    if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
-                    #        add_new_employ(graph, example_uri, support[0].fragment, subject)
-                    #supports = compute_raw_supports(graph, example_uri, subject, action, obj, 0)
-                    
-                    supports_data = pd.DataFrame(supports, columns=["Access type", "Employ relation", "Consider relation", "Use relation", "Define relation"])
-                    supports_data = supports_data.map(strip_prefix)
+                    supports = new_access.permission_supports                    
+                    supports_data = pd.DataFrame(supports,).map(lambda x: x.name)
                     st.dataframe(supports_data,hide_index=True, use_container_width=True)
 
             with support_tabs[1]:  # Prohibition Supports
                 if st.button("Compute prohibition supports", use_container_width=True):
-                    supports = compute_raw_supports(graph, example_uri, subject, action, obj, 1)
-                    #for support in supports:
-                    #    if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
-                    #        add_new_employ(graph, example_uri, support[0].fragment, subject)
-                    #supports = compute_raw_supports(graph, example_uri, subject, action, obj, 1)
-                    
-                    supports_data = pd.DataFrame(supports, columns=["Access type", "Employ relation", "Consider relation", "Use relation", "Define relation"])
-                    supports_data = supports_data.map(strip_prefix)
+                    supports = new_access.prohibition_supports                    
+                    supports_data = pd.DataFrame(supports,).map(lambda x: x.name)
                     st.dataframe(supports_data, hide_index=True, use_container_width=True)
 
         # 3. Checking Consistency & Conflicts Tab
@@ -235,15 +192,9 @@ def display_use_part():
                     st.write("The instance is inconsistent")
             # Only show Compute Conflicts if inconsistent
             if st.button("Compute conflicts", use_container_width=True):
-                # Check if any indirect role inferred from hierarchy exist and add it to graph
-                #supports = list(compute_raw_supports(graph, example_uri, subject, action, obj, 0)) + list(compute_raw_supports(graph, example_uri, subject, action, obj, 1))
-                #for support in supports:
-                #    if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
-                #        add_new_employ(graph, example_uri, support[0].fragment, subject)
                 # Compute and display conflicts
                 conflicts = compute_conflicts(graph)
                 conflict_data = pd.DataFrame(conflicts, columns=["Employ relation1", "Use relation1", "Define relation1", "Employ relation2", "Use relation2", "Define relation2"])
-                
                 conflict_data = conflict_data.map(strip_prefix)
                 st.dataframe(conflict_data, hide_index=True, use_container_width=True)
 
@@ -254,25 +205,14 @@ def display_use_part():
                 if not (subject and obj and action):
                     st.write("Please enter a valid subject, action and object!")
                 else:
-                    # Check if any indirect role inferred from hierarchy exist and add it to graph
-                    #supports = list(compute_raw_supports(graph, example_uri, subject, action, obj, 0)) + list(compute_raw_supports(graph, example_uri, subject, action, obj, 1))
-                    #for support in supports:
-                    #    if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
-                    #        add_new_employ(graph, example_uri, support[0].fragment, subject)
-                    if check_acceptance(graph, example_uri, subject, action, obj):
+                    if new_access.outcome:
                         st.write(f"The permission for {subject} to perform {action} on {obj} is granted")
                     else:
                         st.write(f"The permission for {subject} to perform {action} on {obj} is denied")
             st.header("Text-based explanations:")
-            #st.caption("Generate text-based explanations.")
             if st.button("Explain the desicion", use_container_width=True):
                 nltk.download('wordnet')
                 lemmatizer = WordNetLemmatizer()
-                # Check if any indirect role inferred from hierarchy exist and add it to graph
-                #supports = list(compute_raw_supports(graph, example_uri, subject, action, obj, 0)) + list(compute_raw_supports(graph, example_uri, subject, action, obj, 1))
-                #for support in supports:
-                #    if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
-                #        add_new_employ(graph, example_uri, support[0].fragment, subject)
                 explanations = generate_explanation(graph, example_uri, subject, action, obj, lemmatizer)
                 for explanation in explanations:
                     #st.caption("Text-based explanations:")
