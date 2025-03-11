@@ -77,6 +77,15 @@ def get_example_objects(graph):
     
     return res
 
+def test_acceptance(graph, example_uri, combinations):
+    """test which combination returns granted!"""
+    for row in combinations.itertuples(index=False):
+        subject, action, obj = row.Subject, row.Action, row.Object 
+        if check_acceptance(graph, example_uri, subject, action, obj):
+            print(f"The combination {subject}, {action}, {obj} should return True.")
+        else:
+            print(f"The combination {subject}, {action}, {obj} should return False.")
+
 def display_use_part():
 
     onlyfiles = [f for f in listdir("ontology/examples") if isfile(join("ontology/examples", f))]
@@ -88,7 +97,7 @@ def display_use_part():
             graph = load_policy(policy_name)
             st.write(e + " policy loaded successfully!")
         
-    example_uri = "#"
+    example_uri = "" ##
     base_uri = ""
     for s, p, o in graph.triples((None, RDF.type, OWL.Ontology)):
         base_uri = s
@@ -99,6 +108,9 @@ def display_use_part():
     else:
         print("Base URI not found in the graph.")
 
+    if example_uri[-1] != "#":
+        example_uri += "#"
+
     # Primary tabs for grouping
     left_co1, cent_co1, right_co1 = st.columns([0.02,0.95,0.01])
     
@@ -107,15 +119,20 @@ def display_use_part():
 
     with st.expander("Privilege inference and text-based explanation methods", expanded=True):
         # Create 3 columns
-        col1, col2, col3 = st.columns(3)
-
-        # Place the text inputs in the respective columns
-        with col1:
-            subject = st.selectbox("Subject", get_example_subjects(graph))
+        col1, col2, col3 = st.columns([0.25,0.5,0.25])
+               
         with col2:
-            action = st.selectbox("Action", get_example_actions(graph))
-        with col3:
-            obj = st.selectbox("Object", get_example_objects(graph))
+            define_rules = get_define_rules(graph)
+            define_rules_data = pd.DataFrame(define_rules, columns=["Rule name", "Organisation", "Subject", "Action", "Object", "Context"])
+            define_rules_data = define_rules_data.map(strip_prefix)
+            combinations = define_rules_data[["Subject", "Action", "Object"]].drop_duplicates()
+            combinations['Combination'] = combinations.apply(lambda row: f"{row['Subject']} → {row['Action']} → {row['Object']}", axis=1)
+            selected_combination_str = st.selectbox("Select the combination of subject, action and object", combinations['Combination'].values)
+            # Extract the selected combination (Subject, Action, Object)
+            selected_combination = combinations[combinations['Combination'] == selected_combination_str].iloc[0]
+            subject = selected_combination['Subject']
+            action = selected_combination['Action']
+            obj = selected_combination['Object']
         
         # add inferred employ(s) here
         supps = list(compute_hierarchy_supports(graph, example_uri, subject, action, obj, 0)) + list(compute_hierarchy_supports(graph, example_uri, subject, action, obj, 1))
@@ -325,6 +342,11 @@ def main():
         .center-tabs {
             display: flex;
             justify-content: center;
+        }
+        .css-1cxcynr { /* This class corresponds to the selectbox container */
+            width: 100px; /* Adjust this value to the desired width */
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
     """, unsafe_allow_html=True)

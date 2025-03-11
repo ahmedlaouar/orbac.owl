@@ -59,8 +59,8 @@ class ResultWithExplanations:
         return output
     
     def getLogicBasedSupports(self):
-        text= "Supports\n"
-        text_perm = "S_perm = {"
+        text= "Supports: \n"
+        text_perm = "\n S_perm = {"
         for perm_support in self.perm_supports:
             for value in perm_support:
                 text_perm += value.fragment+", "
@@ -68,7 +68,7 @@ class ResultWithExplanations:
             text_perm = text_perm[0:len(text_perm)-2]        
         text_perm+="}\n"
 
-        text_proh = "S_proh = {"
+        text_proh = "\n S_proh = {"
         for proh_support in self.proh_supports:
             for value in proh_support:
                 text_proh += value.fragment+", "
@@ -175,7 +175,7 @@ class ResultWithExplanations:
                     for outcome_logic_raw in outcome_logic_list:
                         outcome_logic.append(self.getLogicExplanationPreferance(outcome_logic_raw)) # orbac form
 
-                    text+="Is-permitted("+self.subject+","+self.action+","+self.obj+") because " #+outcome_logic+"\n"
+                    text+="\n Is-permitted("+self.subject+","+self.action+","+self.obj+") because " #+outcome_logic+"\n"
                     for outcome_logic_element in outcome_logic:
                         text+= outcome_logic_element+", and "
                     text = text[:-6] + "\n"
@@ -466,7 +466,7 @@ class Explanations:
                 outcome += "there is no support for the prohibition."
                 no_support_prohibition = True
         else:
-            outcome = "Therefore, because of the conflicts, "+ capitalize_first_letter(subject)+" can "+action+" "+obj+"."
+            outcome = "Therefore, because of the conflicts, "+ capitalize_first_letter(subject)+" cannot perform "+action+" on "+obj+"."
         
         # ------ OUTPUT ------ #
 
@@ -907,7 +907,7 @@ def print_diff_supports(diff_supports):
     print(defines_text)
 
 def get_diff_supports_logic_based(diff_supports):
-    text = "Delta(S_perm, S_proh) = {"
+    text = "\n Delta(S_perm, S_proh) = {"
     for employ in diff_supports[0]:
         text+=employ+", "        
     for use in diff_supports[1]:
