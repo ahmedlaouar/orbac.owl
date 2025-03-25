@@ -48,6 +48,8 @@ class AccessType:
     def verbalise(self):
         """"""
         return f"The organization {self.accessTypeOrganisation} grants the role {self.accessTypeRole} the {self.type} to perform the activity {self.accessTypeActivity} on the view {self.accessTypeView} if the context {self.accessTypeContext} holds,"
+    def __str__(self):
+        return f"{self.type}({self.accessTypeOrganisation},{self.accessTypeRole},{self.accessTypeActivity},{self.accessTypeView},{self.accessTypeContext})"
 
 class Employ:
     def __init__(self, name, org, r, s):
@@ -81,6 +83,8 @@ class Employ:
     def verbalise(self):
         """"""
         return f"The organisation {self.employesEmployer} employes {self.employesEmployee} in the role {self.employesRole}, "
+    def __str__(self):
+        return f"Employ({self.employesEmployer},{self.employesRole},{self.employesEmployee})"
 
 class Use:
     def __init__(self, name, org, v, o):
@@ -114,6 +118,8 @@ class Use:
     def verbalise(self):
         """"""
         return f"The organisation {self.usesEmployer} uses {self.usesObject} in the view {self.usesView}, "
+    def __str__(self):
+        return f"Use({self.usesEmployer},{self.usesView},{self.usesObject})"
 
 class Consider:
     def __init__(self, name, org, a, alpha):
@@ -147,6 +153,8 @@ class Consider:
     def verbalise(self):
         """"""
         return f"The organisation {self.considersOrganisation} considers {self.considersAction} as a {self.considersActivity} activity, "
+    def __str__(self):
+        return f"Consider({self.considersOrganisation},{self.considersActivity},{self.considersAction})"
 
 class Define:
     def __init__(self, name, org, s, a, o, c):
@@ -186,7 +194,9 @@ class Define:
     def verbalise(self):
         """"""
         return f"The context {self.definesContext} holds between {self.definesSubject}, {self.definesAction}, and {self.definesObject} in the organisation {self.definesOrganisation}, "
-    
+    def __str__(self):
+        return f"Define({self.definesOrganisation},{self.definesSubject},{self.definesAction},{self.definesObject},{self.definesContext})"
+
 class subOrganisationOf:
     def __init__(self, org_1, org_2):
         self.org_1 = org_1

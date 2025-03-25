@@ -10,7 +10,7 @@ from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
 from os import listdir
 from os.path import isfile, join
-
+#st.set_page_config(layout='centered')
 st.set_page_config(layout="centered", page_title="OrBAC ontology", page_icon="🧊", initial_sidebar_state="expanded", menu_items={'Get help':'https://orbac-owl.streamlit.app/contact','About':'## This is the official OrBAC ontology demo app!'})
 
 # Load the ontology graph
@@ -76,150 +76,175 @@ def get_concrete_concepts(graph):
     return results
 
 def display_use_part():
-
-    onlyfiles = [f for f in listdir("ontology/examples") if isfile(join("ontology/examples", f))]
-    example_option = st.selectbox("Choose an example policy:", onlyfiles)
-    for e in onlyfiles:
-        if example_option == e:
-            st.write("Loading "+e+" policy...")
-            policy_name = e #"secondee-example.owl"
-            graph, example_uri = load_policy(policy_name)
-            st.write(e + " policy loaded successfully!")
     
-    # Primary tabs for grouping
-    left_co1, cent_co1, right_co1 = st.columns([0.02,0.95,0.01])
-    
-    with cent_co1:
-        main_tabs = ui.tabs(["Visualize policy", "Privileges & supports", "Consistency & conflicts", "Acceptance & explainability"], default_value='Visualize policy')#, use_container_width=True
-
-    with st.expander("Privilege inference and text-based explanation methods", expanded=True):
-        # Create 3 columns
-        col1, col2, col3 = st.columns([0.25,0.5,0.25])
-
-        with col2:
-            define_rules = get_concrete_concepts(graph)
-            define_rules_data = pd.DataFrame(define_rules, columns=["Subject", "Action", "Object"])
-            define_rules_data = define_rules_data.map(strip_prefix)
-            combinations = define_rules_data[["Subject", "Action", "Object"]].drop_duplicates()
-            combinations['Combination'] = combinations.apply(lambda row: f"{row['Subject']} → {row['Action']} → {row['Object']}", axis=1)
-            selected_combination_str = st.selectbox("Select the combination of subject, action and object", combinations['Combination'].values)
-            # Extract the selected combination (Subject, Action, Object)
-            selected_combination = combinations[combinations['Combination'] == selected_combination_str].iloc[0]
-            subject = selected_combination['Subject']
-            action = selected_combination['Action']
-            obj = selected_combination['Object']
-        
-        # add inferred employ(s) here
-        #supps = list(compute_hierarchy_supports(graph, example_uri, subject, action, obj, 0)) + list(compute_hierarchy_supports(graph, example_uri, subject, action, obj, 1))
-        #for support in supps:
-        #    if check_if_role_from_hierarchy(graph, example_uri, support[0].fragment, support[1].fragment):
-        #        add_new_employ(graph, example_uri, support[0].fragment, subject)
-        
-        new_access = AccessRight(subject, action, obj, graph, example_uri)
-        # 1. Visualize the policy
-        # TODO : in preference create a Policy class, it should contain a graph, uri and list of all combinations of (subject, action, object), it should have methods to return rules and relations of the following tab
-        # the goal is also to avoid unnecessary IO operations from system files since app is hosted in github
-        if main_tabs == "Visualize policy":
-            policy_tabs = ui.tabs(["Abstract rules", "Connection relations", "Uncertainty"], default_value='Abstract rules')
-
-            if policy_tabs == "Abstract rules":
-                abstract_rules = get_abstract_rules(graph)
-                abstract_rules_data = pd.DataFrame(abstract_rules, columns=["Privilege name", "Privilege type", "Organisation", "Role", "Activity", "view", "Context"])
-                    
-                abstract_rules_data = abstract_rules_data.map(strip_prefix)
-                st.dataframe(abstract_rules_data, hide_index=True, use_container_width=True)
-
-            if policy_tabs == "Connection relations":
-                connection_rules = get_connection_rules(graph)
-                connection_rules_data = pd.DataFrame(connection_rules, columns=["Rule name", "Rule type", "Organisation", "Abstract", "Concrete"])
-                    
-                connection_rules_data = connection_rules_data.map(strip_prefix)
-                st.dataframe(connection_rules_data, hide_index=True, use_container_width=True)
-                st.caption("Define relations:")
-                define_rules = get_define_rules(graph)
-                define_rules_data = pd.DataFrame(define_rules, columns=["Rule name", "Organisation", "Subject", "Action", "Object", "Context"])
-                define_rules_data = define_rules_data.map(strip_prefix)
-                st.dataframe(define_rules_data, hide_index=True, use_container_width=True)
-        
-        # 2. Checking Privileges Tab        
-        elif main_tabs == "Privileges & supports":
-            st.caption("Checking the inference of a privilege")
-            # Nested tabs for permission and prohibition            
-            col1, col2 = st.columns(2)
-            with col1:
-                perm_button = st.button("Check Permission", use_container_width=True)
-            with col2:
-                proh_button = st.button("Check Prohibition", use_container_width=True)
+    with st.container():
+        # Primary tabs for grouping
+        _, cent_co1, _ = st.columns([0.25,0.51,0.25])
+        with cent_co1:
+            main_tabs = ui.tabs(["Home", "Policy Viewer", "More on Explanations"], default_value='Home')
             
-            if perm_button:
-                if not (subject and obj and action):
-                    st.write("Please enter a valid subject, action and object!")
-                elif len(new_access.permission_supports) != 0:
-                    st.write(f"{subject} is permitted to perform {action} on {obj}")
-                else:
-                    st.write(f"{subject} is not permitted to perform {action} on {obj}")
-            if proh_button:
-                if not (subject and obj and action):
-                    st.write("Please enter a valid subject, action and object!")
-                elif len(new_access.prohibition_supports) != 0:
-                    st.write(f"{subject} is prohibited from performing {action} on {obj}")
-                else:
-                    st.write(f"{subject} is not prohibited from performing {action} on {obj}")
+        _, cent_co1, _ = st.columns([0.15,0.7,0.15])
+        with cent_co1:
+            option = st.selectbox('Choose an option:',('Use an example policy', 'Load a policy', 'Build your policy'))
 
-            # Nested tabs for permission and prohibition supports
-            support_tabs = st.tabs(["Permission supports", "Prohibition supports"])            
-            with support_tabs[0]:  # Permission Supports
-                if st.button("Compute permission supports", use_container_width=True):
-                    supports = new_access.permission_supports                    
-                    supports_data = pd.DataFrame(supports,).map(lambda x: x.name)
-                    st.dataframe(supports_data,hide_index=True, use_container_width=True)
+    if option == 'Use an example policy':
+        examples_path = "ontology/examples"
+        onlyfiles = [f for f in sorted(listdir(examples_path)) if isfile(join(examples_path, f))]
+        _, cent_co1, _ = st.columns([0.1,0.8,0.1])
+        with cent_co1:
+            example_option = st.selectbox("Choose an example policy:", onlyfiles)
+            for e in onlyfiles:
+                if example_option == e:
+                    st.caption("Loading "+e+" policy...")
+                    policy_name = e #"secondee-example.owl"
+                    graph, example_uri = load_policy(policy_name)
+                    st.caption(e + " policy loaded successfully!")
 
-            with support_tabs[1]:  # Prohibition Supports
-                if st.button("Compute prohibition supports", use_container_width=True):
-                    supports = new_access.prohibition_supports                    
-                    supports_data = pd.DataFrame(supports,).map(lambda x: x.name)
-                    st.dataframe(supports_data, hide_index=True, use_container_width=True)
+        with st.container(border=True):
+            st.caption("Conflict resolution and explanation of OrBAC Access Control Decisions")
+            
+            _, main_col, _ = st.columns([0.1,2,0.1])
+            with main_col:
+                st.caption("Introduction")
+                
+                # 1. Home tab
+                # TODO : in preference create a Policy class, it should contain a graph, uri and list of all combinations of (subject, action, object), it should have methods to return rules and relations of the following tab
+                # the goal is also to avoid unnecessary IO operations from system files since app is hosted in github
+                if main_tabs == "Home":
+                    # Create 3 columns
+                    _, col2, _ = st.columns([0.05,0.9,0.05])
+                    with col2:
+                        define_rules = get_concrete_concepts(graph)
+                        define_rules_data = pd.DataFrame(define_rules, columns=["Subject", "Action", "Object"])
+                        define_rules_data = define_rules_data.map(strip_prefix)
+                        combinations = define_rules_data[["Subject", "Action", "Object"]].drop_duplicates()
+                        combinations['Combination'] = combinations.apply(lambda row: f"Is-permitted({row['Subject']}, {row['Action']}, {row['Object']})?", axis=1)
+                        selected_combination_str = st.selectbox("Select a combination of subject, action and object", combinations['Combination'].values)
+                        # Extract the selected combination (Subject, Action, Object)
+                        selected_combination = combinations[combinations['Combination'] == selected_combination_str].iloc[0]
+                        subject = selected_combination['Subject']
+                        action = selected_combination['Action']
+                        obj = selected_combination['Object']
+                
+                    new_access = AccessRight(subject, action, obj, graph, example_uri)
 
-        # 3. Checking Consistency & Conflicts Tab
-        elif main_tabs == "Consistency & conflicts":
-            st.caption("Checking consistency & computing the conflicts")
+                    with st.expander("Permission and Prohibition supports", expanded=False):
+                        # Permission supports
+                        st.caption("Permission supports")
+                        if not (subject and obj and action):
+                            st.write("Please enter a valid subject, action and object!")
+                        elif len(new_access.permission_supports) != 0:
+                            st.write(f"{subject} is permitted to perform {action} on {obj}")
+                        else:
+                            st.write(f"{subject} is not permitted to perform {action} on {obj}")
+                        supports = new_access.permission_supports
+                        supports_data = pd.DataFrame(supports,).map(lambda x: x.__str__())
+                        st.dataframe(supports_data,hide_index=True, use_container_width=True)
+                        # Prohibition supports
+                        st.caption("Prohibition supports")
+                        if not (subject and obj and action):
+                            st.write("Please enter a valid subject, action and object!")
+                        elif len(new_access.prohibition_supports) != 0:
+                            st.write(f"{subject} is prohibited from performing {action} on {obj}")
+                        else:
+                            st.write(f"{subject} is not prohibited from performing {action} on {obj}")
+                        supports = new_access.prohibition_supports                    
+                        supports_data = pd.DataFrame(supports,).map(lambda x: x.__str__())
+                        st.dataframe(supports_data, hide_index=True, use_container_width=True)
 
-            if st.button("Check consistency", use_container_width=True):
-                consistency = check_consistency(graph)
-                if consistency:
-                    st.write("The instance is consistent")
-                else:
-                    st.write("The instance is inconsistent")
-            # Only show Compute Conflicts if inconsistent
-            if st.button("Compute conflicts", use_container_width=True):
-                # Compute and display conflicts
-                conflicts = compute_conflicts(graph)
-                conflict_data = pd.DataFrame(conflicts, columns=["Employ relation1", "Use relation1", "Define relation1", "Employ relation2", "Use relation2", "Define relation2"])
-                conflict_data = conflict_data.map(strip_prefix)
-                st.dataframe(conflict_data, hide_index=True, use_container_width=True)
+                    # Acceptance decision:
+                    with st.expander("Conflict resolution using the acceptance method", expanded=False):
+                        st.caption("Description of the used method")
+                        
+                        st.caption("Used supports:")
+                        supports_text = ""
+                        if len(new_access.permission_supports) != 0 and len(new_access.prohibition_supports) != 0:
+                            supports_text += f"There is a conflict in the access of ``{subject}`` to ``{action}`` the object ``{obj}``, namely, it has "
+                        else:
+                            supports_text += f"The access of ``{subject}`` to ``{action}`` the object ``{obj}`` has " 
+                        if len(new_access.permission_supports) == 1:
+                            supports_text += "``1`` permission support " 
+                        else:
+                            supports_text += f"``{len(new_access.permission_supports)}`` permission supports "
+                        if len(new_access.prohibition_supports) == 1:
+                            supports_text += "and ``1`` prohibition support."
+                        else:
+                            supports_text += f"and ``{len(new_access.prohibition_supports)}`` prohibition supports."
+                        st.write(supports_text)
+                        st.caption("The outcome decision:")
+                        if new_access.outcome:
+                            st.write(f"The permission for ``{subject}`` to perform ``{action}`` on ``{obj}`` is accepted")
+                        else:
+                            st.write(f"The permission for ``{subject}`` to perform ``{action}`` on ``{obj}`` is rejected")
 
-        # 4. Acceptance Tab
-        elif main_tabs == "Acceptance & explainability":
-            #st.caption("Checking acceptance")
-            if st.button("Check acceptance", use_container_width=True):
-                if not (subject and obj and action):
-                    st.write("Please enter a valid subject, action and object!")
-                else:
-                    if new_access.outcome:
-                        st.write(f"The permission for {subject} to perform {action} on {obj} is granted")
-                    else:
-                        st.write(f"The permission for {subject} to perform {action} on {obj} is denied")
-            st.header("Text-based explanations:")
-            if st.button("Explain the desicion", use_container_width=True):
-                nltk.download('wordnet')
-                lemmatizer = WordNetLemmatizer()
-                explanations = generate_explanation(graph, example_uri, subject, action, obj, lemmatizer)
-                for explanation in explanations:
-                    #st.caption("Text-based explanations:")
-                    st.markdown(explanation)#.__str__()
-                    #st.caption("Logic-based explanations:")
-                    #st.write(explanation.getContrastiveExplanation())
-                    #st.write(explanation.getOutcomeConflict())
+                    #with st.expander("Logical explanations of the decision", expanded=False):
+                    #    # TODO here present all logical explanations as computed by AccessRight.get_support_logic_explanations()
+                    #    """"""
+
+                    with st.expander("Natural Language Explanations", expanded=False):
+                        # TODO replace the template-based approach with the new approach (ongoing):
+                        """"""
+                        st.caption("Template-based textual explanations:")
+                        if st.button("Explain the desicion", use_container_width=True):
+                            nltk.download('wordnet')
+                            lemmatizer = WordNetLemmatizer()
+                            explanations = generate_explanation(graph, example_uri, subject, action, obj, lemmatizer)
+                            for explanation in explanations:                                
+                                st.markdown(explanation)#.__str__()
+                                #st.caption("Logic-based explanations:")
+                                #st.write(explanation.getContrastiveExplanation())
+                                #st.write(explanation.getOutcomeConflict())
+
+                # 2. Visualise the full policy 
+                elif main_tabs == "Policy Viewer":
+                    with st.container(border=True):
+                        _, c_col, _ = st.columns([0.05,1,0.05], gap="small")
+                        with c_col:
+                            with st.container():
+                                policy_tabs = ui.tabs(["Abstract rules", "Connection relations", "Uncertainty", "Access Conflicts"], default_value='Abstract rules')
+
+                        if policy_tabs == "Abstract rules":
+                            abstract_rules = get_abstract_rules(graph)
+                            abstract_rules_data = pd.DataFrame(abstract_rules, columns=["Privilege name", "Privilege type", "Organisation", "Role", "Activity", "view", "Context"])
+                                
+                            abstract_rules_data = abstract_rules_data.map(strip_prefix)
+                            st.dataframe(abstract_rules_data, hide_index=True, use_container_width=True)
+
+                        elif policy_tabs == "Connection relations":
+                            connection_rules = get_connection_rules(graph)
+                            connection_rules_data = pd.DataFrame(connection_rules, columns=["Rule name", "Rule type", "Organisation", "Abstract", "Concrete"])
+                                
+                            connection_rules_data = connection_rules_data.map(strip_prefix)
+                            st.dataframe(connection_rules_data, hide_index=True, use_container_width=True)
+                            st.caption("Define relations:")
+                            define_rules = get_define_rules(graph)
+                            define_rules_data = pd.DataFrame(define_rules, columns=["Rule name", "Organisation", "Subject", "Action", "Object", "Context"])
+                            define_rules_data = define_rules_data.map(strip_prefix)
+                            st.dataframe(define_rules_data, hide_index=True, use_container_width=True)
+                    
+                        # Checking Consistency & Conflicts Tab
+                        elif policy_tabs == "Access Conflicts":
+                            st.caption("Checking consistency & computing the conflicts")
+
+                            if st.button("Check consistency", use_container_width=True):
+                                consistency = check_consistency(graph)
+                                if consistency:
+                                    st.write("The instance is consistent")
+                                else:
+                                    st.write("The instance is inconsistent")
+                            # Only show Compute Conflicts if inconsistent
+                            if st.button("Compute conflicts", use_container_width=True):
+                                # Compute and display conflicts
+                                conflicts = compute_conflicts(graph)
+                                conflict_data = pd.DataFrame(conflicts, columns=["Employ relation1", "Use relation1", "Define relation1", "Employ relation2", "Use relation2", "Define relation2"])
+                                conflict_data = conflict_data.map(strip_prefix)
+                                st.dataframe(conflict_data, hide_index=True, use_container_width=True)
+
+                    st.caption("Quick Links")
+
+    elif option == "Load a policy" or option == "Build your policy":
+        with st.container(border=True):
+            display_coming()
                 
 
 def link(link, text, **style):
@@ -298,18 +323,8 @@ def main():
     st.sidebar.page_link("app.py", label='Demo')
     st.sidebar.page_link("pages/overview.py", label='About the project')
     st.sidebar.page_link("pages/contact.py", label='Contact us')
-    #st.sidebar.page_link("pages/contact.py", label='COntact us')
 
-    # Streamlit app
-    #display_app_heading()
-
-    option = st.selectbox('Choose an option:',('Use an example policy', 'Load a policy', 'Build your policy'))
-
-    if option == 'Use an example policy':
-        display_use_part()
-    elif option == "Load a policy" or option == "Build your policy":
-        display_coming()
-
+    display_use_part()
 
     footer()
 

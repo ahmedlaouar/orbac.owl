@@ -8,14 +8,14 @@ from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, class
 from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
 
-st.set_page_config(layout="centered", page_title="OrBAC ontology", page_icon="🧊", initial_sidebar_state="expanded", menu_items={'Get help':'https://orbac-owl.streamlit.app/contact','About':'## This is the official OrBAC ontology demo app!'})
+st.set_page_config(layout="wide", page_title="OrBAC ontology", page_icon="🧊", initial_sidebar_state="expanded", menu_items={'Get help':'https://orbac-owl.streamlit.app/contact','About':'## This is the official OrBAC ontology demo app!'})
 
 def display_app_heading():
     st.title("OrBAC ontology demo")
     #st.header("Test some functions of the OrBAC ontology")
     
-    st.image("web-demo/content/static/images/https___raw.githubusercontent.com_ahmedlaouar_orbac.owl_refs_heads_main_ontology_orbac.owl.svg",use_container_width=True,caption="The OrBAC ontology graph")
-    st.markdown("<p style='text-align: center;color:grey;'><small>Created with <a href='http://vowl.visualdataweb.org'>WebVOWL</a> (version 1.1.7)</small></p>", unsafe_allow_html=True)
+    st.image("web-demo/content/static/images/https___raw.githubusercontent.com_ahmedlaouar_orbac.owl_refs_heads_main_ontology_orbac.owl.svg",use_container_width=True,caption="")
+    st.markdown("<p style='text-align: center;color:grey;'><small>The OrBAC ontology graph: Created with <a href='http://vowl.visualdataweb.org'>WebVOWL</a> (version 1.1.7)</small></p>", unsafe_allow_html=True)
 
     with st.expander("The OrBAC ontology",expanded=False):
         #st.header("The Organisation Based Access Control (OrBAC) ontology:")
