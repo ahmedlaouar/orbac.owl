@@ -138,7 +138,7 @@ def display_use_part():
                         else:
                             st.write(f"{subject} is not permitted to perform {action} on {obj}")
                         supports = new_access.permission_supports
-                        supports_data = pd.DataFrame(supports,).map(lambda x: x.__str__())
+                        supports_data = pd.DataFrame(supports,).map(lambda x: x.get_predicate())
                         st.dataframe(supports_data,hide_index=True, use_container_width=True)
                         # Prohibition supports
                         st.caption("Prohibition supports")
@@ -149,7 +149,7 @@ def display_use_part():
                         else:
                             st.write(f"{subject} is not prohibited from performing {action} on {obj}")
                         supports = new_access.prohibition_supports                    
-                        supports_data = pd.DataFrame(supports,).map(lambda x: x.__str__())
+                        supports_data = pd.DataFrame(supports,).map(lambda x: x.get_predicate())
                         st.dataframe(supports_data, hide_index=True, use_container_width=True)
 
                     # Acceptance decision:
