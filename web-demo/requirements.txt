@@ -8,3 +8,6 @@ language_tool_python
 nltk
 numpy
 htbuilder
+logzero
+transformers
+torch

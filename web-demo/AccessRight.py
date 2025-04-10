@@ -278,33 +278,33 @@ class AccessRight:
 
     def verbalise_supports(self):
         """"""
-        text = """2. **Supports of Permission:** List of the elements that compose the permission supports: """
+        text = """2. **Supports of Permission:** List of the elements that compose the permission supports: \n"""
         i = 1
         for support in self.permission_supports:
-            text += "(support "+str(i)+"): " + self.verbalise_support(support)
+            text += "(support "+str(i)+"): " + self.verbalise_support(support) + " \n"
             i += 1
-        text += """3. **Supports of Prohibition:** List of the elements composing the prohibition support: """
+        text += """3. **Supports of Prohibition:** List of the elements composing the prohibition support: \n"""
         i = 1
         for support in self.prohibition_supports:
-            text += "(support "+str(i)+"): " + self.verbalise_support(support)
+            text += "(support "+str(i)+"): " + self.verbalise_support(support) + " \n"
             i += 1
         return text
         
     def verbalise_preferences(self):
         """"""
-        preference_text = "4. **Preferences Between the Elements:**"
+        preference_text = "4. **Preferences Between the Elements:** \n"
         reduced_permission_supports = [(support["employ"], support["define"]) for support in self.permission_supports]
         reduced_prohibition_supports = [(support["employ"], support["define"]) for support in self.prohibition_supports]
         for perm_employ, perm_define in reduced_permission_supports:
             for proh_employ, proh_define in reduced_prohibition_supports:
                 if self.is_strictly_preferred(perm_employ.name, proh_employ.name):
-                    preference_text += f"The relation ``{perm_employ.verbalise()}`` is preferred to ``{proh_employ.verbalise()}`` because: {perm_employ.employesRole} is preferred to {proh_employ.employesRole}. "
+                    preference_text += f"The relation ``{perm_employ.verbalise()}`` is preferred to ``{proh_employ.verbalise()}`` because: {perm_employ.employesRole} is preferred to {proh_employ.employesRole}. \n"
                 else:
-                    preference_text += f"The relation ``{perm_employ.verbalise()}`` is not preferred to ``{proh_employ.verbalise()}`` because: {perm_employ.employesRole} is not preferred to {proh_employ.employesRole}. "
+                    preference_text += f"The relation ``{perm_employ.verbalise()}`` is not preferred to ``{proh_employ.verbalise()}`` because: {perm_employ.employesRole} is not preferred to {proh_employ.employesRole}. \n"
                 if self.is_strictly_preferred(perm_define.name, proh_define.name):
-                    preference_text += f"The relation ``{perm_define.verbalise()}`` is preferred to ``{proh_define.verbalise()}`` because: {perm_define.definesContext} is preferred to {proh_define.definesContext}. "
+                    preference_text += f"The relation ``{perm_define.verbalise()}`` is preferred to ``{proh_define.verbalise()}`` because: {perm_define.definesContext} is preferred to {proh_define.definesContext}. \n"
                 else:
-                    preference_text += f"The relation ``{perm_define.verbalise()}`` is not preferred to ``{proh_define.verbalise()}`` because: {perm_define.definesContext} is not preferred to {proh_define.definesContext}. "
+                    preference_text += f"The relation ``{perm_define.verbalise()}`` is not preferred to ``{proh_define.verbalise()}`` because: {perm_define.definesContext} is not preferred to {proh_define.definesContext}. \n"
         
         return preference_text
 
@@ -339,6 +339,7 @@ class AccessRight:
     
     def get_support_logic_explanations(self):
         """"""
+        # It might be better to render support elements instead of tuples at this level, then access the wanted tuples when needed
         explanations = {}
         if self.outcome :
             for prohibition_support in self.prohibition_supports:
@@ -437,11 +438,11 @@ class AccessRight:
         
     def verbalise_outcome(self):
         """"""
-        decision = "**The Decision:** The outcome of the logical inference is that: "
+        decision = "**The Decision:** The outcome of the logical inference is: "
         if self.outcome :
-            decision += f"the permission for {self.subject} to perform {self.action} on {self.obj} is granted."
+            decision += f"the permission for {self.subject} to perform {self.action} on {self.obj} is granted. \n"
         else:
-            decision += f"the permission for {self.subject} to perform {self.action} on {self.obj} is denied."
+            decision += f"the permission for {self.subject} to perform {self.action} on {self.obj} is denied. \n"
         return decision
 
     def get_hierarchical_relations(self):
@@ -522,11 +523,55 @@ class AccessRight:
         for each support of a prohibition, there exists a corresponding support for a permission where the permission's support dominates the prohibition's. \
         Dominance means that: each element of the support of the permission is strictly preferred to at least one element of the support of the prohibition. \
         Here are the different elements which compose the decision: """
-        request = "**Request for Explanation:** Using the provided logic, supports, and preferences, please explain why the decision was made to grant or deny access in this specific case.\
-             The explanation must contain the following elements: the used decision rule, the outcome decision, and the different relations and preferences leading to the decision. "
+        request = "**Request for Explanation:** Using the provided logic, supports, and preferences. \
+            Please explain the decision-making process (why the access was granted or denied). Please use the structured format below:\n 1. **Decision Rule**: [Provide the decision rule used for the decision-making process.]\n 2. **Outcome**: [Describe the decision outcome clearly and concisely.]\n 3. **Relations and Preferences**: [Explain the different relations and preferences that influenced the decision. Include all relevant information.]\n Make sure to follow this structure exactly and ensure each section is complete."
+        # old_request = "**Request for Explanation:** Using the provided logic, supports, and preferences, please explain why the decision was made to grant or deny access in this specific case.\n The explanation must contain the following elements: the used decision rule, the outcome decision, and the different relations and preferences leading to the decision."
+        # please explain why the decision was made to grant or deny access in this specific case.
         text = overall_logic
         text += self.verbalise_supports()
         text += self.verbalise_preferences()
         text += self.verbalise_outcome()
         text += request
         return text
+    
+    def generate_few_shot_prompt(self):
+        """"""
+        EXAMPLE_INPUT = """### Example Input
+        1. **Overall Logic:** Explain the condition under which access is granted. An access is granted if and only if, for each support of a prohibition, there exists a corresponding support for a permission where the permission's support dominates the prohibition's. Dominance means that: each element of the support of the permission is strictly preferred to at least one element of the support of the prohibition. Here are the different elements which compose the decision: 
+        2. **Supports of Permission:** List of the elements that compose the permission supports: 
+        (support 1): The organization consortium grants the role secondee the Permission to perform the activity modify on the view secondment_reports if the context secondment holds,The organisation university1 employes Bob in the role secondee, The organisation consortium considers edit as a modify activity, The organisation consortium uses report1 in the view secondment_reports, The context secondment holds between Bob, edit, and report1 in the organisation university1,  
+        3. **Supports of Prohibition:** List of the elements composing the prohibition support: 
+        (support 1): The organization consortium grants the role staff_member the Prohibition to perform the activity modify on the view secondment_reports if the context default holds,The organisation consortium employes Bob in the role staff_member, The organisation consortium considers edit as a modify activity, The organisation consortium uses report1 in the view secondment_reports, The context default holds between Bob, edit, and report1 in the organisation consortium,  
+        4. **Preferences Between the Elements:** 
+        The relation ``The organisation university1 employes Bob in the role secondee, `` is preferred to ``The organisation consortium employes Bob in the role staff_member, `` because: secondee is preferred to staff_member. 
+        The relation ``The context secondment holds between Bob, edit, and report1 in the organisation university1, `` is preferred to ``The context default holds between Bob, edit, and report1 in the organisation consortium, `` because: secondment is preferred to default. 
+        **The Decision:** The outcome of the logical inference is: the permission for Bob to perform edit on report1 is granted. """
+        EXAMPLE_OUTPUT = """### Example Output
+        Here is an example of an explanation:
+        **Decision Rule:** 
+        Access is granted if and only if, for every support of a prohibition, there exists a corresponding support of a permission where the permission's support dominates the prohibition's support. Dominance means that each element of the permission's support is strictly preferred to at least one element of the prohibition's support. 
+        **Outcome:** 
+        The access is granted because the permission's support dominates the prohibition's support. Specifically: 
+        The permission's support contains elements that are strictly preferred to corresponding elements in the prohibition's support. 
+        Both dominance conditions (role preference and context preference) are satisfied. 
+        **Relations and Preferences**: 
+        Permission Support Elements: 
+        Role Assignment: The organisation university1 employs Bob in the role secondee. → Preferred over the prohibition's role assignment: The organisation consortium employs Bob in the role staff_member. 
+        Reason: secondee is preferred to staff_member. 
+        Context: The context secondment holds between Bob, edit, and report1 in the organisation university1. → Preferred over the prohibition's context: The context default holds between Bob, edit, and report1 in the organisation consortium.
+        Reason: secondment is preferred to default.
+        Other Elements (No Preference Needed): 
+        Both permission and prohibition share: 
+        The organisation consortium considers edit as a modify activity. 
+        The organisation consortium uses report1 in the view secondment_reports. 
+        Since these are identical, no preference comparison is required. 
+        Conclusion: Since all elements of the permission's support are either preferred to or match the prohibition's support, access is granted."""
+        overall_logic = """1. **Overall Logic:** Explain the condition under which access is granted. An access is granted if and only if, \
+        for each support of a prohibition, there exists a corresponding support for a permission where the permission's support dominates the prohibition's. \
+        Dominance means that: each element of the support of the permission is strictly preferred to at least one element of the support of the prohibition. \
+        Here are the different elements which compose the decision: """
+        request = "### **Request for Explanation:** Using the provided logic, supports, and preferences. \
+            Please explain the decision-making process (why the access was granted or denied). Please use the structured format below:\n 1. **Decision Rule**: [Provide the decision rule used for the decision-making process.]\n 2. **Outcome**: [Describe the decision outcome clearly and concisely.]\n 3. **Relations and Preferences**: [Explain the different relations and preferences that influenced the decision. Include all relevant information.]\n Make sure to follow this structure exactly and ensure each section is complete."
+        prompt = "This is an example case for illustration purposes: \n" + EXAMPLE_INPUT + "\n" + EXAMPLE_OUTPUT + "\n\n---\n\n" 
+        prompt += "### Input:" + overall_logic + self.verbalise_supports() + self.verbalise_preferences() + self.verbalise_outcome() + request + "\n\n" + "### Output:"
+        return prompt
