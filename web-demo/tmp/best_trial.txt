@@ -1,0 +1,60 @@
+--------------------------------- Using Ollama = False ------------------------------------------------------
+Used model: meta-llama/Llama-3.2-3B-Instruct, Executed example: ontology/examples/supports_1to3_example_50.owl:
+Best hyperparameters: {'temperature': 0.9232973467015446, 'top_p': 0.8713658012227233, 'top_k': 75, 'repetition_penalty': 1.0078379771790247, 'no_repeat_ngram_size': 3, 'num_beams': 2}
+Best combined score: 0.9724076652526856
+Best trial metrics: {'coverage': 0.9811380505561829, 'completness': 0.9811380505561829, 'correctness': 0.9567432075738906, 'clarity': 0.990113377571106, 'hallucination': 0.04709435999393463, 'grammar_score': 0.9655172413793104, 'flesch_reading_ease': 16.66, 'flesch_kincaid_grade': 18.1, 'gunning_fog': 16.29, 'smog_index': 18.7, 'coleman_liau_index': 16.14, 'ari': 21.0}
+--------------------------------- Using Ollama = False ------------------------------------------------------
+Used model: google/gemma-2-2b-it, Executed example: ontology/examples/supports_1to3_example_50.owl:
+Best hyperparameters: {'temperature': 1.0848267644606455, 'top_p': 0.7756574147055288, 'top_k': 90, 'repetition_penalty': 1.234203428506281, 'no_repeat_ngram_size': 4, 'num_beams': 4}
+Best combined score: 0.6445068359375
+Best trial metrics: {'coverage': 0.342132568359375, 'completness': 0.296539306640625, 'correctness': 0.8212890625, 'clarity': 0.8896484375, 'hallucination': 0.1270751953125, 'grammar_score': 0.9646464646464646, 'flesch_reading_ease': 38.21, 'flesch_kincaid_grade': 11.9, 'gunning_fog': 11.21, 'smog_index': 14.9, 'coleman_liau_index': 14.15, 'ari': 14.8}
+--------------------------------- Using Ollama = False ------------------------------------------------------
+Used model: google/gemma-2-2b-it, Executed example: ontology/examples/diff_supp_example_20.owl:
+Best hyperparameters: {'temperature': 0.8161383122256992, 'top_p': 0.9587783453794114, 'top_k': 80, 'repetition_penalty': 1.0889133486602653, 'no_repeat_ngram_size': 5, 'num_beams': 2}
+Best combined score: 0.5684552001953125
+Best trial metrics: {'coverage': 0.3947245279947917, 'completness': 0.2875417073567708, 'correctness': 0.69833984375, 'clarity': 0.89990234375, 'hallucination': 0.438232421875, 'grammar_score': 0.9461538461538461, 'flesch_reading_ease': 30.26, 'flesch_kincaid_grade': 12.9, 'gunning_fog': 11.36, 'smog_index': 15.1, 'coleman_liau_index': 16.47, 'ari': 16.7}
+--------------------------------- Using Ollama = False ------------------------------------------------------
+Used model: google/gemma-2-2b-it, Executed example: ontology/examples/hospital_example_25.owl:
+Best hyperparameters: {'temperature': 1.2376942974414695, 'top_p': 0.8635489185068728, 'top_k': 92, 'repetition_penalty': 1.679773797174842, 'no_repeat_ngram_size': 4, 'num_beams': 4}
+Best combined score: 0.5669893391927083
+Best trial metrics: {'coverage': 0.4223429361979167, 'completness': 0.296783447265625, 'correctness': 0.8091796875, 'clarity': 0.919921875, 'hallucination': 0.61328125, 'grammar_score': 0.9489795918367347, 'flesch_reading_ease': 20.89, 'flesch_kincaid_grade': 14.4, 'gunning_fog': 11.3, 'smog_index': 15.8, 'coleman_liau_index': 15.95, 'ari': 16.6}
+--------------------------------- Using Ollama = False ------------------------------------------------------
+Used model: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B, Executed example: ontology/examples/supports_1to3_example_50.owl:
+Best hyperparameters: {'temperature': 1.2608298465885563, 'top_p': 0.7742300094869489, 'top_k': 91, 'repetition_penalty': 1.7246826296595033, 'no_repeat_ngram_size': 5, 'num_beams': 3}
+Best combined score: 0.8957662552595138
+Best trial metrics: {'coverage': 0.990806519985199, 'completness': 0.990806519985199, 'correctness': 0.9603478759527206, 'clarity': 0.8938746452331543, 'hallucination': 0.3570042848587036, 'grammar_score': 0.9642857142857143, 'flesch_reading_ease': 22.82, 'flesch_kincaid_grade': 13.7, 'gunning_fog': 12.79, 'smog_index': 14.6, 'coleman_liau_index': 16.93, 'ari': 17.2}
+--------------------------------- Using Ollama = False ------------------------------------------------------
+Used model: deepseek-ai/DeepSeek-R1-Distill-Qwen-7B, Executed example: ontology/examples/diff_supp_example_20.owl:
+Best hyperparameters: {'temperature': 1.0242507457306906, 'top_p': 0.7027738163790833, 'top_k': 60, 'repetition_penalty': 1.4769542090400425, 'no_repeat_ngram_size': 5, 'num_beams': 2}
+Best combined score: 0.9429515074566007
+Best trial metrics: {}
+--------------------------------- Using Ollama = False ------------------------------------------------------
+Used model: EleutherAI/llemma_7b, Executed example: ontology/examples/supports_1to3_example_50.owl:
+Best hyperparameters: {'temperature': 1.2185297692217358, 'top_p': 0.8212820336645007, 'top_k': 82, 'repetition_penalty': 1.5336108911570294, 'no_repeat_ngram_size': 5, 'num_beams': 3}
+Best combined score: 0.5762210083007813
+Best trial metrics: {'coverage': 0.19163004557291666, 'completness': 0.1397679646809896, 'correctness': 0.821435546875, 'clarity': 0.99365234375, 'hallucination': 0.265380859375, 'grammar_score': 0.5532994923857868, 'flesch_reading_ease': -34.25, 'flesch_kincaid_grade': 23.2, 'gunning_fog': 13.45, 'smog_index': 18.5, 'coleman_liau_index': 32.02, 'ari': 40.0}
+--------------------------------- Using Ollama = False ------------------------------------------------------
+Used model: EleutherAI/llemma_7b, Executed example: ontology/examples/diff_supp_example_20.owl:
+Best hyperparameters: {'temperature': 1.2769289252799627, 'top_p': 0.7823236865974945, 'top_k': 97, 'repetition_penalty': 1.025774186907277, 'no_repeat_ngram_size': 5, 'num_beams': 4}
+Best combined score: 0.5835270182291666
+Best trial metrics: {'coverage': 0.6664225260416666, 'completness': 0.6664225260416666, 'correctness': 0.588330078125, 'clarity': 0.18603515625, 'hallucination': 0.1895751953125, 'grammar_score': 0.9291101055806938, 'flesch_reading_ease': -3.79, 'flesch_kincaid_grade': 17.7, 'gunning_fog': 10.36, 'smog_index': 15.2, 'coleman_liau_index': 24.88, 'ari': 24.4}
+--------------------------------- Using Ollama = False ------------------------------------------------------
+Used model: EleutherAI/llemma_7b, Executed example: ontology/examples/hospital_example_25.owl:
+Best hyperparameters: {'temperature': 0.6822557088070528, 'top_p': 0.8785881232113854, 'top_k': 75, 'repetition_penalty': 1.6638358837730554, 'no_repeat_ngram_size': 5, 'num_beams': 5}
+Best combined score: 0.5003030395507813
+Best trial metrics: {'coverage': 0.1050262451171875, 'completness': 0.09141082763671875, 'correctness': 0.7685791015625, 'clarity': 0.72900390625, 'hallucination': 0.1925048828125, 'grammar_score': 0, 'flesch_reading_ease': -436.6, 'flesch_kincaid_grade': 82.6, 'gunning_fog': 63.3, 'smog_index': 24.5, 'coleman_liau_index': 170.25, 'ari': 163.6}
+--------------------------------- Using Ollama = False ------------------------------------------------------
+Used model: deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B, Executed example: ontology/examples/supports_1to3_example_50.owl:
+Best hyperparameters: {'temperature': 1.456894478539, 'top_p': 0.802839712270468, 'top_k': 76, 'repetition_penalty': 1.078632672846121, 'no_repeat_ngram_size': 3, 'num_beams': 4}
+Best combined score: 0.863663330078125
+Best trial metrics: {'coverage': 0.7042236328125, 'completness': 0.7042236328125, 'correctness': 0.9574462890625, 'clarity': 0.97119140625, 'hallucination': 0.018768310546875, 'grammar_score': 0.9725274725274725, 'flesch_reading_ease': 36.89, 'flesch_kincaid_grade': 12.4, 'gunning_fog': 12.94, 'smog_index': 14.8, 'coleman_liau_index': 15.54, 'ari': 17.6}
+--------------------------------- Using Ollama = False ------------------------------------------------------
+Used model: deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B, Executed example: ontology/examples/diff_supp_example_20.owl:
+Best hyperparameters: {'temperature': 0.6559143330117907, 'top_p': 0.9975892995327533, 'top_k': 67, 'repetition_penalty': 1.3420454368466015, 'no_repeat_ngram_size': 2, 'num_beams': 3}
+Best combined score: 0.73619140625
+Best trial metrics: {'coverage': 0.5146484375, 'completness': 0.5146484375, 'correctness': 0.883837890625, 'clarity': 0.98583984375, 'hallucination': 0.218017578125, 'grammar_score': 0.948561464690497, 'flesch_reading_ease': 56.96, 'flesch_kincaid_grade': 8.9, 'gunning_fog': 9.01, 'smog_index': 12.4, 'coleman_liau_index': 10.32, 'ari': 10.7}
+--------------------------------- Using Ollama = False ------------------------------------------------------
+Used model: deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B, Executed example: ontology/examples/hospital_example_25.owl:
+Best hyperparameters: {'temperature': 0.6929649401132001, 'top_p': 0.893255154172798, 'top_k': 73, 'repetition_penalty': 1.1900061712909855, 'no_repeat_ngram_size': 3, 'num_beams': 3}
+Best combined score: 0.75021240234375
+Best trial metrics: {'coverage': 0.70562744140625, 'completness': 0.70562744140625, 'correctness': 0.9597412109375, 'clarity': 0.4208984375, 'hallucination': 0.04083251953125, 'grammar_score': 0.9439252336448598, 'flesch_reading_ease': 31.11, 'flesch_kincaid_grade': 14.7, 'gunning_fog': 13.86, 'smog_index': 16.7, 'coleman_liau_index': 14.97, 'ari': 19.0}

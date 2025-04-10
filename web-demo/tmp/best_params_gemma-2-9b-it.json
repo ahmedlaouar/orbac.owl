@@ -1,0 +1,11 @@
+{
+    "temperature": 1.0848267644606455,
+    "top_p": 0.7756574147055288,
+    "top_k": 90,
+    "repetition_penalty": 1.234203428506281,
+    "no_repeat_ngram_size": 4,
+    "num_beams": 4,
+    "do_sample": true, 
+    "early_stopping": false,
+    "max_new_tokens": 1800
+}
