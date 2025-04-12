@@ -11,3 +11,4 @@ htbuilder
 logzero
 transformers
 torch
+python-dotenv

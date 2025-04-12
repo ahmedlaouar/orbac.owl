@@ -1,3 +1,4 @@
+import os
 import streamlit as st
 import streamlit_shadcn_ui as ui
 from rdflib import Graph
@@ -5,11 +6,18 @@ import pandas as pd
 from acceptance import *
 from explanation import *
 from AccessRight import AccessRight
+from Explainer import Explainer
+from Evaluator import Evaluator
 from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, classes, fonts
 from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
 from os import listdir
 from os.path import isfile, join
+from dotenv import load_dotenv
+from logzero import logger
+
+load_dotenv()
+
 #st.set_page_config(layout='centered')
 st.set_page_config(layout="centered", page_title="OrBAC ontology", page_icon="🧊", initial_sidebar_state="expanded", menu_items={'Get help':'https://orbac-owl.streamlit.app/contact','About':'## This is the official OrBAC ontology demo app!'})
 
@@ -194,6 +202,31 @@ def display_use_part():
                                 #st.caption("Logic-based explanations:")
                                 #st.write(explanation.getContrastiveExplanation())
                                 #st.write(explanation.getOutcomeConflict())
+
+                        st.caption("Large Language Models explanations:")
+                        if st.button("Explain using LLM", use_container_width=True):
+                            explanations = new_access.get_logic_explanations()
+                            prompt = new_access.generate_few_shot_prompt()
+                            try:
+                                hf_token = st.secrets["HF_TOKEN"]
+                            except (AttributeError, KeyError):
+                                hf_token = os.getenv("HF_TOKEN")
+                            model_name = "google/gemma-2-9b-it"
+
+                            explainer = Explainer(model_name, use_ollama=False, ollama_model_name="", load_json_params=False, hf_token=hf_token)
+
+                            answer, _, _ = explainer.query_model(prompt)
+
+                            st.write(answer)
+
+                            evaluator = Evaluator()
+                            metrics = evaluator.run_evaluations(new_access, answer, explanations)
+                            logger.debug(f'Scores: coverage {metrics["coverage"]}, correctness {metrics["correctness"]}, clarity {metrics["clarity"]}.')
+                            metrics_df = pd.DataFrame([metrics])
+                            metrics_df = metrics_df[['coverage', 'completness', 'correctness', 'clarity', 'hallucination', 'grammar_score',]]
+                            st.dataframe(metrics_df,hide_index=True, use_container_width=True)
+                            
+                            #st.write(prompt_len, answer_len)
 
                 # 2. Visualise the full policy 
                 elif main_tabs == "Policy Viewer":

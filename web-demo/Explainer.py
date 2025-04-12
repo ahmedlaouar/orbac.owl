@@ -11,6 +11,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig
 from Evaluator import Evaluator
 from AccessRight import AccessRight
 from time import time
+from huggingface_hub import InferenceClient
 
 # Custom handler to redirect Optuna logs to logzero
 class LogzeroHandler(logging.Handler):
@@ -26,36 +27,45 @@ class LogzeroHandler(logging.Handler):
             logger.debug(log_message)
 
 class Explainer:
-    def __init__(self, model_name, use_ollama=True, ollama_model_name="", load_json_params=False):
+    def __init__(self, model_name, use_ollama=True, ollama_model_name="", load_json_params=False, hf_token =""):
         self.model_name = model_name
-        self.use_ollama = use_ollama
-        self.use_gpu = torch.cuda.is_available()
-        logger.debug('Use GPU: %r' % self.use_gpu)
-        if self.use_ollama and ollama_model_name == "":
-            logger.error('Missing model name to call ollama, aborting...')
-        elif self.use_ollama:
-            logger.info("Using ollama.")
-            self.ollama_model_name = ollama_model_name
-            self.url = "http://localhost:11434/api/generate"
-            self.query_model = self.query_ollama
-        elif not self.use_ollama:
-            logger.info("Using transformers.")
-            if self.use_gpu:
-                quantization_config = BitsAndBytesConfig(load_in_4bit=True)
-                self.model = AutoModelForCausalLM.from_pretrained(
-                    model_name,
-                    quantization_config=quantization_config,
-                    torch_dtype=torch.float16,
-                    device_map="auto",
-                    low_cpu_mem_usage=True)
-            else:
-                self.model = AutoModelForCausalLM.from_pretrained(model_name)
-            #torch_dtype=torch.float32,  # Use FP16 for better performance
-            self.device = "cuda" if self.use_gpu else "cpu"
-            self.model.to(self.device)
-            self.query_model = self.query_transformers
+        self.use_ollama = use_ollama        
+        if hf_token != "":
+            self.hf_token = hf_token
+            #self.api_url = f"https://router.huggingface.co/hf-inference/models/{model_name}/v1/chat/completions"
+            #self.api_url = "https://router.huggingface.co/novita/v3/openai/chat/completions"
+            self.api_url = "https://router.huggingface.co/nebius/v1/chat/completions"
+            self.headers = {"Authorization": f"Bearer {self.hf_token}"}
+            self.client = InferenceClient(provider="nebius", api_key=self.hf_token,)
+            self.query_model = self.query_hf
+        else:
+            self.use_gpu = torch.cuda.is_available()
+            logger.debug('Use GPU: %r' % self.use_gpu)
+            if self.use_ollama and ollama_model_name == "":
+                logger.error('Missing model name to call ollama, aborting...')
+            elif self.use_ollama:
+                logger.info("Using ollama.")
+                self.ollama_model_name = ollama_model_name
+                self.url = "http://localhost:11434/api/generate"
+                self.query_model = self.query_ollama
+            elif not self.use_ollama:
+                logger.info("Using transformers.")
+                if self.use_gpu:
+                    quantization_config = BitsAndBytesConfig(load_in_4bit=True)
+                    self.model = AutoModelForCausalLM.from_pretrained(
+                        model_name,
+                        quantization_config=quantization_config,
+                        torch_dtype=torch.float16,
+                        device_map="auto",
+                        low_cpu_mem_usage=True)
+                else:
+                    self.model = AutoModelForCausalLM.from_pretrained(model_name)
+                #torch_dtype=torch.float32,  # Use FP16 for better performance
+                self.device = "cuda" if self.use_gpu else "cpu"
+                self.model.to(self.device)
+                self.query_model = self.query_transformers
         self.tokenizer = AutoTokenizer.from_pretrained(model_name)
-        self.load_params = load_json_params        
+        self.load_params = load_json_params
         logger.debug('Ready.')
 
     def load_from_json(self):
@@ -118,7 +128,34 @@ class Explainer:
         answer_size = len(answer_tokens['input_ids'][0])
         logger.debug(f'Model prompted in {time()-start_time:.2f} seconds.')
         return answer, prompt_size, answer_size
-    
+
+    def query_hf(self, prompt, **kwargs):
+        start_time = time()
+        inputs = self.tokenizer(prompt, return_tensors="pt")
+        prompt_size = len(inputs['input_ids'][0])
+        messages = [{"role": "assistant", "content": prompt}]        
+        # Handle extra parameters
+        if kwargs:
+            logger.info("Using provided params.")
+        elif self.load_params:
+            logger.info("Loading params from json.")
+            kwargs = self.load_from_json()
+        else:
+            logger.info("Using default model params.")
+        completion = self.client.chat.completions.create(
+            model=self.model_name,
+            messages=messages,
+            **kwargs
+        )
+        answer = completion.choices[0].message.content
+
+        answer = self.clean_answer(answer, prompt)
+        answer_tokens = self.tokenizer(answer, return_tensors="pt")
+        answer_size = len(answer_tokens['input_ids'][0])
+
+        logger.debug(f"Model prompted in {time() - start_time:.2f} seconds.")
+        return answer, prompt_size, answer_size
+
     def clean_answer(self, answer, prompt):
         if "</think>" in answer:
             answer = answer.split("</think>")[1]
