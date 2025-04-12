@@ -12,3 +12,4 @@ logzero
 transformers
 torch
 python-dotenv
+optuna
