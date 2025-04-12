@@ -6,6 +6,10 @@ from Explainer import Explainer
 from Evaluator import Evaluator
 from AccessRight import AccessRight
 from huggingface_hub import login
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 models_list = [
     #"local_models/gemma-2-2b-it",
@@ -96,8 +100,8 @@ def run_few_shot(model_name, instance_file_path):
     logger.debug('Done.')
 
 if __name__ == "__main__":
-    token = ""
-    login(token=token)
+    hf_token = os.getenv("HF_TOKEN")
+    login(token=hf_token)
     # Set a logfile (all future log messages are also saved there)
     timestamp = int(time())  # Get the current time as an integer
     log_filename = f"web-demo/tmp/logfile_{timestamp}.log"  # Format filename with timestamp
