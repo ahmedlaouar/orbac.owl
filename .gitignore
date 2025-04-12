@@ -1,0 +1,4 @@
+web-demo/.env
+local_models
+.vscode
+*.log
