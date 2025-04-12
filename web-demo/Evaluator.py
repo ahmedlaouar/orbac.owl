@@ -17,7 +17,11 @@ class Evaluator:
         self.model = AutoModelForSequenceClassification.from_pretrained(self.model_name)
         self.device = "cuda" if self.use_gpu else "cpu"
         self.model.to(self.device)
-        self.tool = language_tool_python.LanguageTool('en-GB')
+        try:
+            self.tool = language_tool_python.LanguageTool('en-GB')
+        except Exception as e:
+            logger.error(f"Falling back to public API due to: {e}")
+            self.tool = language_tool_python.LanguageToolPublicAPI('en-GB')
         logger.debug('Ready.')
 
     def get_nli_score_pipeline(self, fact, text):
