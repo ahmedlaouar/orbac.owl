@@ -1,13 +1,12 @@
 import os
 import streamlit as st
 import streamlit_shadcn_ui as ui
-from rdflib import Graph
 import pandas as pd
-from acceptance import *
 from explanation import *
 from AccessRight import AccessRight
 from Explainer import Explainer
 from Evaluator import Evaluator
+from Policy import Policy
 from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, classes, fonts
 from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
@@ -20,33 +19,6 @@ load_dotenv()
 
 #st.set_page_config(layout='centered')
 st.set_page_config(layout="centered", page_title="OrBAC ontology", page_icon="🧊", initial_sidebar_state="expanded", menu_items={'Get help':'https://orbac-owl.streamlit.app/contact','About':'## This is the official OrBAC ontology demo app!'})
-
-# Load the ontology graph
-def load_policy(policy_name):
-    graph = Graph()
-    # Paths to the base ontology and the instance file
-    base_ontology_path = "ontology/orbac.owl"
-    
-    # Parse the base ontology into the graph
-    graph.parse(base_ontology_path, format="xml")
-
-    instance_file_path = "ontology/examples/"+policy_name
-    # Parse the instance file into the same graph
-    graph.parse(instance_file_path, format="xml")
-
-    for s, p, o in graph.triples((None, RDF.type, OWL.Ontology)):
-        base_uri = s
-        #break  # Assuming there is only one owl:Ontology
-
-    if base_uri:
-        example_uri = base_uri
-    else:
-        print("Base URI not found in the graph.")
-
-    if example_uri[-1] != "#":
-        example_uri += "#"
-
-    return graph, example_uri
 
 def generate_explanation(graph, example_uri, subject, action, obj, lemmatizer):
     accessesPermission = computeAccess(graph, example_uri, "Permission", subject, action, obj)
@@ -67,21 +39,6 @@ def generate_explanation(graph, example_uri, subject, action, obj, lemmatizer):
 
 def display_coming():
     st.write("Coming soon")
-
-def get_concrete_concepts(graph):
-    query = """PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-            PREFIX : <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
-
-            SELECT ?s ?alpha ?o {{
-                ?relation rdf:type :Define .
-                ?relation :definesSubject ?s .
-                ?relation :definesAction ?alpha .
-                ?relation :definesObject ?o .
-            }}"""
-    
-    results = graph.query(query)
-
-    return results
 
 def display_use_part():
     
@@ -104,8 +61,8 @@ def display_use_part():
             for e in onlyfiles:
                 if example_option == e:
                     st.caption("Loading "+e+" policy...")
-                    policy_name = e #"secondee-example.owl"
-                    graph, example_uri = load_policy(policy_name)
+                    policy_name = e
+                    policy = Policy(examples_path+"/"+policy_name)
                     st.caption(e + " policy loaded successfully!")
 
         with st.container(border=True):
@@ -116,16 +73,11 @@ def display_use_part():
                 st.caption("Introduction")
                 
                 # 1. Home tab
-                # TODO : in preference create a Policy class, it should contain a graph, uri and list of all combinations of (subject, action, object), it should have methods to return rules and relations of the following tab
-                # the goal is also to avoid unnecessary IO operations from system files since app is hosted in github
                 if main_tabs == "Home":
                     # Create 3 columns
                     _, col2, _ = st.columns([0.05,0.9,0.05])
                     with col2:
-                        define_rules = get_concrete_concepts(graph)
-                        define_rules_data = pd.DataFrame(define_rules, columns=["Subject", "Action", "Object"])
-                        define_rules_data = define_rules_data.map(strip_prefix)
-                        combinations = define_rules_data[["Subject", "Action", "Object"]].drop_duplicates()
+                        combinations = pd.DataFrame(policy.get_combinations())
                         combinations['Combination'] = combinations.apply(lambda row: f"Is-permitted({row['Subject']}, {row['Action']}, {row['Object']})?", axis=1)
                         selected_combination_str = st.selectbox("Select a combination of subject, action and object", combinations['Combination'].values)
                         # Extract the selected combination (Subject, Action, Object)
@@ -134,7 +86,7 @@ def display_use_part():
                         action = selected_combination['Action']
                         obj = selected_combination['Object']
                 
-                    new_access = AccessRight(subject, action, obj, graph, example_uri)
+                    new_access = AccessRight(subject, action, obj, policy.graph, policy.example_uri)
 
                     with st.expander("Permission and Prohibition supports", expanded=False):
                         # Permission supports
@@ -190,18 +142,16 @@ def display_use_part():
                     #    """"""
 
                     with st.expander("Natural Language Explanations", expanded=False):
-                        # TODO replace the template-based approach with the new approach (ongoing):
-                        """"""
-                        st.caption("Template-based textual explanations:")
-                        if st.button("Explain the desicion", use_container_width=True):
-                            nltk.download('wordnet')
-                            lemmatizer = WordNetLemmatizer()
-                            explanations = generate_explanation(graph, example_uri, subject, action, obj, lemmatizer)
-                            for explanation in explanations:                                
-                                st.markdown(explanation)#.__str__()
-                                #st.caption("Logic-based explanations:")
-                                #st.write(explanation.getContrastiveExplanation())
-                                #st.write(explanation.getOutcomeConflict())
+                        #st.caption("Template-based textual explanations:")
+                        #if st.button("Explain the desicion", use_container_width=True):
+                        #    nltk.download('wordnet')
+                        #    lemmatizer = WordNetLemmatizer()
+                        #    explanations = generate_explanation(policy.graph, policy.example_uri, subject, action, obj, lemmatizer)
+                        #    for explanation in explanations:                                
+                        #        st.markdown(explanation)#.__str__()
+                        #        #st.caption("Logic-based explanations:")
+                        #        #st.write(explanation.getContrastiveExplanation())
+                        #        #st.write(explanation.getOutcomeConflict())
 
                         st.caption("Large Language Models explanations:")
                         if st.button("Explain using LLM", use_container_width=True):
@@ -209,7 +159,8 @@ def display_use_part():
                             prompt = new_access.generate_few_shot_prompt()
                             try:
                                 hf_token = st.secrets["HF_TOKEN"]
-                            except (AttributeError, KeyError):
+                            except Exception as e:
+                                logger.error(f"Falling back to local .env config: {e}")
                                 hf_token = os.getenv("HF_TOKEN")
                             model_name = "google/gemma-2-9b-it"
 
@@ -237,20 +188,20 @@ def display_use_part():
                                 policy_tabs = ui.tabs(["Abstract rules", "Connection relations", "Uncertainty", "Access Conflicts"], default_value='Abstract rules')
 
                         if policy_tabs == "Abstract rules":
-                            abstract_rules = get_abstract_rules(graph)
+                            abstract_rules = policy.get_abstract_rules()
                             abstract_rules_data = pd.DataFrame(abstract_rules, columns=["Privilege name", "Privilege type", "Organisation", "Role", "Activity", "view", "Context"])
                                 
                             abstract_rules_data = abstract_rules_data.map(strip_prefix)
                             st.dataframe(abstract_rules_data, hide_index=True, use_container_width=True)
 
                         elif policy_tabs == "Connection relations":
-                            connection_rules = get_connection_rules(graph)
+                            connection_rules = policy.get_connection_rules()
                             connection_rules_data = pd.DataFrame(connection_rules, columns=["Rule name", "Rule type", "Organisation", "Abstract", "Concrete"])
                                 
                             connection_rules_data = connection_rules_data.map(strip_prefix)
                             st.dataframe(connection_rules_data, hide_index=True, use_container_width=True)
                             st.caption("Define relations:")
-                            define_rules = get_define_rules(graph)
+                            define_rules = policy.get_define_rules()
                             define_rules_data = pd.DataFrame(define_rules, columns=["Rule name", "Organisation", "Subject", "Action", "Object", "Context"])
                             define_rules_data = define_rules_data.map(strip_prefix)
                             st.dataframe(define_rules_data, hide_index=True, use_container_width=True)
@@ -260,7 +211,7 @@ def display_use_part():
                             st.caption("Checking consistency & computing the conflicts")
 
                             if st.button("Check consistency", use_container_width=True):
-                                consistency = check_consistency(graph)
+                                consistency = policy.check_consistency()
                                 if consistency:
                                     st.write("The instance is consistent")
                                 else:
@@ -268,7 +219,7 @@ def display_use_part():
                             # Only show Compute Conflicts if inconsistent
                             if st.button("Compute conflicts", use_container_width=True):
                                 # Compute and display conflicts
-                                conflicts = compute_conflicts(graph)
+                                conflicts = policy.compute_conflicts()
                                 conflict_data = pd.DataFrame(conflicts, columns=["Employ relation1", "Use relation1", "Define relation1", "Employ relation2", "Use relation2", "Define relation2"])
                                 conflict_data = conflict_data.map(strip_prefix)
                                 st.dataframe(conflict_data, hide_index=True, use_container_width=True)

@@ -70,3 +70,59 @@ class Policy:
         combinations = {tuple(d.values()) for d in define_rules_data}
         combinations = [dict(zip(["Subject", "Action", "Object"], comb)) for comb in combinations]
         return combinations
+    
+    def get_abstract_rules(self):
+        abstract_rules_query_path = 'queries.sparql/get_access_types.sparql'
+
+        with open(abstract_rules_query_path, 'r') as file:
+            query = file.read()
+        
+        results = self.graph.query(query)
+
+        return results
+
+    def get_connection_rules(self):
+        connection_rules_query_path = 'queries.sparql/get_connection_rules.sparql'
+
+        with open(connection_rules_query_path, 'r') as file:
+            query = file.read()
+        
+        results = self.graph.query(query)
+
+        return results
+
+    def get_define_rules(self):
+        connection_rules_query_path = 'queries.sparql/get_define_rules.sparql'
+
+        with open(connection_rules_query_path, 'r') as file:
+            query = file.read()
+        
+        results = self.graph.query(query)
+
+        return results
+    
+    def check_consistency(self):
+        consistency_checking_query_path = "queries.sparql/inconsistency_checking.sparql"
+        with open(consistency_checking_query_path, 'r') as file:
+            query = file.read()
+
+        results = self.graph.query(query)
+        try:
+            first_result = next(iter(results))
+            if first_result:
+                return False
+            else: 
+                return True
+        except StopIteration:
+            print("No query results found.")
+            return True
+
+    def compute_conflicts(self):
+        conflicts_query_path = 'queries.sparql/compute_conflicts.sparql'
+
+        with open(conflicts_query_path, 'r') as file:
+            query = file.read()
+
+        results = self.graph.query(query)
+
+        return results
