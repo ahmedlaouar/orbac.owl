@@ -1,7 +1,7 @@
 import random
 import rdflib
 from rdflib.namespace import RDF, OWL
-from orbac_classes import classes
+from dataset_generation import classes
 
 """individuals = {
     "Organisation" : ["Consortium", "Institute1", "Institute2", "Institute3", "University1", "University2", "University3"],

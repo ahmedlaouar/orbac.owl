@@ -3,7 +3,7 @@ from itertools import product
 import rdflib
 from rdflib.namespace import RDF, OWL
 
-from orbac_classes import classes
+from dataset_generation import classes
 
 def generate_test_cases(input_individuals):
     output_individuals = {
