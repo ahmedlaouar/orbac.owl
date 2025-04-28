@@ -8,7 +8,9 @@ import nltk
 from nltk.stem import WordNetLemmatizer
 import numpy as np
 from acceptance import *
-#from util import *
+
+def strip_prefix(uri):
+    return uri.split('#')[-1]
 
 # Initialize the lexicon, factory, and realiser
 lexicon = Lexicon.getDefaultLexicon()

@@ -20,6 +20,9 @@ load_dotenv()
 #st.set_page_config(layout='centered')
 st.set_page_config(layout="centered", page_title="OrBAC ontology", page_icon="🧊", initial_sidebar_state="expanded", menu_items={'Get help':'https://orbac-owl.streamlit.app/contact','About':'## This is the official OrBAC ontology demo app!'})
 
+def strip_prefix(uri):
+    return uri.split('#')[-1]
+
 def generate_explanation(graph, example_uri, subject, action, obj, lemmatizer):
     accessesPermission = computeAccess(graph, example_uri, "Permission", subject, action, obj)
     accessesProhibition = computeAccess(graph, example_uri, "Prohibition", subject, action, obj)
