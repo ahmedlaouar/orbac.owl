@@ -98,13 +98,13 @@ class Evaluator:
             for employ_perm, define_perm in list_permissions:
                 role_fact = f"the role {employ_perm.employesRole} in {employ_perm.employesEmployer} is preferred over the role {employ_proh.employesRole} in {employ_proh.employesEmployer}"
                 facts += ". " + role_fact
-                role_score = self.get_nli_score(role_fact, text_answer)
+                role_score = self.get_full_nli_score(role_fact, text_answer) # self.get_nli_score(role_fact, text_answer)
                 #role_opposite_fact = f"{employ_perm.employesEmployee} playing the role {employ_perm.employesRole} in {employ_perm.employesEmployer} is not preferred over {employ_proh.employesEmployee} playing the role {employ_proh.employesRole} in {employ_proh.employesEmployer}"
                 #role_opposite_score = self.get_nli_score(role_opposite_fact, text_answer)
                 #role_score = role_score - OPPOSITE_SCORE_PENALTY * role_opposite_score
                 context_fact = f"the definition of the context {define_perm.definesContext} in {define_perm.definesOrganisation} is preferred over the definition of the context {define_proh.definesContext} in {define_proh.definesOrganisation}"
                 facts += ". " + context_fact
-                context_score = self.get_nli_score(context_fact, text_answer)
+                context_score =  self.get_full_nli_score(context_fact, text_answer) # self.get_nli_score(context_fact, text_answer)
                 #context_opposite_fact = f"the definition of the context {define_perm.definesContext} in {define_perm.definesOrganisation} is not preferred over the definition of the context {define_proh.definesContext} in {define_proh.definesOrganisation}"
                 #context_opposite_score = self.get_nli_score(context_opposite_fact, text_answer)
                 #context_score = context_score  - OPPOSITE_SCORE_PENALTY * context_opposite_score
@@ -130,10 +130,10 @@ class Evaluator:
             for employ_perm, define_perm in list_permissions:
                 role_fact = f"the role {employ_perm.employesRole} in {employ_perm.employesEmployer} is not preferred over the role {employ_proh.employesRole} in {employ_proh.employesEmployer}"
                 facts += ". " + role_fact
-                role_score = self.get_nli_score(role_fact, text_answer)
+                role_score = self.get_full_nli_score(role_fact, text_answer) # self.get_nli_score(role_fact, text_answer)
                 context_fact = f"the definition of the context {define_perm.definesContext} in {define_perm.definesOrganisation} is not preferred over the definition of the context {define_proh.definesContext} in {define_proh.definesOrganisation}"
                 facts += ". " + context_fact
-                context_score = self.get_nli_score(context_fact, text_answer)
+                context_score = self.get_full_nli_score(context_fact, text_answer) # self.get_nli_score(context_fact, text_answer)
                 final_score = max(role_score,context_score)
                 sum_one_scores += final_score
             # average score of current explanation

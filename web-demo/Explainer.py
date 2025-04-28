@@ -60,7 +60,6 @@ class Explainer:
                         low_cpu_mem_usage=True)
                 else:
                     self.model = AutoModelForCausalLM.from_pretrained(model_name)
-                #torch_dtype=torch.float32,  # Use FP16 for better performance
                 self.device = "cuda" if self.use_gpu else "cpu"
                 self.model.to(self.device)
                 self.query_model = self.query_transformers
