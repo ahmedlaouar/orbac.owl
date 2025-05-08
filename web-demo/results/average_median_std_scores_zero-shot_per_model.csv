@@ -1,9 +1,0 @@
-,coverage,coverage,coverage,completness,completness,completness,correctness,correctness,correctness,clarity,clarity,clarity,hallucination,hallucination,hallucination,grammar_score,grammar_score,grammar_score
-,mean,median,std,mean,median,std,mean,median,std,mean,median,std,mean,median,std,mean,median,std
-model,,,,,,,,,,,,,,,,,,
-deepseek-r1:1.5B,0.28,0.18,0.24,0.24,0.17,0.22,0.56,0.51,0.32,0.88,0.96,0.19,0.18,0.07,0.22,0.98,0.98,0.02
-deepseek-r1:7B,0.49,0.47,0.32,0.42,0.35,0.3,0.86,0.97,0.24,0.86,0.93,0.2,0.26,0.13,0.28,0.95,0.96,0.04
-gemma-2-9B,0.53,0.58,0.32,0.45,0.4,0.29,0.89,0.96,0.16,0.84,0.92,0.22,0.35,0.27,0.3,0.97,0.98,0.03
-gemma-2-9B(IT),0.46,0.42,0.29,0.37,0.32,0.24,0.92,0.96,0.11,0.92,0.94,0.07,0.38,0.26,0.3,0.95,0.95,0.03
-llama-3.2-3B,0.68,0.75,0.27,0.58,0.62,0.27,0.87,0.94,0.18,0.75,0.79,0.17,0.46,0.46,0.3,0.9,0.94,0.11
-llama-3.2-3B(IT),0.61,0.68,0.28,0.52,0.53,0.27,0.84,0.96,0.24,0.94,0.98,0.12,0.2,0.11,0.22,0.94,0.97,0.11

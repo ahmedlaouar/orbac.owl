@@ -1,12 +1,14 @@
+import sys
 import os
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import streamlit as st
 import streamlit_shadcn_ui as ui
 import pandas as pd
-from explanation import *
-from AccessRight import AccessRight
-from Explainer import Explainer
-from Evaluator import Evaluator
-from Policy import Policy
+from core.explanation import *
+from core.AccessRight import AccessRight
+from core.Explainer import Explainer
+from core.Evaluator import Evaluator
+from core.Policy import Policy
 from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, classes, fonts
 from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
@@ -102,7 +104,7 @@ def display_use_part():
                             st.write(f"{subject} is not permitted to perform {action} on {obj}")
                         supports = new_access.permission_supports
                         supports_data = pd.DataFrame(supports,).map(lambda x: x.get_predicate())
-                        st.dataframe(supports_data,hide_index=True, use_container_width=True)
+                        st.dataframe(supports_data, hide_index=True, use_container_width=True)
                         # Prohibition supports
                         st.caption("Prohibition supports")
                         if not (subject and obj and action):
@@ -173,12 +175,12 @@ def display_use_part():
 
                             st.write(answer)
 
-                            evaluator = Evaluator()
-                            metrics = evaluator.run_evaluations(new_access, answer, explanations)
-                            logger.debug(f'Scores: coverage {metrics["coverage"]}, correctness {metrics["correctness"]}, clarity {metrics["clarity"]}.')
-                            metrics_df = pd.DataFrame([metrics])
-                            metrics_df = metrics_df[['coverage', 'completness', 'correctness', 'clarity', 'hallucination', 'grammar_score',]]
-                            st.dataframe(metrics_df,hide_index=True, use_container_width=True)
+                            #evaluator = Evaluator()
+                            #metrics = evaluator.run_evaluations(new_access, answer, explanations)
+                            #logger.debug(f'Scores: coverage {metrics["coverage"]}, correctness {metrics["correctness"]}, clarity {metrics["clarity"]}.')
+                            #metrics_df = pd.DataFrame([metrics])
+                            #metrics_df = metrics_df[['coverage', 'completness', 'correctness', 'clarity', 'hallucination', 'grammar_score',]]
+                            #st.dataframe(metrics_df,hide_index=True, use_container_width=True)
                             
                             #st.write(prompt_len, answer_len)
 

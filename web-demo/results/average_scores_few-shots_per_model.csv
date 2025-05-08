@@ -1,6 +1,0 @@
-model,coverage,completness,correctness,clarity,hallucination,grammar_score
-deepseek-r1:7B,0.51,0.44,0.69,0.87,0.29,0.93
-gemma-2-9B,0.45,0.37,0.75,0.84,0.37,0.98
-gemma-2-9B(IT),0.65,0.58,0.94,0.88,0.33,0.95
-llama-3.2-3B,0.31,0.27,0.59,0.65,0.42,0.95
-llama-3.2-3B(IT),0.59,0.5,0.89,0.86,0.37,0.9
