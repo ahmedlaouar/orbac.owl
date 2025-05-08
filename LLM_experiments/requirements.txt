@@ -1,0 +1,15 @@
+streamlit
+streamlit_shadcn_ui
+rdflib
+pandas
+simplenlg
+textstat
+language_tool_python
+nltk
+numpy
+htbuilder
+logzero
+transformers
+torch
+python-dotenv
+optuna
