@@ -175,7 +175,7 @@ def generate_test_cases():
 
 def add_generated_to_graph(graph, test_data):
     """Adding generated test examples to an rdflib graph"""
-    long_example = rdflib.Namespace("http://www.semanticweb.org/laouar/ontologies/2025/0/supports_1to3_example_50#")
+    long_example = rdflib.Namespace("http://www.semanticweb.org/bleu/ontologies/2025/0/supports_1to3_example_50#")
     ORBAC = rdflib.Namespace("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#")    
     
     graph.bind("orbac-owl", ORBAC)

@@ -1,0 +1,16 @@
+{
+    "parent_organisation": "Consortium",
+    "Organisation": ["Institute1", "Institute2", "Institute3", "University1", "University2", "University3"],
+    "up_Role": ["full_professor", "team_leader", "researcher", "wp_leader", "coordinator"],
+    "down_Role": ["staff_member", "PhD_student", "post_doc", "secondee", "associate_professor"],
+    "View": ["administration", "confidential_data", "contracts", "data", "deliverables", "internal_data", "public_data", "reports", "secondment_agreement", "secondment_report", "WP1", "WP2", "WP3", "WP4", "WP5"],
+    "up_Context": ["secondment", "management", "audit"],
+    "down_Context": ["default", "collaboration"],
+    "Subject": ["Alice_Johnson", "Bob_Smith", "Charlie_Brown", "David_Williams", "Eva_Clark", "Frank_Harris", "Grace_Davis", "Henry_Lee", "Isla_Martin", "James_Wilson", "Katherine_Moore", "Liam_Taylor", "Mia_Anderson", "Nathan_White", "Olivia_Scott", "Paul_Harris", "Quinn_Thomas", "Rachel_Baker", "Samuel_Evans", "Tina_Allen", "Ursula_Carter", "Victor_Turner", "Wendy_Mitchell", "Xander_Rodriguez", "Yara_Lee", "Zane_Gonzalez", "Amelia_King", "Ben_Foster", "Chloe_Walker", "Dylan_Nelson"],
+    "Action": {
+      "consult": ["ask", "cat", "describe", "grep", "list", "read", "select"],      
+      "modify": ["add", "copy", "create", "delete", "drop", "edit", "insert", "move"],
+      "validate": ["sign"]
+    },
+    "Object": ["agreement1", "agreement2", "agreement3", "agreement4", "agreement5", "agreement6", "dataset1", "dataset10", "dataset2", "dataset3", "dataset4", "dataset5", "dataset6", "dataset7", "dataset8", "dataset9", "deliverable1", "deliverable2", "report1", "report2", "report3", "report4", "report5", "report6", "report7"]
+}

@@ -1,0 +1,22 @@
+{
+    "parent_organisation": "central_hospital",
+    "Organisation": ["west_hospital", "east_hospital", "south_hospital", "north_hospital"],
+    "up_Role": ["anesthetist", "hospital_doctor", "intern", "surgeon", "liberal_doctor", "doctor", "specialist", "nurse"],
+    "down_Role": ["patient", "medical_secretary", "student", "extern"],
+    "View": ["medical_file", "sample", "medical_data", "personal_data", "admin_data", "prescribtion_data"],
+    "up_Context": ["intern_presc_hour", "referent_doctor", "anesthesic_patient", "emergency"],
+    "down_Context": ["afternoon", "sample_analysis", "morning", "no_anesthesia"],
+    "Subject": ["Alice_Johnson", "Bob_Smith", "Charlie_Brown", "David_Williams", "Eva_Clark", "Frank_Harris", "Grace_Davis", "Henry_Lee", "Isla_Martin", "James_Wilson", "Katherine_Moore", "Liam_Taylor", "Mia_Anderson", "Nathan_White", "Olivia_Scott", "Paul_Harris", "Quinn_Thomas", "Rachel_Baker", "Samuel_Evans", "Tina_Allen", "Ursula_Carter", "Victor_Turner", "Wendy_Mitchell", "Xander_Rodriguez", "Yara_Lee", "Zane_Gonzalez", "Amelia_King", "Ben_Foster", "Chloe_Walker", "Dylan_Nelson"],
+    "Action": {
+      "prescribe": ["transfer", "prescribe_appointment", "manage", "prescribe_prescription", "prescribe_medecine"],
+      "consult": ["read_db", "ask", "cat", "describe", "grep", "list", "read", "select"],
+      "prepare_operation": ["anaesthetize"],
+      "operate": ["aOperate"],
+      "analyze": ["blood_analysis", "cancer_analysis", "biopsy"],
+      "handle": ["handle_db", "delegate"],
+      "modify": ["add", "copy", "create", "delete", "drop", "edit", "insert", "move", "write", "write_db", "revoke"],
+      "validate": ["sign"]
+    },
+    "Object": ["prescription_1", "prescription_2", "prescription_3", "prescription_4", "prescription_5", "sample_1", "sample_2", "sample_3", "sample_4", "sample_5", "patient_medical_data_1", "patient_medical_data_2", "patient_medical_data_3", "patient_medical_data_4", "patient_medical_data_5", "patient_admin_data_1", "patient_admin_data_2", "patient_admin_data_3", "patient_admin_data_4", "patient_admin_data_5"]
+}
+  

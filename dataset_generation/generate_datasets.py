@@ -1,12 +1,15 @@
+import argparse
+import json
 import random
 from itertools import product
 import rdflib
 from rdflib.namespace import RDF, OWL
 
-from dataset_generation import classes
+import classes
 
-def generate_test_cases(input_individuals):
+def generate_test_cases(input_individuals, nb_confs):
     output_individuals = {
+        "parent_organisation": input_individuals["parent_organisation"],
         "Organisation" : [],
         "up_Role" : [],
         "down_Role" : [],
@@ -20,11 +23,11 @@ def generate_test_cases(input_individuals):
         "Action" : [],
         "Object" : []
     }    
-    output_individuals["Organisation"].append("central_hospital")
+    output_individuals["Organisation"].append(input_individuals["parent_organisation"])
     generated_elements = set()
     
     # For each action type (consult, modify, validate)
-    for _ in range(50):
+    for _ in range(nb_confs):
         # choose first a random subject, action and object (activity follows by default)
         s = random.choice(input_individuals["Subject"])
         o = random.choice(input_individuals["Object"])
@@ -48,9 +51,9 @@ def generate_test_cases(input_individuals):
             generated_elements.add(classes.Permission(org_perm=org_perm, r_perm=r_perm, v_perm=v_perm, a_perm=a_perm, c_perm=c_perm))
             generated_elements.add(classes.Employ(org=org_perm, r=r_perm, s=s))
             generated_elements.add(classes.Use(org=org_perm, v=v_perm, o=o))
-            generated_elements.add(classes.Consider(org="central_hospital", a=a_perm, alpha=a))
+            generated_elements.add(classes.Consider(org=input_individuals["parent_organisation"], a=a_perm, alpha=a))
             generated_elements.add(classes.Define(org=org_perm, s=s, a=a, o=o, c=c_perm))
-            generated_elements.add(classes.subOrganisationOf(org_1=org_perm, org_2="central_hospital"))         
+            generated_elements.add(classes.subOrganisationOf(org_1=org_perm, org_2=input_individuals["parent_organisation"]))         
             output_individuals["Organisation"].append(org_perm)
             output_individuals["up_Role"].append(r_perm)
             output_individuals["Role"].append(r_perm)
@@ -70,9 +73,9 @@ def generate_test_cases(input_individuals):
             generated_elements.add(classes.Prohibition(org_proh=org_proh, r_proh=r_proh, a_proh=a_proh, v_proh=v_proh, c_proh=c_proh))
             generated_elements.add(classes.Employ(org=org_proh, r=r_proh, s=s))            
             generated_elements.add(classes.Use(org=org_proh, v=v_proh, o=o))            
-            generated_elements.add(classes.Consider(org="central_hospital", a=a_proh, alpha=a))            
+            generated_elements.add(classes.Consider(org=input_individuals["parent_organisation"], a=a_proh, alpha=a))            
             generated_elements.add(classes.Define(org=org_proh, s=s, a=a, o=o, c=c_proh))
-            generated_elements.add(classes.subOrganisationOf(org_1=org_proh, org_2="central_hospital"))
+            generated_elements.add(classes.subOrganisationOf(org_1=org_proh, org_2=input_individuals["parent_organisation"]))
 
             output_individuals["Organisation"].append(org_proh)
             output_individuals["down_Role"].append(r_proh)
@@ -87,7 +90,7 @@ def generate_test_cases(input_individuals):
 def add_generated_to_graph(graph, test_data, output_individuals, long_example, ORBAC):
     count = 0
     for typ, elements in output_individuals.items():
-        if typ == "up_Role" or typ == "down_Role" or typ == "up_Context" or typ == "down_Context":
+        if typ == "up_Role" or typ == "down_Role" or typ == "up_Context" or typ == "down_Context" or typ == "parent_organisation":
             continue
         for element in elements:
             graph.add((rdflib.URIRef(long_example[element]), RDF.type, rdflib.URIRef(ORBAC[typ])))
@@ -104,8 +107,8 @@ def add_generated_to_graph(graph, test_data, output_individuals, long_example, O
         count +=1
 
     for org in output_individuals["Organisation"]:
-        if org != "central_hospital":
-            graph.add((rdflib.URIRef(long_example[org]), rdflib.URIRef(ORBAC["subOrganisationOf"]), rdflib.URIRef(long_example["central_hospital"])))
+        if org != output_individuals["parent_organisation"]:
+            graph.add((rdflib.URIRef(long_example[org]), rdflib.URIRef(ORBAC["subOrganisationOf"]), rdflib.URIRef(long_example[output_individuals["parent_organisation"]])))
     
     # preference between contexts
     for up_c in output_individuals["up_Context"]:
@@ -119,44 +122,41 @@ def add_generated_to_graph(graph, test_data, output_individuals, long_example, O
 
 if __name__ == '__main__':
     """"""
-    """Generating and Adding test examples to an rdflib graph"""
-    # xmlns="http://www.semanticweb.org/laouar/ontologies/2025/0/hospital_example_25#"
-    long_example = rdflib.Namespace("http://www.semanticweb.org/laouar/ontologies/2025/0/hospital_example_25#")
+    """Generating and Adding test examples to an rdflib graph"""    
+
+    parser = argparse.ArgumentParser(description="Generation of RDF graphs for examples of the OrBAC ontology.")
+    parser.add_argument("--file", type=str, required=True, help="Path to JSON file containing elements of an example.")
+    parser.add_argument("--conflicts", type=int, required=True, help="The number of conflicts wanted in the output graph.")
+
+    args = parser.parse_args()
+    nb_confs = args.conflicts
+    example_file = args.file
+
+    with open(example_file, "r") as f:
+        individuals = json.load(f)
+
+    example_name = example_file.split("/")[-1].split(".json")[0]
+
+    # Namespaces
+    example_uri = f"http://www.semanticweb.org/bleu/ontologies/2025/0/{example_name}_{nb_confs}#"
+    long_example = rdflib.Namespace(example_uri)
     ORBAC = rdflib.Namespace("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#")    
     
+    # Create graph and load ORBAC ontology
     graph = rdflib.Graph()
-    base_ontology_path = "ontology/orbac.owl"
-    graph.parse(base_ontology_path, format="xml")
-    graph.bind("orbac-owl", ORBAC)
-    graph.bind("",long_example)
-    graph.add((rdflib.URIRef(long_example), RDF.type, OWL.Ontology))
+    graph.parse("ontology/orbac.owl", format="xml")
+    
+    graph.bind("ex", long_example)
+    graph.bind("orbac", ORBAC)
+    graph.bind("owl", OWL)
+    # Explicitly declare this ontology's IRI
+    graph.add((rdflib.URIRef(example_uri), RDF.type, OWL.Ontology))
 
-    individuals = {
-        "Organisation" : ["west_hospital", "east_hospital", "south_hospital", "north_hospital"],
-        "up_Role" : ["anesthetist", "hospital_doctor", "intern", "surgeon", "liberal_doctor", "doctor", "specialist", "nurse"],
-        "down_Role" : ["patient", "medical_secretary", "student", "extern"],
-        "View" : ["medical_file", "sample", "medical_data", "personal_data", "admin_data", "prescribtion_data"],
-        "up_Context" : ["intern_presc_hour", "referent_doctor", "anesthesic_patient", "emergency"],
-        "down_Context" : ["afternoon", "sample_analysis", "morning", "no_anesthesia"],
-        "Subject" : ["Alice_Johnson", "Bob_Smith", "Charlie_Brown", "David_Williams", "Eva_Clark", "Frank_Harris", "Grace_Davis", "Henry_Lee", "Isla_Martin", "James_Wilson", "Katherine_Moore", "Liam_Taylor", "Mia_Anderson", "Nathan_White", "Olivia_Scott", "Paul_Harris", "Quinn_Thomas", "Rachel_Baker", "Samuel_Evans", "Tina_Allen", "Ursula_Carter", "Victor_Turner", "Wendy_Mitchell", "Xander_Rodriguez", "Yara_Lee", "Zane_Gonzalez", "Amelia_King", "Ben_Foster", "Chloe_Walker", "Dylan_Nelson"],
-        "Action" : {
-            "prescribe" : ["transfer", "prescribe_appointment", "manage", "prescribe_prescription", "prescribe_medecine"],
-            "consult" : ["read_db", "ask", "cat", "describe", "grep", "list", "read", "select"],
-            "prepare_operation" : ["anaesthetize"],
-            "operate" : ["aOperate"],
-            "analyze" : ["blood_analysis", "cancer_analysis", "biopsy"],
-            "handle" : ["handle_db", "delegate"],
-            "modify": ["add", "copy", "create", "delete", "drop", "edit", "insert", "move", "write", "write_db", "revoke"],
-            "validate": ["sign"]
-        },
-        "Object" : ["prescription_1", "prescription_2", "prescription_3", "prescription_4", "prescription_5", 
-                    "sample_1", "sample_2", "sample_3", "sample_4", "sample_5", 
-                    "patinet_medical_data_1", "patinet_medical_data_2", "patinet_medical_data_3", "patinet_medical_data_4", "patinet_medical_data_5",
-                    "patinet_admin_data_1", "patinet_admin_data_2", "patinet_admin_data_3", "patinet_admin_data_4", "patinet_admin_data_5"]
-    }
+    # Explicitly declare ORBAC as an import
+    graph.add((rdflib.URIRef(example_uri), OWL.imports, rdflib.URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl")))
 
-    generated_elements, output_individuals = generate_test_cases(individuals)
+    generated_elements, output_individuals = generate_test_cases(individuals, nb_confs)
     add_generated_to_graph(graph, generated_elements, output_individuals, long_example, ORBAC)
 
-    output_file = "ontology/examples/hospital_example_25.owl"
+    output_file = f"ontology/examples/{example_name}_{nb_confs}.owl"
     graph.serialize(destination=output_file,format="application/rdf+xml")
