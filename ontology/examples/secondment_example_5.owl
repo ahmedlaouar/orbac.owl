@@ -1,0 +1,2401 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#"
+     xml:base="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:orbac="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#">
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeActivity -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeActivity">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeContext -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeContext">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeOrganisation -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeOrganisation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeRole -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeRole">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeView -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeView">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersAction -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersAction">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersActivity -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersActivity">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersOrganisation -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersOrganisation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesAction -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesAction">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesContext -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesContext">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesObject -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesObject">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesOrganisation -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesOrganisation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesSubject -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesSubject">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployee -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployee">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployer -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployer">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#hasParent -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#hasParent">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#subOrganisationOf -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#subOrganisationOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#subRoleOrganisation -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#subRoleOrganisation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesEmployer -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesEmployer">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesObject -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesObject">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesView -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesView">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Obligation -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Obligation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Recommendation -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Recommendation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SeniorRole -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SeniorRole">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SubRole -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SubRole">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consider29 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consider29">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <orbac:considersAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#ask"/>
+        <orbac:considersActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult"/>
+        <orbac:considersOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consortium"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consider44 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consider44">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <orbac:considersAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#copy"/>
+        <orbac:considersActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#modify"/>
+        <orbac:considersOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consortium"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consider49 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consider49">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <orbac:considersAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#cat"/>
+        <orbac:considersActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult"/>
+        <orbac:considersOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consortium"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consider79 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consider79">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <orbac:considersAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#sign"/>
+        <orbac:considersActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#validate"/>
+        <orbac:considersOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consortium"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consortium -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consortium">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define13 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define13">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#cat"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#default"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverable2"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Liam_Taylor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define17 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define17">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#sign"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#default"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset1"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Katherine_Moore"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define19 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define19">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#cat"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverable2"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Liam_Taylor"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define13"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define17"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define32"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define43"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define57"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define65"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define81"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define83"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define22 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define22">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#sign"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset1"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Katherine_Moore"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define13"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define17"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define32"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define43"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define57"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define65"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define81"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define83"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define27 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define27">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#cat"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#audit"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverable2"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute3"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Liam_Taylor"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define13"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define17"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define32"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define43"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define57"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define65"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define81"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define83"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define30 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define30">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#cat"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverable2"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Liam_Taylor"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define13"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define17"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define32"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define43"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define57"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define65"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define81"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define83"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define32 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define32">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#copy"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#default"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset6"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Paul_Harris"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define41 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define41">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#ask"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset5"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Victor_Turner"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define13"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define17"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define32"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define43"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define57"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define65"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define81"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define83"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define43 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define43">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#sign"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#collaboration"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#agreement1"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Frank_Harris"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define45 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define45">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#ask"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset5"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University3"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Victor_Turner"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define13"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define17"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define32"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define43"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define57"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define65"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define81"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define83"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define46 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define46">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#sign"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#audit"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#agreement1"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University3"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Frank_Harris"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define13"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define17"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define32"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define43"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define57"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define65"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define81"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define83"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define54 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define54">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#sign"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#agreement1"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Frank_Harris"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define13"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define17"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define32"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define43"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define57"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define65"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define81"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define83"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define57 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define57">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#ask"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#collaboration"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset5"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute3"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Victor_Turner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define60 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define60">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#ask"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset5"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Victor_Turner"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define13"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define17"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define32"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define43"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define57"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define65"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define81"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define83"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define64 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define64">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#sign"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#agreement1"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Frank_Harris"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define13"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define17"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define32"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define43"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define57"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define65"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define81"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define83"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define65 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define65">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#cat"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#collaboration"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverable2"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute1"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Liam_Taylor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define71 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define71">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#copy"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#audit"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset6"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute1"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Paul_Harris"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define13"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define17"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define32"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define43"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define57"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define65"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define81"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define83"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define81 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define81">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#sign"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#collaboration"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset1"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Katherine_Moore"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define83 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Define83">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#ask"/>
+        <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#default"/>
+        <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset5"/>
+        <orbac:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Victor_Turner"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ1">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Katherine_Moore"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#full_professor"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ14"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ15"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ37"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ42"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ51"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ58"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ7"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ82"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ14 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ14">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Victor_Turner"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#PhD_student"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ15 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ15">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Katherine_Moore"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#associate_professor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ21 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ21">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Paul_Harris"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute1"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#team_leader"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ14"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ15"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ37"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ42"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ51"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ58"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ7"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ82"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ25 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ25">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Victor_Turner"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#researcher"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ14"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ15"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ37"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ42"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ51"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ58"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ7"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ82"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ3">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Frank_Harris"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#full_professor"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ14"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ15"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ37"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ42"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ51"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ58"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ7"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ82"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ33 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ33">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Victor_Turner"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University3"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#coordinator"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ14"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ15"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ37"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ42"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ51"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ58"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ7"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ82"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ37 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ37">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Liam_Taylor"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute1"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#staff_member"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ39 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ39">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Frank_Harris"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#wp_leader"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ14"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ15"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ37"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ42"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ51"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ58"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ7"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ82"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ42 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ42">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Katherine_Moore"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#staff_member"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ51 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ51">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Paul_Harris"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#PhD_student"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ58 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ58">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Victor_Turner"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute3"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#associate_professor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ59 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ59">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Liam_Taylor"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#coordinator"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ14"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ15"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ37"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ42"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ51"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ58"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ7"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ82"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ62 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ62">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Liam_Taylor"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#team_leader"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ14"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ15"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ37"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ42"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ51"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ58"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ7"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ82"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ66 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ66">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Victor_Turner"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#coordinator"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ14"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ15"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ37"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ42"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ51"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ58"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ7"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ82"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ7 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ7">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Frank_Harris"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#associate_professor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ78 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ78">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Liam_Taylor"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute3"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#full_professor"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ14"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ15"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ37"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ42"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ51"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ58"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ7"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ82"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ80 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ80">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Frank_Harris"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University3"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#wp_leader"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ14"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ15"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ37"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ42"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ51"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ58"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ7"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ82"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ82 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Employ82">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Liam_Taylor"/>
+        <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#staff_member"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Frank_Harris -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Frank_Harris">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute1">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <orbac:subOrganisationOf rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consortium"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <orbac:subOrganisationOf rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consortium"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute3">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <orbac:subOrganisationOf rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consortium"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Katherine_Moore -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Katherine_Moore">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Liam_Taylor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Liam_Taylor">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Paul_Harris -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Paul_Harris">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission12 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission12">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#validate"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#wp_leader"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#administration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission23 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission23">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#researcher"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#public_data"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission24 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission24">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#validate"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#full_professor"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission26 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission26">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University3"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#coordinator"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#administration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission31 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission31">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#audit"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute3"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#full_professor"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission35 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission35">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#modify"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#audit"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute1"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#team_leader"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverables"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission48 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission48">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#validate"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#full_professor"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission6">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#coordinator"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission61 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission61">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#team_leader"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment_report"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission69 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission69">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#coordinator"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission8 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Permission8">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#validate"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#audit"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University3"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#wp_leader"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment_report"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#PhD_student -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#PhD_student">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition16 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition16">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#validate"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#default"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#staff_member"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#reports"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition20 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition20">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#modify"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#default"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#PhD_student"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#data"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition34 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition34">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#default"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#staff_member"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#administration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition53 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition53">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#default"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#PhD_student"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment_report"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition63 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition63">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#collaboration"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute1"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#staff_member"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverables"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition68 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition68">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#validate"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#collaboration"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#associate_professor"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition74 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition74">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#validate"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#collaboration"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#associate_professor"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#internal_data"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition85 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Prohibition85">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult"/>
+        <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#collaboration"/>
+        <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute3"/>
+        <orbac:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#associate_professor"/>
+        <orbac:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <orbac:subOrganisationOf rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consortium"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <orbac:subOrganisationOf rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consortium"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University3">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <orbac:subOrganisationOf rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Consortium"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use0">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University3"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset5"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#administration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use10 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use10">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#agreement1"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use11 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use11">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverable2"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use2">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute1"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset6"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverables"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use28 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use28">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute3"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverable2"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use36 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use36">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverable2"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment_report"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use38 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use38">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#agreement1"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#administration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use4">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#agreement1"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#internal_data"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use47 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use47">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset1"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP4"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use5">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset6"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#data"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use52 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use52">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute1"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverable2"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverables"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use56 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use56">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset1"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#reports"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use67 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use67">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverable2"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#administration"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use70 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use70">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University3"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#agreement1"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment_report"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use73 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use73">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute3"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset5"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use75 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use75">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset5"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#public_data"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use76 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use76">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University1"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset5"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment_report"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use84 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use84">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Institute2"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset5"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use9 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Use9">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#University2"/>
+        <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset1"/>
+        <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Victor_Turner -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#Victor_Turner">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP1">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP3">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#WP4">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#administration -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#administration">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#agreement1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#agreement1">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#ask -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#ask">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#associate_professor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#associate_professor">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#audit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#audit">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#collaboration"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#default"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#cat -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#cat">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#collaboration -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#collaboration">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#consult">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#coordinator -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#coordinator">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#PhD_student"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#associate_professor"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#staff_member"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#copy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#copy">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#data -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#data">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset1">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset5">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset6 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#dataset6">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#default -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#default">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverable2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverable2">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverables -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#deliverables">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#full_professor -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#full_professor">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#PhD_student"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#associate_professor"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#staff_member"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#internal_data -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#internal_data">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#management">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#collaboration"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#default"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#modify -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#modify">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#public_data -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#public_data">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#reports -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#reports">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#researcher -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#researcher">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#PhD_student"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#associate_professor"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#staff_member"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#collaboration"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#default"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment_report -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#secondment_report">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#sign -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#sign">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#staff_member -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#staff_member">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#team_leader -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#team_leader">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#PhD_student"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#associate_professor"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#staff_member"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#validate -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#validate">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#wp_leader -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#wp_leader">
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#PhD_student"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#associate_professor"/>
+        <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/secondment_example_5#staff_member"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#context1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#context2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#define1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#define2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#role1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#role2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#employ1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#employ2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#R1">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#R2">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>preferrenceContextToDefine</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#context1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#context2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#context1"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#context2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesContext"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#define1"/>
+                                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#context1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesContext"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#define2"/>
+                                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#context2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#define1"/>
+                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#define2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>prefrrenceRoleToEmploy</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#role1"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#role2"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
+                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#role1"/>
+                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#role2"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                        <rdf:first>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole"/>
+                                                <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#employ1"/>
+                                                <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#role1"/>
+                                            </rdf:Description>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                                                <rdf:first>
+                                                    <rdf:Description>
+                                                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole"/>
+                                                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#employ2"/>
+                                                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#role2"/>
+                                                    </rdf:Description>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#employ1"/>
+                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#employ2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</swrla:isRuleEnabled>
+        <rdfs:comment></rdfs:comment>
+        <rdfs:label>preferenceFromHierarchy</rdfs:label>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#hasParent"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#R1"/>
+                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#R2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
+                        <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#R1"/>
+                        <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#R2"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
