@@ -113,6 +113,18 @@ These token files (`.env`, `.streamlit/secrets.toml`) are listed in `.gitignore`
 - `python-dotenv` – Secure environment variable management
 - `nltk`, `simplenlg` – Natural Language Generation utilities
 
+### 🧠 Used Language Models
+The following table lists the LLMs that were used in our experiments, along with links to their official Hugging Face pages:
+
+| Model Name |	URL |
+|------------|------|
+| DeepSeek-r1:7B |	https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B |
+| DeepSeek-r1:1.5B |	https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B |
+| Gemma-2-9B (IT) |	https://huggingface.co/google/gemma-2-9b-it |
+| Gemma-2-9B |	https://huggingface.co/google/gemma-2-9b |
+| Llama-3.2-3B (Instruct) |	https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct |
+| Llama-3.2-3B |	https://huggingface.co/meta-llama/Llama-3.2-3B |
+
 ### 🧠 Text Quality & Evaluation
 - `language-tool-python` – Grammar and style checking
 - `textstat` – Readability scoring
