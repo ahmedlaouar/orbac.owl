@@ -87,7 +87,7 @@ oarnodes -J | jq 'to_entries[] | select(.value.state == "Alive" and .value.gpu !
 ```
 
 ## Notes
-Only some commands work differently depending on the type of the reserved material — test each one with oarsub -C (check mode) before real submission.
+Only some commands work differently depending on the type of the reserved material — test each one with `oarsub -C` (check mode) before real submission.
 
 Also adjust paths, and preferrably use full paths for job submission (avoid using `~`).
 
