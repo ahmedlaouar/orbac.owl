@@ -84,15 +84,15 @@ def layout(*args):
 
 def footer():
     myargs = [
-        " Copyright © 2024, Created by ",
-        link("http://ahmedlaouar.me", "Ahmed Laouar"),
+        " Copyright © 2025, Created by ",
+        link("ABCD", "ABCD"),
         ", ",
-        link("https://www.tokyraboanary.org/", "Toky Raboanary"),
+        link("ABCD", "ABCD"),
         ", ",
-        link("https://scholar.google.fr/citations?user=-3kO5x0AAAAJ&hl=fr", "Salem Benferhat"),
+        link("ABCD", "ABCD"),
         br(),
-        "Funded by the STARWARS-project: ",
-        link2("https://sites.google.com/view/horizoneurope2020-starwars/", "Horizon Europe 2020"),
+        "Funded by the XYZ: ",
+        link2("XYZ", "XYZ"),
     ]
     layout(*myargs)
 
