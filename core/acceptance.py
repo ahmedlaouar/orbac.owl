@@ -312,7 +312,7 @@ def check_if_role_from_hierarchy(graph, example_uri, access_type_relation, emplo
     # Test if some roles are inferred from hierarchy
     # amounts to checking if an employ relation exists and connects subject to role
     # return True if the role is inferred from a hierarchy, False instead. The negation of the result of the query
-    verif_query= """PREFIX orbac-owl: <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#>
+    verif_query= """PREFIX orbac-owl: <https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#>
     PREFIX : <{example_uri}>
     ASK {{
     :{access_type_relation} orbac-owl:accessTypeRole ?role .
@@ -324,13 +324,13 @@ def check_if_role_from_hierarchy(graph, example_uri, access_type_relation, emplo
     return not(next(iter(results)))
 
 def add_new_employ(graph, example_uri, access_type_relation, subject):
-    accessTypeRole = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeRole")
-    accessTypeOrganisation = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeOrganisation")
-    Employ = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ")
-    employesEmployer = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployer")
-    employesEmploee = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployee")
-    employesRole = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole")
-    isPreferredTo = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo")
+    accessTypeRole = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeRole")
+    accessTypeOrganisation = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeOrganisation")
+    Employ = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ")
+    employesEmployer = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesEmployer")
+    employesEmploee = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesEmployee")
+    employesRole = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesRole")
+    isPreferredTo = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#isPreferredTo")
     
     for _, _, o in graph.triples((URIRef(example_uri+access_type_relation), accessTypeRole, None)):
         role = o

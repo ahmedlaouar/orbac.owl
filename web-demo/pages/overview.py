@@ -2,8 +2,6 @@ import streamlit as st
 import streamlit_shadcn_ui as ui
 from rdflib import Graph
 import pandas as pd
-from acceptance import *
-from explanation import *
 from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, classes, fonts
 from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb
@@ -14,7 +12,7 @@ def display_app_heading():
     st.title("OrBAC ontology demo")
     #st.header("Test some functions of the OrBAC ontology")
     
-    st.image("web-demo/content/static/images/https___raw.githubusercontent.com_ahmedlaouar_orbac.owl_refs_heads_main_ontology_orbac.owl.svg",use_container_width=True,caption="")
+    st.image("web-demo/content/static/images/https___raw.githubusercontent.com_bleuontologies_orbac.owl_refs_heads_main_orbac.owl.svg",use_container_width=True,caption="")
     st.markdown("<p style='text-align: center;color:grey;'><small>The OrBAC ontology graph: Created with <a href='http://vowl.visualdataweb.org'>WebVOWL</a> (version 1.1.7)</small></p>", unsafe_allow_html=True)
 
     with st.expander("The OrBAC ontology",expanded=False):

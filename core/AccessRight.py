@@ -28,11 +28,11 @@ class AccessType:
     @classmethod
     def create_from_graph(cls, graph, uri, name, type):
         """"""
-        accessTypeOrganisation = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeOrganisation")
-        accessTypeRole = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeRole")
-        accessTypeActivity = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeActivity")
-        accessTypeView = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeView")
-        accessTypeContext = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeContext")
+        accessTypeOrganisation = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeOrganisation")
+        accessTypeRole = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeRole")
+        accessTypeActivity = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeActivity")
+        accessTypeView = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeView")
+        accessTypeContext = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeContext")
         
         for _, _, o in graph.triples((URIRef(uri+name), accessTypeOrganisation, None)):
             org = o.fragment
@@ -72,8 +72,8 @@ class Employ:
     @classmethod
     def create_from_graph(cls, graph, uri, name, s):
         """"""
-        employesEmployer = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployer")
-        employesRole = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole")
+        employesEmployer = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesEmployer")
+        employesRole = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesRole")
         
         for _, _, o in graph.triples((URIRef(uri+name), employesRole, None)):
             role = o.fragment
@@ -107,8 +107,8 @@ class Use:
     @classmethod
     def create_from_graph(cls, graph, uri, name, s):
         """"""
-        usesEmployer = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesEmployer")
-        usesView = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesView")
+        usesEmployer = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#usesEmployer")
+        usesView = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#usesView")
         
         for _, _, o in graph.triples((URIRef(uri+name), usesView, None)):
             view = o.fragment
@@ -142,8 +142,8 @@ class Consider:
     @classmethod
     def create_from_graph(cls, graph, uri, name, s):
         """"""
-        considersOrganisation = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersOrganisation")
-        considersActivity = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersActivity")
+        considersOrganisation = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#considersOrganisation")
+        considersActivity = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#considersActivity")
         
         for _, _, o in graph.triples((URIRef(uri+name), considersActivity, None)):
             activity = o.fragment
@@ -183,8 +183,8 @@ class Define:
     @classmethod
     def create_from_graph(cls, graph, uri, name, subject, action, obj):
         """"""
-        definesOrganisation = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesOrganisation")
-        definesContext = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesContext")
+        definesOrganisation = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesOrganisation")
+        definesContext = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesContext")
         
         for _, _, o in graph.triples((URIRef(uri+name), definesContext, None)):
             context = o.fragment
@@ -378,7 +378,7 @@ class AccessRight:
 
     def is_strictly_preferred(self, member1, member2):
         
-        query_template = """PREFIX orbac-owl: <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#>
+        query_template = """PREFIX orbac-owl: <https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#>
         PREFIX : <{example_uri}>
         # query to check dominance of member1 over member2
         ASK {{
@@ -490,7 +490,7 @@ class AccessRight:
         # Test if some roles are inferred from hierarchy
         # amounts to checking if an employ relation exists and connects subject to role
         # return True if the role is inferred from a hierarchy, False instead. The negation of the result of the query
-        verif_query= """PREFIX orbac-owl: <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#>
+        verif_query= """PREFIX orbac-owl: <https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#>
         PREFIX : <{example_uri}>
         ASK {{
         :{access_type_relation} orbac-owl:accessTypeRole ?role .
@@ -502,13 +502,13 @@ class AccessRight:
         return not(next(iter(results)))
 
     def add_new_employ(self, access_type_relation):
-        accessTypeRole = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeRole")
-        accessTypeOrganisation = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeOrganisation")
-        Employ = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ")
-        employesEmployer = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployer")
-        employesEmploee = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployee")
-        employesRole = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole")
-        isPreferredTo = URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo")
+        accessTypeRole = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeRole")
+        accessTypeOrganisation = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeOrganisation")
+        Employ = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ")
+        employesEmployer = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesEmployer")
+        employesEmploee = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesEmployee")
+        employesRole = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesRole")
+        isPreferredTo = URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#isPreferredTo")
         
         for _, _, o in self.graph.triples((URIRef(self.uri+access_type_relation), accessTypeRole, None)):
             role = o

@@ -140,7 +140,7 @@ if __name__ == '__main__':
     # Namespaces
     example_uri = f"http://www.semanticweb.org/bleu/ontologies/2025/0/{example_name}_{nb_confs}#"
     long_example = rdflib.Namespace(example_uri)
-    ORBAC = rdflib.Namespace("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#")    
+    ORBAC = rdflib.Namespace("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#")    
     
     # Create graph and load ORBAC ontology
     graph = rdflib.Graph()
@@ -153,7 +153,7 @@ if __name__ == '__main__':
     graph.add((rdflib.URIRef(example_uri), RDF.type, OWL.Ontology))
 
     # Explicitly declare ORBAC as an import
-    graph.add((rdflib.URIRef(example_uri), OWL.imports, rdflib.URIRef("https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl")))
+    graph.add((rdflib.URIRef(example_uri), OWL.imports, rdflib.URIRef("https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl")))
 
     generated_elements, output_individuals = generate_test_cases(individuals, nb_confs)
     add_generated_to_graph(graph, generated_elements, output_individuals, long_example, ORBAC)

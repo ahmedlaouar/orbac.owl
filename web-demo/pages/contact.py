@@ -2,8 +2,6 @@ import streamlit as st
 import streamlit_shadcn_ui as ui
 from rdflib import Graph
 import pandas as pd
-from acceptance import *
-from explanation import *
 from htbuilder import HtmlElement, div, ul, li, br, hr, a, p, img, styles, classes, fonts
 from htbuilder.units import percent, px
 from htbuilder.funcs import rgba, rgb

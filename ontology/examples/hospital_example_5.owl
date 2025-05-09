@@ -7,11 +7,11 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:swrl="http://www.w3.org/2003/11/swrl#"
-     xmlns:orbac="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#"
+     xmlns:orbac="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#"
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#">
-        <owl:imports rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl"/>
     </owl:Ontology>
     
 
@@ -44,254 +44,254 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeActivity -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeActivity -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeActivity">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeActivity">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Activity"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeContext -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeContext -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeContext">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeContext">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeOrganisation -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeOrganisation -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeOrganisation">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeOrganisation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeRole -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeRole -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeRole">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeRole">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeView -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeView -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#accessTypeView">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#accessTypeView">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#View"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersAction -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#considersAction -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersAction">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#considersAction">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Consider"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Action"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersActivity -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#considersActivity -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersActivity">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#considersActivity">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Consider"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Activity"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersOrganisation -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#considersOrganisation -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#considersOrganisation">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#considersOrganisation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Consider"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesAction -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesAction -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesAction">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesAction">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Action"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesContext -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesContext -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesContext">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesContext">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesObject -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesObject -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesObject">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesObject">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Object"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesOrganisation -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesOrganisation -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesOrganisation">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesOrganisation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesSubject -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesSubject -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesSubject">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesSubject">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployee -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesEmployee -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployee">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesEmployee">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployer -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesEmployer -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesEmployer">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesEmployer">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesRole -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesRole">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#hasParent -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#hasParent -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#hasParent">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#hasParent">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#isPreferredTo -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#isPreferredTo">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#subOrganisationOf -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#subOrganisationOf -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#subOrganisationOf">
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#subOrganisationOf">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#subRoleOrganisation -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#subRoleOrganisation -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#subRoleOrganisation">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#subRoleOrganisation">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesEmployer -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#usesEmployer -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesEmployer">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#usesEmployer">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesObject -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#usesObject -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesObject">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#usesObject">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Object"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesView -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#usesView -->
 
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#usesView">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#usesView">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#View"/>
     </owl:ObjectProperty>
     
 
@@ -307,173 +307,173 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Action -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Action">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Activity -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Activity">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Consider -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Consider">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context"/>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Object -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Object">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Obligation -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Obligation -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Obligation">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Obligation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Permission -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Permission">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <owl:disjointWith rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Recommendation -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Recommendation -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Recommendation">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Recommendation">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SeniorRole -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#SeniorRole -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SeniorRole">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#SeniorRole">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SubRole -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#SubRole -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SubRole">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#SubRole">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
     </owl:Class>
     
 
 
-    <!-- https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View -->
+    <!-- https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#View -->
 
-    <owl:Class rdf:about="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
+    <owl:Class rdf:about="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#View">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
     </owl:Class>
     
 
@@ -492,8 +492,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Ben_Foster -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Ben_Foster">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:NamedIndividual>
     
 
@@ -501,8 +501,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Consider0 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Consider0">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Consider"/>
         <orbac:considersAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#grep"/>
         <orbac:considersActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#consult"/>
         <orbac:considersOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#central_hospital"/>
@@ -513,8 +513,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Consider23 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Consider23">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Consider"/>
         <orbac:considersAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#revoke"/>
         <orbac:considersActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#modify"/>
         <orbac:considersOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#central_hospital"/>
@@ -525,8 +525,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Consider41 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Consider41">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Consider"/>
         <orbac:considersAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sign"/>
         <orbac:considersActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#validate"/>
         <orbac:considersOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#central_hospital"/>
@@ -537,8 +537,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Consider65 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Consider65">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Consider"/>
         <orbac:considersAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#anaesthetize"/>
         <orbac:considersActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prepare_operation"/>
         <orbac:considersOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#central_hospital"/>
@@ -549,8 +549,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Consider74 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Consider74">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Consider"/>
         <orbac:considersAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#biopsy"/>
         <orbac:considersActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#analyze"/>
         <orbac:considersOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#central_hospital"/>
@@ -561,8 +561,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define11 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define11">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#biopsy"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#intern_presc_hour"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_5"/>
@@ -585,8 +585,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define2 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define2">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sign"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#intern_presc_hour"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
@@ -609,8 +609,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define22 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define22">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#anaesthetize"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#no_anesthesia"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
@@ -623,8 +623,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define24 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define24">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#revoke"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#referent_doctor"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient_admin_data_3"/>
@@ -647,8 +647,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define31 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define31">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#revoke"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#anesthesic_patient"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient_admin_data_3"/>
@@ -671,8 +671,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define32 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define32">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#grep"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#no_anesthesia"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_1"/>
@@ -685,8 +685,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define34 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define34">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#grep"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#morning"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_1"/>
@@ -699,8 +699,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define35 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define35">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sign"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample_analysis"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
@@ -713,8 +713,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define48 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define48">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sign"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#emergency"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
@@ -737,8 +737,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define50 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define50">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#anaesthetize"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample_analysis"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
@@ -751,8 +751,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define54 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define54">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#biopsy"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample_analysis"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_5"/>
@@ -765,8 +765,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define58 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define58">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#grep"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#emergency"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_1"/>
@@ -789,8 +789,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define6 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define6">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sign"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#afternoon"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
@@ -803,8 +803,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define67 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define67">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sign"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#morning"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
@@ -817,8 +817,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define7 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define7">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#revoke"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#intern_presc_hour"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient_admin_data_3"/>
@@ -841,8 +841,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define70 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define70">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#grep"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample_analysis"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_1"/>
@@ -855,8 +855,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define73 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define73">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#revoke"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#no_anesthesia"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient_admin_data_3"/>
@@ -869,8 +869,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define78 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Define78">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Define"/>
         <orbac:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#anaesthetize"/>
         <orbac:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#referent_doctor"/>
         <orbac:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
@@ -893,8 +893,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ27 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ27">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Eva_Clark"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient"/>
@@ -905,8 +905,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ28 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ28">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Mia_Anderson"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#east_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#intern"/>
@@ -926,8 +926,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ29 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ29">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Eva_Clark"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#student"/>
@@ -938,8 +938,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ38 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ38">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Mia_Anderson"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#extern"/>
@@ -950,8 +950,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ4 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ4">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Ben_Foster"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#extern"/>
@@ -962,8 +962,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ42 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ42">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Eva_Clark"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#hospital_doctor"/>
@@ -983,8 +983,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ44 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ44">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Victor_Turner"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#surgeon"/>
@@ -1004,8 +1004,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ46 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ46">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Nathan_White"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#extern"/>
@@ -1016,8 +1016,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ49 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ49">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Mia_Anderson"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#liberal_doctor"/>
@@ -1037,8 +1037,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ55 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ55">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Ben_Foster"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#surgeon"/>
@@ -1058,8 +1058,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ66 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ66">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Nathan_White"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#east_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#anesthetist"/>
@@ -1079,8 +1079,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ68 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ68">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Victor_Turner"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_secretary"/>
@@ -1091,8 +1091,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ69 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ69">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Ben_Foster"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#hospital_doctor"/>
@@ -1112,8 +1112,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ76 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ76">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Ben_Foster"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#east_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#liberal_doctor"/>
@@ -1133,8 +1133,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ77 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ77">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Nathan_White"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient"/>
@@ -1145,8 +1145,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ79 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ79">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Nathan_White"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#student"/>
@@ -1157,8 +1157,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ9 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Employ9">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Employ"/>
         <orbac:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Mia_Anderson"/>
         <orbac:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
         <orbac:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient"/>
@@ -1169,8 +1169,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Eva_Clark -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Eva_Clark">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:NamedIndividual>
     
 
@@ -1178,8 +1178,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Mia_Anderson -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Mia_Anderson">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:NamedIndividual>
     
 
@@ -1187,8 +1187,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Nathan_White -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Nathan_White">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:NamedIndividual>
     
 
@@ -1196,8 +1196,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission10 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission10">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Permission"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#validate"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#intern_presc_hour"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#east_hospital"/>
@@ -1210,8 +1210,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission17 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission17">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Permission"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#modify"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#intern_presc_hour"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
@@ -1224,8 +1224,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission26 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission26">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Permission"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#modify"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#referent_doctor"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital"/>
@@ -1238,8 +1238,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission30 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission30">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Permission"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prepare_operation"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#referent_doctor"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital"/>
@@ -1252,8 +1252,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission37 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission37">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Permission"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#validate"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#emergency"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
@@ -1266,8 +1266,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission40 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission40">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Permission"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#modify"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#anesthesic_patient"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#east_hospital"/>
@@ -1280,8 +1280,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission43 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission43">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Permission"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#analyze"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#intern_presc_hour"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital"/>
@@ -1294,8 +1294,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission61 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Permission61">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Permission"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#consult"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#emergency"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#east_hospital"/>
@@ -1308,8 +1308,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition1">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prepare_operation"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample_analysis"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital"/>
@@ -1322,8 +1322,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition18 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition18">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prepare_operation"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#no_anesthesia"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital"/>
@@ -1336,8 +1336,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition33 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition33">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#consult"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#morning"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital"/>
@@ -1350,8 +1350,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition39 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition39">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#validate"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#morning"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
@@ -1364,8 +1364,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition5 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition5">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#consult"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample_analysis"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
@@ -1378,8 +1378,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition52 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition52">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#consult"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#no_anesthesia"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital"/>
@@ -1392,8 +1392,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition57 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition57">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#validate"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample_analysis"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
@@ -1406,8 +1406,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition59 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition59">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#analyze"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample_analysis"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital"/>
@@ -1420,8 +1420,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition63 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition63">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#validate"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#afternoon"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
@@ -1434,8 +1434,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition75 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Prohibition75">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AccessType"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AccessType"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Prohibition"/>
         <orbac:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#modify"/>
         <orbac:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#no_anesthesia"/>
         <orbac:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
@@ -1448,8 +1448,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use12 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use12">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_5"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample"/>
@@ -1460,8 +1460,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use13 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use13">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient_admin_data_3"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#admin_data"/>
@@ -1472,8 +1472,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use14 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use14">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_1"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#personal_data"/>
@@ -1484,8 +1484,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use15 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use15">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_1"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#personal_data"/>
@@ -1496,8 +1496,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use16 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use16">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample"/>
@@ -1508,8 +1508,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use19 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use19">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_1"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#admin_data"/>
@@ -1520,8 +1520,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use20 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use20">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample"/>
@@ -1532,8 +1532,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use21 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use21">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_data"/>
@@ -1544,8 +1544,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use25 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use25">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient_admin_data_3"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample"/>
@@ -1556,8 +1556,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use3 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use3">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#east_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient_admin_data_3"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#admin_data"/>
@@ -1568,8 +1568,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use45 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use45">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#east_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_1"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample"/>
@@ -1580,8 +1580,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use47 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use47">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient_admin_data_3"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_file"/>
@@ -1592,8 +1592,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use51 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use51">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_5"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#admin_data"/>
@@ -1604,8 +1604,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use53 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use53">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#east_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescribtion_data"/>
@@ -1616,8 +1616,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use56 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use56">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_data"/>
@@ -1628,8 +1628,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use60 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use60">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#personal_data"/>
@@ -1640,8 +1640,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use62 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use62">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_file"/>
@@ -1652,8 +1652,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use64 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Use64">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConnectionRule"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConnectionRule"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Use"/>
         <orbac:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital"/>
         <orbac:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3"/>
         <orbac:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_file"/>
@@ -1664,8 +1664,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Victor_Turner -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#Victor_Turner">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:NamedIndividual>
     
 
@@ -1673,8 +1673,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#admin_data -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#admin_data">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#View"/>
     </owl:NamedIndividual>
     
 
@@ -1682,7 +1682,7 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#afternoon -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#afternoon">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context"/>
     </owl:NamedIndividual>
     
 
@@ -1690,8 +1690,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#anaesthetize -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#anaesthetize">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Action"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
     </owl:NamedIndividual>
     
 
@@ -1699,8 +1699,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#analyze -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#analyze">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Activity"/>
     </owl:NamedIndividual>
     
 
@@ -1708,7 +1708,7 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#anesthesic_patient -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#anesthesic_patient">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#afternoon"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#morning"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#no_anesthesia"/>
@@ -1720,8 +1720,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#anesthetist -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#anesthetist">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#extern"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_secretary"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient"/>
@@ -1733,8 +1733,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#biopsy -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#biopsy">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Action"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
     </owl:NamedIndividual>
     
 
@@ -1742,9 +1742,9 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#central_hospital -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#central_hospital">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
     </owl:NamedIndividual>
     
 
@@ -1752,8 +1752,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#consult -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#consult">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Activity"/>
     </owl:NamedIndividual>
     
 
@@ -1761,9 +1761,9 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#east_hospital -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#east_hospital">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
         <orbac:subOrganisationOf rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#central_hospital"/>
     </owl:NamedIndividual>
     
@@ -1772,7 +1772,7 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#emergency -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#emergency">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#afternoon"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#morning"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#no_anesthesia"/>
@@ -1784,8 +1784,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#extern -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#extern">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
     </owl:NamedIndividual>
     
 
@@ -1793,8 +1793,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#grep -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#grep">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Action"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
     </owl:NamedIndividual>
     
 
@@ -1802,8 +1802,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#hospital_doctor -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#hospital_doctor">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#extern"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_secretary"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient"/>
@@ -1815,8 +1815,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#intern -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#intern">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#extern"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_secretary"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient"/>
@@ -1828,7 +1828,7 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#intern_presc_hour -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#intern_presc_hour">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#afternoon"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#morning"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#no_anesthesia"/>
@@ -1840,8 +1840,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#liberal_doctor -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#liberal_doctor">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#extern"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_secretary"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient"/>
@@ -1853,8 +1853,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_data -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_data">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#View"/>
     </owl:NamedIndividual>
     
 
@@ -1862,8 +1862,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_file -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_file">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#View"/>
     </owl:NamedIndividual>
     
 
@@ -1871,8 +1871,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_secretary -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_secretary">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
     </owl:NamedIndividual>
     
 
@@ -1880,8 +1880,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#modify -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#modify">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Activity"/>
     </owl:NamedIndividual>
     
 
@@ -1889,7 +1889,7 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#morning -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#morning">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context"/>
     </owl:NamedIndividual>
     
 
@@ -1897,7 +1897,7 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#no_anesthesia -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#no_anesthesia">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context"/>
     </owl:NamedIndividual>
     
 
@@ -1905,9 +1905,9 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#north_hospital">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
         <orbac:subOrganisationOf rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#central_hospital"/>
     </owl:NamedIndividual>
     
@@ -1916,8 +1916,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
     </owl:NamedIndividual>
     
 
@@ -1925,8 +1925,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient_admin_data_3 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient_admin_data_3">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Object"/>
     </owl:NamedIndividual>
     
 
@@ -1934,8 +1934,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#personal_data -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#personal_data">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#View"/>
     </owl:NamedIndividual>
     
 
@@ -1943,8 +1943,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prepare_operation -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prepare_operation">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Activity"/>
     </owl:NamedIndividual>
     
 
@@ -1952,8 +1952,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescribtion_data -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescribtion_data">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#View"/>
     </owl:NamedIndividual>
     
 
@@ -1961,8 +1961,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_1">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Object"/>
     </owl:NamedIndividual>
     
 
@@ -1970,8 +1970,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_3">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Object"/>
     </owl:NamedIndividual>
     
 
@@ -1979,8 +1979,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_5 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#prescription_5">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Object"/>
     </owl:NamedIndividual>
     
 
@@ -1988,7 +1988,7 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#referent_doctor -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#referent_doctor">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#afternoon"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#morning"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#no_anesthesia"/>
@@ -2000,8 +2000,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#revoke -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#revoke">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Action"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
     </owl:NamedIndividual>
     
 
@@ -2009,8 +2009,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#View"/>
     </owl:NamedIndividual>
     
 
@@ -2018,7 +2018,7 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample_analysis -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sample_analysis">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context"/>
     </owl:NamedIndividual>
     
 
@@ -2026,8 +2026,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sign -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#sign">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Action"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
     </owl:NamedIndividual>
     
 
@@ -2035,9 +2035,9 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#south_hospital">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
         <orbac:subOrganisationOf rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#central_hospital"/>
     </owl:NamedIndividual>
     
@@ -2046,8 +2046,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#student -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#student">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
     </owl:NamedIndividual>
     
 
@@ -2055,8 +2055,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#surgeon -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#surgeon">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#extern"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#medical_secretary"/>
         <orbac:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#patient"/>
@@ -2068,8 +2068,8 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#validate -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#validate">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#AbstractConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#AbstractConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Activity"/>
     </owl:NamedIndividual>
     
 
@@ -2077,9 +2077,9 @@
     <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#west_hospital">
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#ConcreteConcept"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#ConcreteConcept"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Organisation"/>
+        <rdf:type rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Subject"/>
         <orbac:subOrganisationOf rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/hospital_example_5#central_hospital"/>
     </owl:NamedIndividual>
     
@@ -2134,7 +2134,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#context1"/>
                     </rdf:Description>
                 </rdf:first>
@@ -2144,7 +2144,7 @@
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Context"/>
                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#context2"/>
                             </rdf:Description>
                         </rdf:first>
@@ -2154,7 +2154,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
+                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#isPreferredTo"/>
                                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#context1"/>
                                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#context2"/>
                                     </rdf:Description>
@@ -2165,7 +2165,7 @@
                                         <rdf:first>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesContext"/>
+                                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesContext"/>
                                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#define1"/>
                                                 <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#context1"/>
                                             </rdf:Description>
@@ -2176,7 +2176,7 @@
                                                 <rdf:first>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#definesContext"/>
+                                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#definesContext"/>
                                                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#define2"/>
                                                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#context2"/>
                                                     </rdf:Description>
@@ -2198,7 +2198,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#isPreferredTo"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#define1"/>
                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#define2"/>
                     </rdf:Description>
@@ -2218,7 +2218,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+                        <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#role1"/>
                     </rdf:Description>
                 </rdf:first>
@@ -2228,7 +2228,7 @@
                         <rdf:first>
                             <rdf:Description>
                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#ClassAtom"/>
-                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
+                                <swrl:classPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#Role"/>
                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#role2"/>
                             </rdf:Description>
                         </rdf:first>
@@ -2238,7 +2238,7 @@
                                 <rdf:first>
                                     <rdf:Description>
                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
+                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#isPreferredTo"/>
                                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#role1"/>
                                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#role2"/>
                                     </rdf:Description>
@@ -2249,7 +2249,7 @@
                                         <rdf:first>
                                             <rdf:Description>
                                                 <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole"/>
+                                                <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesRole"/>
                                                 <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#employ1"/>
                                                 <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#role1"/>
                                             </rdf:Description>
@@ -2260,7 +2260,7 @@
                                                 <rdf:first>
                                                     <rdf:Description>
                                                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#employesRole"/>
+                                                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#employesRole"/>
                                                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#employ2"/>
                                                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#role2"/>
                                                     </rdf:Description>
@@ -2282,7 +2282,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#isPreferredTo"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#employ1"/>
                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#employ2"/>
                     </rdf:Description>
@@ -2302,7 +2302,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#hasParent"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#hasParent"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#R1"/>
                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#R2"/>
                     </rdf:Description>
@@ -2316,7 +2316,7 @@
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
-                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#isPreferredTo"/>
+                        <swrl:propertyPredicate rdf:resource="https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#isPreferredTo"/>
                         <swrl:argument1 rdf:resource="http://www.w3.org/2002/07/owl#R1"/>
                         <swrl:argument2 rdf:resource="http://www.w3.org/2002/07/owl#R2"/>
                     </rdf:Description>

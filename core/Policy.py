@@ -27,7 +27,7 @@ class Policy:
     
     def get_concrete_concepts(self):
         query = """PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-                PREFIX : <https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#> # Adjust the base URI as necessary
+                PREFIX : <https://raw.githubusercontent.com/bleuontologies/orbac.owl/refs/heads/main/orbac.owl#> # Adjust the base URI as necessary
 
                 SELECT ?s ?alpha ?o {{
                     ?relation rdf:type :Define .
