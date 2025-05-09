@@ -46,9 +46,10 @@ Houses all the core classes:
 
 ### `web-demo/`
 - A **Streamlit web application** that:
-  - Loads the ontology
-  - Accepts input (subject, action, object)
-  - Checks permissions
+  - Loads the ontology and the examples.
+  - Accepts inputs selection (subject, action, object).
+  - Checks permissions, and displays permission and prohibition **supports**.
+  - Displays the result of **conflict-resolution** (acceptance method).
   - Displays **LLM-generated explanations** interactively.
 
 ---
@@ -129,7 +130,46 @@ These token files (`.env`, `.streamlit/secrets.toml`) are listed in `.gitignore`
 
 ---
 
-## 🚀 How to Use
+## 🧪 `main_test.py`: Command-Line Explanation Testing Tool
+`main_test.py` is a self-contained CLI-based script designed to let users test the OrBAC-based policy reasoning and explanation system. It simulates a full reasoning and explanation pipeline for a randomly selected access control scenario.
+
+### 🔍 Features:
+
+- **Model Selection**: Choose between multiple LLMs including:
+    - HuggingFace-hosted models (default, requires API token)
+    - Local models via Transformers (requires GPU)
+    - Ollama-based models (requires local setup with model pulled)
+- **Example Policy Sampling**: Randomly selects a policy file and access combination (subject, action, object).
+- **Conflict Resolution**: Automatically applies the acceptance-based conflict resolution method.
+- **Explanation Generation**: Uses the selected LLM to generate a natural language explanation.
+- **Evaluation**: Outputs the explanation and related policy decision for quick validation.
+- **Robust Handling**: Includes warnings and fallbacks for:
+    - Missing HuggingFace token
+    - No available GPU for Transformers
+    - Ollama misconfiguration or missing model
+    - API failures or connectivity issues
+
+### ▶️ How to Run:
+
+1. Ensure the required dependencies are installed via `LLM_experiments/requirements.txt`.
+
+2. Run the script:
+```bash
+python main_test.py
+```
+3. Follow the interactive prompts:
+
+    - Choose explanation method (huggingface, transformers, ollama)
+    - Select an LLM model
+    - Confirm execution if GPU is not detected (for transformers)
+
+4. Review the printed supports, conflict resolution, and generated explanation.
+
+This tool is ideal for quick testing and debugging of the explanation pipeline directly from the terminal.
+
+---
+
+## 🚀 How to Use (to re-launch full experiments)
 
 1. **Prepare Dataset**: Use `dataset_generation/` or examples in `ontology/`.
 2. **Run Experiments**:
