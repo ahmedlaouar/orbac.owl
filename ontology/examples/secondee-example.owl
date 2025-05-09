@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee"
-     xml:base="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee"
+<rdf:RDF xmlns="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee"
+     xml:base="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
@@ -10,7 +10,7 @@
      xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
      xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
      xmlns:orbac-owl="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee"/>
+    <owl:Ontology rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee"/>
     
 
 
@@ -487,207 +487,207 @@
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#Bob -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#Bob -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#Bob">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#Bob">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Subject"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#consider_modify -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#consider_modify -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#consider_modify">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#consider_modify">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Consider"/>
-        <orbac-owl:considersAction rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#edit"/>
-        <orbac-owl:considersActivity rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#modify"/>
-        <orbac-owl:considersOrganisation rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#consortium"/>
+        <orbac-owl:considersAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#edit"/>
+        <orbac-owl:considersActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#modify"/>
+        <orbac-owl:considersOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#consortium"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#consortium -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#consortium -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#consortium">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#consortium">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#default -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#default -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#default">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#default">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#define_bob_default -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#define_bob_default -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#define_bob_default">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#define_bob_default">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
-        <orbac-owl:definesAction rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#edit"/>
-        <orbac-owl:definesContext rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#default"/>
-        <orbac-owl:definesObject rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#report1"/>
-        <orbac-owl:definesOrganisation rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#consortium"/>
-        <orbac-owl:definesSubject rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#Bob"/>
+        <orbac-owl:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#edit"/>
+        <orbac-owl:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#default"/>
+        <orbac-owl:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#report1"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#consortium"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#Bob"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#define_bob_secondment -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#define_bob_secondment -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#define_bob_secondment">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#define_bob_secondment">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Define"/>
-        <orbac-owl:definesAction rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#edit"/>
-        <orbac-owl:definesContext rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#secondment"/>
-        <orbac-owl:definesObject rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#report1"/>
-        <orbac-owl:definesOrganisation rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#university1"/>
-        <orbac-owl:definesSubject rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#Bob"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#define_bob_default"/>
+        <orbac-owl:definesAction rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#edit"/>
+        <orbac-owl:definesContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#secondment"/>
+        <orbac-owl:definesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#report1"/>
+        <orbac-owl:definesOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#university1"/>
+        <orbac-owl:definesSubject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#Bob"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#define_bob_default"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#edit -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#edit -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#edit">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#edit">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Action"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#employ_bob_secondee -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#employ_bob_secondee -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#employ_bob_secondee">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#employ_bob_secondee">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Employ"/>
-        <orbac-owl:employesEmployee rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#Bob"/>
-        <orbac-owl:employesEmployer rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#university1"/>
-        <orbac-owl:employesRole rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#secondee"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#define_bob_default"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#use_as_secondment_report"/>
+        <orbac-owl:employesEmployee rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#Bob"/>
+        <orbac-owl:employesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#university1"/>
+        <orbac-owl:employesRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#secondee"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#define_bob_default"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#use_as_secondment_report"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#employee -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#employee -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#employee">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#employee">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SubRole"/>
-        <orbac-owl:hasParent rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#staff_member"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#staff_member"/>
-        <orbac-owl:subRoleOrganisation rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#consortium"/>
+        <orbac-owl:hasParent rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#staff_member"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#staff_member"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#consortium"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#modify -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#modify -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#modify">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#modify">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Activity"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#permission_secondment_reports -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#permission_secondment_reports -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#permission_secondment_reports">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#permission_secondment_reports">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Permission"/>
-        <orbac-owl:accessTypeActivity rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#modify"/>
-        <orbac-owl:accessTypeContext rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#secondment"/>
-        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#consortium"/>
-        <orbac-owl:accessTypeRole rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#secondee"/>
-        <orbac-owl:accessTypeView rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#secondment_reports"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#consider_modify"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#define_bob_default"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#define_bob_secondment"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#employ_bob_secondee"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#use_as_secondment_report"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#modify"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#secondment"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#consortium"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#secondee"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#secondment_reports"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#consider_modify"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#define_bob_default"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#define_bob_secondment"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#employ_bob_secondee"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#use_as_secondment_report"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#prohibition_secondment_reports -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#prohibition_secondment_reports -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#prohibition_secondment_reports">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#prohibition_secondment_reports">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Prohibition"/>
-        <orbac-owl:accessTypeActivity rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#modify"/>
-        <orbac-owl:accessTypeContext rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#default"/>
-        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#consortium"/>
-        <orbac-owl:accessTypeRole rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#staff_member"/>
-        <orbac-owl:accessTypeView rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#secondment_reports"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#consider_modify"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#define_bob_default"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#define_bob_secondment"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#employ_bob_secondee"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#use_as_secondment_report"/>
+        <orbac-owl:accessTypeActivity rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#modify"/>
+        <orbac-owl:accessTypeContext rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#default"/>
+        <orbac-owl:accessTypeOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#consortium"/>
+        <orbac-owl:accessTypeRole rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#staff_member"/>
+        <orbac-owl:accessTypeView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#secondment_reports"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#consider_modify"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#define_bob_default"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#define_bob_secondment"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#employ_bob_secondee"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#use_as_secondment_report"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#report1 -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#report1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#report1">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#report1">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Object"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#secondee -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#secondee -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#secondee">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#secondee">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#SubRole"/>
-        <orbac-owl:hasParent rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#employee"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#employee"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#staff_member"/>
-        <orbac-owl:subRoleOrganisation rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#university1"/>
+        <orbac-owl:hasParent rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#employee"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#employee"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#staff_member"/>
+        <orbac-owl:subRoleOrganisation rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#university1"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#secondment -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#secondment -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#secondment">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#secondment">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Context"/>
-        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#default"/>
+        <orbac-owl:isPreferredTo rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#default"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#secondment_reports -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#secondment_reports -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#secondment_reports">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#secondment_reports">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#View"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#staff_member -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#staff_member -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#staff_member">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#staff_member">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Role"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#university1 -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#university1 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#university1">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#university1">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Organisation"/>
-        <orbac-owl:subOrganisationOf rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#consortium"/>
+        <orbac-owl:subOrganisationOf rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#consortium"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#use_as_secondment_report -->
+    <!-- http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#use_as_secondment_report -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#use_as_secondment_report">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#use_as_secondment_report">
         <rdf:type rdf:resource="https://raw.githubusercontent.com/ahmedlaouar/orbac.owl/refs/heads/main/ontology/orbac.owl#Use"/>
-        <orbac-owl:usesEmployer rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#consortium"/>
-        <orbac-owl:usesObject rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#report1"/>
-        <orbac-owl:usesView rdf:resource="http://www.semanticweb.org/laouar/ontologies/2025/0/example-secondee#secondment_reports"/>
+        <orbac-owl:usesEmployer rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#consortium"/>
+        <orbac-owl:usesObject rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#report1"/>
+        <orbac-owl:usesView rdf:resource="http://www.semanticweb.org/bleu/ontologies/2025/0/example-secondee#secondment_reports"/>
     </owl:NamedIndividual>
     
 
