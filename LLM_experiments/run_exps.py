@@ -16,6 +16,8 @@ from core.AccessRight import AccessRight
 
 load_dotenv()
 
+USE_OLLAMA = False
+
 models_list = [
     "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
     "deepseek-ai/DeepSeek-R1-Distill-Qwen-7B",
@@ -35,7 +37,7 @@ def parameters_fine_tuning(model_name, instance_file_path):
     logger.info(f"Parameters selection for the model: {model_name}.")
     start_time = time()
     n_trials = 30
-    use_ollama = False
+    use_ollama = USE_OLLAMA
     # init policy
     policy = Policy(instance_file_path)
     # load explainer
@@ -52,7 +54,7 @@ def parameters_fine_tuning(model_name, instance_file_path):
 
 def interactive_exps(model_name, instance_file_path, iterations=1):
     logger.info(f"Interactive expermients for the model: {model_name}.")
-    use_ollama = False
+    use_ollama = USE_OLLAMA
     # init policy
     logger.debug('Init policy')
     policy = Policy(instance_file_path)
@@ -77,7 +79,7 @@ def interactive_exps(model_name, instance_file_path, iterations=1):
 
 def run_few_shot(model_name, instance_file_path):
     logger.info(f"Few-shot prompting expermients for the model: {model_name}.")
-    use_ollama = False
+    use_ollama = USE_OLLAMA
     # init policy
     logger.debug('Init policy')
     policy = Policy(instance_file_path)

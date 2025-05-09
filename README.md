@@ -136,11 +136,29 @@ These token files (`.env`, `.streamlit/secrets.toml`) are listed in `.gitignore`
     ```bash
     python LLM_experiments/experiments.py [zero_shot|few_shot|parameters_tuning|interactive] [model_name]
     ```
-3. Analyze Results: Open the notebook in `LLM_experiments/OrBAC_LLMs_stats.ipynb`.
-4. Try the Web Demo:
+3. **Analyze Results**: Open the notebook in `LLM_experiments/OrBAC_LLMs_stats.ipynb`.
+4. **Try the Web Demo**:
     ```bash
     streamlit run web-demo/app.py
     ```
+5. **To run bash experiments**:
+    - Bash experiments are set to use `transformers` by default.
+    - 3 steps for running experiments: 
+      - First, fine tuning of `hyperparameters` for each model.
+      - Then, zero-shot and interactive experiments, as configured in `core/Explainer.py`.
+      - Finally, `few_shot` experiments, also configured in `core/Explainer.py`.
+      
+    - The 3 types of experiments try to load fine-tuned parameters from `json` files in `LLM_experiments/tmp/`.
+    - In the main project directory, run: `chmod +x run_experiment.sh`
+    - The folders needed for experiments to work:
+      - `core/`,
+      - `LLM_experiments/`,
+      - `ontology/`, and 
+      - `queries.sparql/`
+
+One can also modify the experiments to use a local (or distant) `ollama` server (set by default to "http://localhost:11434/api/generate" in `core/Explainer.py`), this can be achieved by setting the variable `USE_OLLAMA` in `LLM_experiments/run_exps.py` to `True`.
+
+HuggingFace APIs calls use a **Serverless Inference API**, which is free to use, but difficult to use reliably. It is used here only for testing purposes.
 
 ## 📄 License
 
