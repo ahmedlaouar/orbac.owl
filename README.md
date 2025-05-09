@@ -2,7 +2,7 @@
 
 This project addresses **access conflict resolution in ORBAC (Organization-Based Access Control)** policies using an **acceptance-based method**, and enhances it by generating **human-friendly natural language explanations** using **Large Language Models (LLMs)**.
 
-It integrates **symbolic reasoning over OWL ontologies** with **neural explanation generation**, and supports **experiments, evaluation, and a web-based demo**.
+It integrates **symbolic reasoning over OWL ontologies** with **LLM-based natural language explanation generation**, and supports **experiments, evaluation, and a web-based demo**.
 
 ---
 
