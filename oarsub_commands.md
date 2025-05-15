@@ -86,6 +86,12 @@ oarnodes -J | jq 'to_entries[] | select(.value.state == "Alive" and .value.gpu !
 oarnodes -J | jq 'to_entries[] | select(.value.state == "Alive" and .value.gpu != null and .value.cpuarch != null) | .value.cpuarch'
 ```
 
+## 6. Get all used nodes
+```bash
+# List all assigned hostnames from previous job ids extracted from stdout and stderr file names
+for jobid in $(ls OAR.* | grep -oP 'OAR\.\K[0-9]+' | sort -u); do   echo "Job $jobid:";   oarstat -f -j $jobid 2>/dev/null | grep assigned_hostnames;   echo ""; done
+```
+
 ## Notes
 Only some commands work differently depending on the type of the reserved material — test each one with `oarsub -C` (check mode) before real submission.
 

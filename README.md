@@ -1,4 +1,4 @@
-# 🛡️ ORBAC-LLM: Conflict Resolution & Explanation with Ontologies and LLMs
+# 🛡️ OrBAC-LLM: Conflict Resolution & Explanation with Ontologies and LLMs
 
 This project addresses **access conflict resolution in ORBAC (Organization-Based Access Control)** policies using an **acceptance-based method**, and enhances it by generating **human-friendly natural language explanations** using **Large Language Models (LLMs)**.
 
@@ -11,6 +11,8 @@ It integrates **symbolic reasoning over OWL ontologies** with **LLM-based natura
 - Implement efficient **conflict resolution** in access control policies using the **acceptance method**.
 - Leverage **LLMs** to produce **clear, natural language explanations** justifying granted or denied access.
 - Provide tools for **experimentation, evaluation**, and **user-friendly demonstration**.
+
+Please also consult the `README.md` files in each project folder, it provides further details on each part, in addition to this main `README` file.
 
 ---
 

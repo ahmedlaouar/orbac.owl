@@ -1,0 +1,32 @@
+Query:
+Q_accept(s, α, o) ≡ 
+∃ org, org', ro, act, vi, co, w1, w2, w3, w4, org₃, org₄, ro', act', vi', co', u1, u2, u3, u4 
+  ( permission(org, ro, act, vi, co) ∨ permission(org', ro, act, vi, co) ) ∧
+  ( employ(org, s, ro, w1) ∨ employ(org', s, ro, w1) ) ∧
+  ( use(org, o, vi, w2) ∨ use(org', o, vi, w2) ) ∧
+  ( consider(org, α, act, w3) ∨ consider(org', α, act, w3) ) ∧
+  ( define(org, s, α, o, co, w4) ∨ define(org', s, α, o, co, w4) ) ∧
+  ( subOrganisationOf(org, org') ∨ org = org' )
+
+∧
+
+  [ ¬∃ org₃, org₄, ro', act', vi', co', u1, u2, u3, u4
+   ( prohibition(org₃, ro', act', vi', co') ∨ prohibition(org₄, ro', act', vi', co') ) ∧
+   ( employ(org₃, s, ro', u1) ∨ employ(org₄, s, ro', u1) ) ∧
+   ( use(org₃, o, vi', u2) ∨ use(org₄, o, vi', u2) ) ∧
+   ( consider(org₃, α, act', u3) ∨ consider(org₄, α, act', u3) ) ∧
+   ( define(org₃, s, α, o, co', u4) ∨ define(org₄, s, α, o, co', u4) ) ∧
+   ( subOrganisationOf(org₃, org₄) ∨ org₃ = org₄ )
+  ]
+  
+  ∨
+  
+  [ ∃ org₃, org₄, ro', act', vi', co', u1, u2, u3, u4
+   ( prohibition(org₃, ro', act', vi', co') ∨ prohibition(org₄, ro', act', vi', co') ) ∧
+   ( employ(org₃, s, ro', u1) ∨ employ(org₄, s, ro', u1) ) ∧
+   ( use(org₃, o, vi', u2) ∨ use(org₄, o, vi', u2) ) ∧
+   ( consider(org₃, α, act', u3) ∨ consider(org₄, α, act', u3) ) ∧
+   ( define(org₃, s, α, o, co', u4) ∨ define(org₄, s, α, o, co', u4) ) ∧
+   ( subOrganisationOf(org₃, org₄) ∨ org₃ = org₄ ) ∧
+   ( greater(w1, u1) ∨ greater(w1, u4) ) ∧ ( greater(w4, u4) ∨ greater(w4, u1) )
+  ]
